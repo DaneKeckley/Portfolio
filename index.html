@@ -12,11 +12,23 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        tailwind.config = {
+        // Initialize EmailJS
+        (function() {
+            emailjs.init('YOUR_EMAILJS_USER_ID');
+        })();
+tailwind.config = {
             theme: {
                 extend: {
                     colors: {
@@ -126,10 +138,10 @@
                     <p class="text-lg md:text-xl font-serif italic text-gold mb-4">Velvet Tone. Scarlet Passion.</p>
                     <p class="text-xl md:text-2xl font-serif italic text-cream mb-10">Voice Actor, Actor, Model</p>
 <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#demos" class="bg-scarlet-500 hover:bg-scarlet-600 text-cream font-bold py-3 px-8 rounded-full transition-all duration-300 flex items-center justify-center gap-2">
+                    <a href="#demos" class="bg-scarlet-500 hover:bg-scarlet-600 text-cream font-bold py-3 px-8 rounded-full transition-all duration-300 flex items-center justify-center gap-2" onclick="document.getElementById('demos').scrollIntoView({behavior: 'smooth'}); return false;">
                         <i data-feather="headphones"></i> LISTEN TO MY WORK
                     </a>
-                    <a href="#contact" class="border-2 border-gold hover:bg-gold/10 text-gold font-bold py-3 px-8 rounded-full transition-all duration-300 flex items-center justify-center gap-2">
+<a href="#contact" class="border-2 border-gold hover:bg-gold/10 text-gold font-bold py-3 px-8 rounded-full transition-all duration-300 flex items-center justify-center gap-2">
                         <i data-feather="mail"></i> CONTACT ME
                     </a>
                 </div>
@@ -141,8 +153,7 @@
             </a>
         </div>
     </section>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
   <!-- Demo Card Template -->
   <div class="audio-card bg-velvet-800 rounded-lg overflow-hidden p-6 transition-all duration-300">
     <div class="flex flex-col gap-4">
@@ -164,20 +175,8 @@
       </audio>
     </div>
   </div>
-
-  <div class="audio-card bg-velvet-800 rounded-lg overflow-hidden p-6 transition-all duration-300">
-    <div class="flex flex-col gap-4">
-      <h3 class="text-xl font-bold text-cream">Narration Demo</h3>
-      <audio id="narrationAudio" class="w-full" controls preload="metadata">
-        <source src="/assets/demos/narration.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-    </div>
-  </div>
 </div>
-
-
-    <!-- About Section -->
+<!-- About Section -->
     <section id="about" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row items-center gap-12">
@@ -308,9 +307,11 @@
 <div class="flex items-start gap-4">
                                 <i data-feather="map-pin" class="text-gold"></i>
                                 <div>
-                                    <p class="font-bold">LOCATION</p>
+                                    <p class="font-bold">LOCATIONS</p>
                                     <p>Los Angeles, CA</p>
-                                </div>
+                                    <p class="mb-2"></p>
+                                    <p>Salt Lake City, UT</p>
+</div>
                             </div>
                         </div>
                         
@@ -380,10 +381,11 @@
             <img id="lightbox-image" src="" alt="" class="w-full max-h-[90vh] object-contain">
         </div>
     </div>
-
+    <!-- Add EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
         // Initialize Feather Icons
-        feather.replace();
+feather.replace();
         
         // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -435,19 +437,26 @@
                 document.body.style.overflow = 'auto';
             }
         });
-        
-        // Contact form submission
+        // Contact form submission with EmailJS
         const contactForm = document.getElementById('contact-form');
+        
+        // Initialize EmailJS (replace with your actual User ID)
+        emailjs.init('YOUR_EMAILJS_USER_ID');
         
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            // Here you would typically send the form data to a server
-            // For demo purposes, we'll just show an alert
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
-            
-            // In a real implementation, you might use EmailJS or Formspree:
+            try {
+                // Send email using EmailJS
+                await emailjs.sendForm('service_danekeckley', 'template_danekeckley', e.target);
+                
+                alert('Thank you for your message! I will get back to you soon.');
+                contactForm.reset();
+            } catch (error) {
+                console.error('Failed to send message:', error);
+                alert('Failed to send message. Please try again or email me directly at danekeckley@gmail.com');
+            }
+// In a real implementation, you might use EmailJS or Formspree:
             // Example with EmailJS:
             /*
             emailjs.sendForm('service_id', 'template_id', e.target)

@@ -142,67 +142,40 @@
         </div>
     </section>
 
-    <!-- Demos Section -->
-    <section id="demos" class="py-20 bg-velvet-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-16 text-cream">
-                <span class="border-b-2 border-gold pb-2">DEMOS</span>
-            </h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Demo Card 1 -->
-                <div class="audio-card bg-velvet-800 rounded-lg overflow-hidden transition-all duration-300">
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-bold text-cream">Animation Demo</h3>
-                            <i data-feather="play-circle" class="text-gold w-6 h-6"></i>
-                        </div>
-                        <div class="h-2 bg-scarlet-700/50 rounded-full mb-4">
-                            <div class="h-2 bg-scarlet-500 rounded-full" style="width: 30%"></div>
-                        </div>
-                        <audio controls class="w-full mt-6">
-                            <source src="/assets/demos/animation.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </div>
-                </div>
-                
-                <!-- Demo Card 2 -->
-                <div class="audio-card bg-velvet-800 rounded-lg overflow-hidden transition-all duration-300">
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-bold text-cream">Commercial Demo</h3>
-                            <i data-feather="play-circle" class="text-gold w-6 h-6"></i>
-                        </div>
-                        <div class="h-2 bg-scarlet-700/50 rounded-full mb-4">
-                            <div class="h-2 bg-scarlet-500 rounded-full" style="width: 45%"></div>
-                        </div>
-                        <audio controls class="w-full mt-6">
-                            <source src="/assets/demos/commercial.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </div>
-                </div>
-                
-                <!-- Demo Card 3 -->
-                <div class="audio-card bg-velvet-800 rounded-lg overflow-hidden transition-all duration-300">
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-bold text-cream">Narration Demo</h3>
-                            <i data-feather="play-circle" class="text-gold w-6 h-6"></i>
-                        </div>
-                        <div class="h-2 bg-scarlet-700/50 rounded-full mb-4">
-                            <div class="h-2 bg-scarlet-500 rounded-full" style="width: 60%"></div>
-                        </div>
-                        <audio controls class="w-full mt-6">
-                            <source src="/assets/demos/narration.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <!-- Demo Card Template -->
+  <div class="audio-card bg-velvet-800 rounded-lg overflow-hidden p-6 transition-all duration-300">
+    <div class="flex flex-col gap-4">
+      <h3 class="text-xl font-bold text-cream">Animation Demo</h3>
+      <!-- Custom Audio Player -->
+      <audio id="animationAudio" class="w-full" controls preload="metadata">
+        <source src="/assets/demos/animation.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+
+  <div class="audio-card bg-velvet-800 rounded-lg overflow-hidden p-6 transition-all duration-300">
+    <div class="flex flex-col gap-4">
+      <h3 class="text-xl font-bold text-cream">Commercial Demo</h3>
+      <audio id="commercialAudio" class="w-full" controls preload="metadata">
+        <source src="/assets/demos/commercial.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+
+  <div class="audio-card bg-velvet-800 rounded-lg overflow-hidden p-6 transition-all duration-300">
+    <div class="flex flex-col gap-4">
+      <h3 class="text-xl font-bold text-cream">Narration Demo</h3>
+      <audio id="narrationAudio" class="w-full" controls preload="metadata">
+        <source src="/assets/demos/narration.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+</div>
+
 
     <!-- About Section -->
     <section id="about" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">

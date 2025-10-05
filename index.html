@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dane Keckley | Voice Actor</title>
+    <meta name="description" content="Professional voice actor specializing in animation, commercials, and narration. Bringing stories to life with character and depth.">
+    <meta property="og:title" content="Dane Keckley | Voice Actor">
+    <meta property="og:description" content="Professional voice actor specializing in animation, commercials, and narration.">
+    <meta property="og:image" content="http://static.photos/black/1200x630/42">
+    <meta property="og:url" content="https://danekeckley.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        scarlet: {
+                            500: '#8C1C13',
+                            600: '#781912',
+                            700: '#641510',
+                        },
+                        velvet: {
+                            900: '#0C0C0C',
+                            800: '#1A1A1A',
+                        },
+                        gold: '#D4AF37',
+                        cream: '#F5F3F0'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+        body {
+            background-color: #0C0C0C;
+            color: #F5F3F0;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .velvet-gradient {
+            background: linear-gradient(135deg, #0C0C0C 0%, #1A0A0A 20%, #200908 40%, #1A0A0A 60%, #0C0C0C 100%);
+            background-size: 200% 200%;
+            animation: gradientPulse 15s ease infinite;
+        }
+        
+        @keyframes gradientPulse {
+            0% { background-position: 0% 50% }
+            50% { background-position: 100% 50% }
+            100% { background-position: 0% 50% }
+        }
+.nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #D4AF37;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .audio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(140, 28, 19, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-xl font-bold text-cream">DANE KECKLEY</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="nav-link text-cream hover:text-gold px-3 py-2 text-sm font-medium">HOME</a>
+                        <a href="#demos" class="nav-link text-cream hover:text-gold px-3 py-2 text-sm font-medium">DEMOS</a>
+                        <a href="#about" class="nav-link text-cream hover:text-gold px-3 py-2 text-sm font-medium">ABOUT</a>
+                        <a href="#gallery" class="nav-link text-cream hover:text-gold px-3 py-2 text-sm font-medium">GALLERY</a>
+                        <a href="#contact" class="nav-link text-cream hover:text-gold px-3 py-2 text-sm font-medium">CONTACT</a>
+</div>
+</div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-cream hover:text-gold">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-velvet-900 z-40 pt-20">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="#home" class="block px-3 py-4 text-cream hover:text-gold text-lg border-b border-scarlet-700/20">HOME</a>
+                    <a href="#demos" class="block px-3 py-4 text-cream hover:text-gold text-lg border-b border-scarlet-700/20">DEMOS</a>
+                    <a href="#about" class="block px-3 py-4 text-cream hover:text-gold text-lg border-b border-scarlet-700/20">ABOUT</a>
+                    <a href="#gallery" class="block px-3 py-4 text-cream hover:text-gold text-lg border-b border-scarlet-700/20">GALLERY</a>
+                    <a href="#contact" class="block px-3 py-4 text-cream hover:text-gold text-lg">CONTACT</a>
+</div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center velvet-gradient relative overflow-hidden hovered-element">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
+            <div class="text-center md:text-left">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 text-cream">
+                    <span class="block">DANE</span>
+                    <span class="block text-scarlet-500">KECKLEY</span>
+                </h1>
+                    <p class="text-lg md:text-xl font-serif italic text-gold mb-4">Velvet Tone. Scarlet Passion.</p>
+                    <p class="text-xl md:text-2xl font-serif italic text-cream mb-10">Voice Actor, Actor, Model</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#demos" class="bg-scarlet-500 hover:bg-scarlet-600 text-cream font-bold py-3 px-8 rounded-full transition-all duration-300 flex items-center justify-center gap-2">
+                        <i data-feather="headphones"></i> LISTEN TO MY WORK
+                    </a>
+                    <a href="#contact" class="border-2 border-gold hover:bg-gold/10 text-gold font-bold py-3 px-8 rounded-full transition-all duration-300 flex items-center justify-center gap-2">
+                        <i data-feather="mail"></i> CONTACT ME
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center">
+            <a href="#demos" class="animate-bounce">
+                <i data-feather="chevron-down" class="text-cream w-10 h-10"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Demos Section -->
+    <section id="demos" class="py-20 bg-velvet-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 text-cream">
+                <span class="border-b-2 border-gold pb-2">DEMOS</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Demo Card 1 -->
+                <div class="audio-card bg-velvet-800 rounded-lg overflow-hidden transition-all duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-cream">Animation Demo</h3>
+                            <i data-feather="play-circle" class="text-gold w-6 h-6"></i>
+                        </div>
+                        <div class="h-2 bg-scarlet-700/50 rounded-full mb-4">
+                            <div class="h-2 bg-scarlet-500 rounded-full" style="width: 30%"></div>
+                        </div>
+                        <audio controls class="w-full mt-6">
+                            <source src="/assets/demos/animation.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+                
+                <!-- Demo Card 2 -->
+                <div class="audio-card bg-velvet-800 rounded-lg overflow-hidden transition-all duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-cream">Commercial Demo</h3>
+                            <i data-feather="play-circle" class="text-gold w-6 h-6"></i>
+                        </div>
+                        <div class="h-2 bg-scarlet-700/50 rounded-full mb-4">
+                            <div class="h-2 bg-scarlet-500 rounded-full" style="width: 45%"></div>
+                        </div>
+                        <audio controls class="w-full mt-6">
+                            <source src="/assets/demos/commercial.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+                
+                <!-- Demo Card 3 -->
+                <div class="audio-card bg-velvet-800 rounded-lg overflow-hidden transition-all duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-cream">Narration Demo</h3>
+                            <i data-feather="play-circle" class="text-gold w-6 h-6"></i>
+                        </div>
+                        <div class="h-2 bg-scarlet-700/50 rounded-full mb-4">
+                            <div class="h-2 bg-scarlet-500 rounded-full" style="width: 60%"></div>
+                        </div>
+                        <audio controls class="w-full mt-6">
+                            <source src="/assets/demos/narration.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/3">
+                    <div class="relative group">
+                    <img src="https://huggingface.co/spaces/Trajan239/undefined/resolve/main/images/Dane%20Keckley%20Model%20Headshot.jpg" alt="Dane Keckley" class="w-full rounded-lg shadow-xl transform group-hover:scale-105 transition-transform duration-300">
+<div class="absolute inset-0 bg-scarlet-500/10 rounded-lg border-2 border-scarlet-500/30 group-hover:opacity-0 transition-opacity duration-300"></div>
+                    </div>
+                </div>
+                <div class="lg:w-2/3">
+                    <h2 class="text-4xl font-bold mb-8 text-cream">
+                        <span class="border-b-2 border-gold pb-2">ABOUT</span>
+                    </h2>
+                    <div class="space-y-6 text-cream/90">
+                        <p class="text-lg">With a voice that carries both warmth and authority, Dane Keckley brings characters to life with remarkable depth and versatility. His vocal range spans from heroic protagonists to sinister villains, with every nuanced performance grounded in authentic emotion.</p>
+                        <p class="text-lg">Trained in classical theater and modern voiceover techniques, Dane's background includes work with major animation studios, commercial campaigns, and audiobook productions. His ability to adapt his voice to fit any genre or demographic makes him a sought-after talent in the industry.</p>
+                        <p class="text-lg">When not in the booth, Dane volunteers with youth theater programs and mentors aspiring voice actors, believing strongly in giving back to the creative community that shaped his career.</p>
+                    </div>
+                    <div class="mt-10">
+                        <a href="/assets/resume.pdf" download class="inline-flex items-center bg-scarlet-500 hover:bg-scarlet-600 text-cream font-bold py-3 px-6 rounded-full transition-all duration-300">
+                            <i data-feather="download" class="mr-2"></i> DOWNLOAD RESUME
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-velvet-800 border-t border-scarlet-700/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 text-cream">
+                <span class="border-b-2 border-gold pb-2">GALLERY</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="group relative overflow-hidden rounded-lg cursor-pointer">
+                    <img src="http://static.photos/studio/640x360/1" alt="Studio Session" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-feather="zoom-in" class="text-cream w-10 h-10"></i>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="group relative overflow-hidden rounded-lg cursor-pointer">
+                    <img src="http://static.photos/studio/640x360/2" alt="Behind the Scenes" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-feather="zoom-in" class="text-cream w-10 h-10"></i>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="group relative overflow-hidden rounded-lg cursor-pointer">
+                    <img src="http://static.photos/studio/640x360/3" alt="Voice Acting Workshop" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-feather="zoom-in" class="text-cream w-10 h-10"></i>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="group relative overflow-hidden rounded-lg cursor-pointer">
+                    <img src="http://static.photos/studio/640x360/4" alt="Recording Session" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-feather="zoom-in" class="text-cream w-10 h-10"></i>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="group relative overflow-hidden rounded-lg cursor-pointer">
+                    <img src="http://static.photos/studio/640x360/5" alt="Convention Appearance" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-feather="zoom-in" class="text-cream w-10 h-10"></i>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="group relative overflow-hidden rounded-lg cursor-pointer">
+                    <img src="http://static.photos/studio/640x360/6" alt="Character Development" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-feather="zoom-in" class="text-cream w-10 h-10"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 text-cream">
+                <span class="border-b-2 border-gold pb-2">CONTACT</span>
+            </h2>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-cream mb-2">NAME</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-cream mb-2">EMAIL</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-cream mb-2">MESSAGE</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-scarlet-500 hover:bg-scarlet-600 text-cream font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
+                            <i data-feather="send"></i> SEND MESSAGE
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-velvet-800 rounded-lg p-8 h-full">
+                        <h3 class="text-2xl font-bold text-cream mb-6">LET'S WORK TOGETHER</h3>
+                        <div class="space-y-6 text-cream/90">
+                            <p>For voiceover inquiries, collaborations, or just to say hello, feel free to reach out through the form or directly via email.</p>
+                            <div class="flex items-start gap-4">
+                                <i data-feather="mail" class="text-gold"></i>
+                                <div>
+                                    <p class="font-bold">EMAIL</p>
+                                <p>danekeckley@gmail.com</p>
+</div>
+                            </div>
+<div class="flex items-start gap-4">
+                                <i data-feather="map-pin" class="text-gold"></i>
+                                <div>
+                                    <p class="font-bold">LOCATION</p>
+                                    <p>Los Angeles, CA</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-12">
+                            <h4 class="text-xl font-bold text-cream mb-4">CONNECT WITH ME</h4>
+                            <div class="flex gap-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
+                                    <i data-feather="twitter" class="text-gold"></i>
+                                </a>
+                                <a href="https://www.instagram.com/dane_keckley" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
+                                    <i data-feather="instagram" class="text-gold"></i>
+                                </a>
+                                <a href="https://www.imdb.com/name/nm14250926" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
+                                    <i data-feather="film" class="text-gold"></i>
+                                </a>
+                                <a href="https://www.youtube.com/@TrajanWeekly" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
+                                    <i data-feather="youtube" class="text-gold"></i>
+                                </a>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-velvet-900 border-t border-scarlet-700/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <span class="text-xl font-bold text-cream">DANE KECKLEY</span>
+                    <p class="text-cream/70 mt-2">Voice Actor | Performer | Storyteller</p>
+                </div>
+                <div class="flex flex-col md:flex-row gap-6 md:gap-12 text-center md:text-left">
+                    <div>
+                        <h5 class="text-cream font-bold mb-3">NAVIGATION</h5>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-cream/70 hover:text-gold transition-colors duration-300">Home</a></li>
+                            <li><a href="#demos" class="text-cream/70 hover:text-gold transition-colors duration-300">Demos</a></li>
+                            <li><a href="#about" class="text-cream/70 hover:text-gold transition-colors duration-300">About</a></li>
+                            <li><a href="#gallery" class="text-cream/70 hover:text-gold transition-colors duration-300">Gallery</a></li>
+                            <li><a href="#contact" class="text-cream/70 hover:text-gold transition-colors duration-300">Contact</a></li>
+</ul>
+</div>
+                    <div>
+                        <h5 class="text-cream font-bold mb-3">LEGAL</h5>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-cream/70 hover:text-gold transition-colors duration-300">Privacy Policy</a></li>
+                            <li><a href="#" class="text-cream/70 hover:text-gold transition-colors duration-300">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-scarlet-700/20 mt-12 pt-8 text-center text-cream/50">
+                <p>&copy; 2025 Dane Keckley. All rights reserved.</p>
+</div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center hidden">
+        <div class="relative max-w-5xl w-full mx-4">
+            <button id="close-lightbox" class="absolute -top-12 right-0 text-cream hover:text-gold">
+                <i data-feather="x" class="w-8 h-8"></i>
+            </button>
+            <img id="lightbox-image" src="" alt="" class="w-full max-h-[90vh] object-contain">
+        </div>
+    </div>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+        
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuButton.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                feather.replace();
+            } else {
+                icon.setAttribute('data-feather', 'x');
+                feather.replace();
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.querySelector('i').setAttribute('data-feather', 'menu');
+                feather.replace();
+            });
+        });
+        
+        // Lightbox functionality
+        const galleryItems = document.querySelectorAll('#gallery [class*="group"]');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const closeLightbox = document.getElementById('close-lightbox');
+        
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                lightboxImage.src = imgSrc;
+                lightbox.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeLightbox.addEventListener('click', () => {
+            lightbox.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to a server
+            // For demo purposes, we'll just show an alert
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+            
+            // In a real implementation, you might use EmailJS or Formspree:
+            // Example with EmailJS:
+            /*
+            emailjs.sendForm('service_id', 'template_id', e.target)
+                .then(() => {
+                    alert('Message sent successfully!');
+                    contactForm.reset();
+                }, (error) => {
+                    alert('Failed to send message. Please try again later.');
+                    console.error('EmailJS Error:', error);
+                });
+            */
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

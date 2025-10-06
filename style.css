@@ -34,15 +34,15 @@
             border: 1px solid lightgray;
             border-radius: 16px;
             background-color: #1A1A1A;
-            box-shadow: 0 0 15px rgba(255, 220, 130, 0.1);
+            box-shadow: 0 0 15px rgba(245, 234, 214, 0.1);
         }
 
         .card p:last-child {
             margin-bottom: 0;
         }
 
-        /* Metallic Gold Button */
-        .gold-button {
+        /* Cream Button */
+        .cream-button {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -51,15 +51,15 @@
             padding: 12px 32px;
             border-radius: 9999px;
             color: #0C0C0C;
-            background: linear-gradient(90deg, #C5A44F 0%, #D7B865 50%, #C5A44F 100%);
+            background: linear-gradient(90deg, #F5EAD6 0%, #FFF4E2 50%, #F5EAD6 100%);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
-        .gold-button:hover {
-            background: linear-gradient(90deg, #EBD28B 0%, #F1E3A1 50%, #EBD28B 100%);
-            box-shadow: 0 0 20px rgba(255, 220, 130, 0.6);
+        .cream-button:hover {
+            background: linear-gradient(90deg, #FFF7E8 0%, #FFFFFF 50%, #FFF7E8 100%);
+            box-shadow: 0 0 20px rgba(255, 247, 232, 0.6);
             transform: translateY(-2px);
         }
     </style>
@@ -70,7 +70,7 @@
         <h1>Dane Keckley | Voice Actor</h1>
         <p>Professional voice actor specializing in animation, commercials, and narration. Bringing stories to life with character and depth.</p>
 
-        <a href="#demos-header" class="gold-button">
+        <a href="#demos-header" class="cream-button">
             🎧 LISTEN TO MY WORK
         </a>
     </div>

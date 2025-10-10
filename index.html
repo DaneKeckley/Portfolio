@@ -11,36 +11,30 @@
     <meta property="og:url" content="https://danekeckley.com">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <!-- Framer Motion -->
     <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     <script>
-        // Initialize EmailJS
-        (function() {
-            emailjs.init('YOUR_EMAILJS_USER_ID');
-        })();
-tailwind.config = {
+        // Initialize EmailJS with your public key
+        emailjs.init('o-XjlNLzlQ99Lrq_k');
+
+        // Tailwind custom theme
+        tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        scarlet: {
-                            500: '#340E12',
-                            600: '#2A0B0E',
-                            700: '#20090A',
-                        },
-                        velvet: {
-                            900: '#0C0C0C',
-                            800: '#1A1A1A',
-                        },
+                        scarlet: { 500: '#340E12', 600: '#2A0B0E', 700: '#20090A' },
+                        velvet: { 900: '#0C0C0C', 800: '#1A1A1A' },
                         gold: '#E5C47A',
                         cream: '#F5F3F0'
                     },
@@ -52,6 +46,7 @@ tailwind.config = {
             }
         }
     </script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
         body {
@@ -65,13 +60,12 @@ tailwind.config = {
             background-size: 200% 200%;
             animation: gradientPulse 15s ease infinite;
         }
-        
         @keyframes gradientPulse {
             0% { background-position: 0% 50% }
             50% { background-position: 100% 50% }
             100% { background-position: 0% 50% }
         }
-.nav-link::after {
+        .nav-link::after {
             content: '';
             display: block;
             width: 0;
@@ -79,11 +73,7 @@ tailwind.config = {
             background: #D4AF37;
             transition: width 0.3s;
         }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
+        .nav-link:hover::after { width: 100%; }
         .audio-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(140, 28, 19, 0.3);
@@ -93,7 +83,7 @@ tailwind.config = {
 <body>
     <!-- Navbar -->
     <nav class="fixed w-full z-50">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex-shrink-0 flex items-center">
                     <span class="text-xl font-bold text-cream">DANE KECKLEY</span>
@@ -101,12 +91,12 @@ tailwind.config = {
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-center space-x-8">
                         <a href="#home" class="nav-link text-cream hover:text-gold px-3 py-2 text-sm font-medium">HOME</a>
-                <a href="#demos-header" class="nav-link text-cream hover:text-gold px-3 py-2 text-sm font-medium">DEMOS</a>
-<a href="#about" class="nav-link text-cream hover:text-gold px-3 py-2 text-sm font-medium">ABOUT</a>
+                        <a href="#demos-header" class="nav-link text-cream hover:text-gold px-3 py-2 text-sm font-medium">DEMOS</a>
+                        <a href="#about" class="nav-link text-cream hover:text-gold px-3 py-2 text-sm font-medium">ABOUT</a>
                         <a href="#gallery" class="nav-link text-cream hover:text-gold px-3 py-2 text-sm font-medium">GALLERY</a>
                         <a href="#contact" class="nav-link text-cream hover:text-gold px-3 py-2 text-sm font-medium">CONTACT</a>
-</div>
-</div>
+                    </div>
+                </div>
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-cream hover:text-gold">
                         <i data-feather="menu"></i>
@@ -119,29 +109,27 @@ tailwind.config = {
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-velvet-900 z-40 pt-20">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <a href="#home" class="block px-3 py-4 text-cream hover:text-gold text-lg border-b border-scarlet-700/20">HOME</a>
-                    <a href="#demos-header" class="block px-3 py-4 text-cream hover:text-gold text-lg border-b border-scarlet-700/20">DEMOS</a>
-<a href="#about" class="block px-3 py-4 text-cream hover:text-gold text-lg border-b border-scarlet-700/20">ABOUT</a>
-                    <a href="#gallery" class="block px-3 py-4 text-cream hover:text-gold text-lg border-b border-scarlet-700/20">GALLERY</a>
-                    <a href="#contact" class="block px-3 py-4 text-cream hover:text-gold text-lg">CONTACT</a>
-</div>
+            <a href="#home" class="block px-3 py-4 text-cream hover:text-gold text-lg border-b border-scarlet-700/20">HOME</a>
+            <a href="#demos-header" class="block px-3 py-4 text-cream hover:text-gold text-lg border-b border-scarlet-700/20">DEMOS</a>
+            <a href="#about" class="block px-3 py-4 text-cream hover:text-gold text-lg border-b border-scarlet-700/20">ABOUT</a>
+            <a href="#gallery" class="block px-3 py-4 text-cream hover:text-gold text-lg border-b border-scarlet-700/20">GALLERY</a>
+            <a href="#contact" class="block px-3 py-4 text-cream hover:text-gold text-lg">CONTACT</a>
+        </div>
     </div>
 
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center text-center velvet-gradient relative overflow-hidden hovered-element">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
             <div class="text-center">
                 <h1 class="text-5xl md:text-7xl font-bold mb-6 text-cream">
                     <span class="block">DANE</span>
                     <span class="block text-gold">KECKLEY</span>
                 </h1>
-                    <p class="text-lg md:text-xl font-serif italic text-cream mb-4">Velvet Tone. Scarlet Passion.</p>
-                    <p class="text-xl md:text-2xl font-serif italic text-gold mb-10">Voice Actor, Actor, Model</p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#demos-header"
-   class="relative font-bold py-3 px-8 rounded-full transition-all duration-300 flex items-center justify-center gap-2 
-          text-[#0C0C0C] shadow-lg bg-[#F5F3F0] hover:bg-[#e7e4e1]">
-    <i data-feather="headphones"></i> LISTEN TO MY WORK
+                <p class="text-lg md:text-xl font-serif italic text-cream mb-4">Velvet Tone. Scarlet Passion.</p>
+                <p class="text-xl md:text-2xl font-serif italic text-gold mb-10">Voice Actor, Actor, Model</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#demos-header" class="relative font-bold py-3 px-8 rounded-full transition-all duration-300 flex items-center justify-center gap-2 text-[#0C0C0C] shadow-lg bg-[#F5F3F0] hover:bg-[#e7e4e1]">
+                        <i data-feather="headphones"></i> LISTEN TO MY WORK
                     </a>
                     <a href="#contact" class="border-2 border-gold hover:bg-gold/10 text-gold font-bold py-3 px-8 rounded-full transition-all duration-300 flex items-center justify-center gap-2">
                         <i data-feather="mail"></i> CONTACT ME
@@ -155,42 +143,42 @@ tailwind.config = {
             </a>
         </div>
     </section>
-<div id="demos-header" class="pt-16">
-    <h2 class="text-4xl font-bold text-center mb-8 text-cream">
-<span class="border-b-2 border-gold pb-2">DEMOS</span>
-    </h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<!-- Demo Card Template -->
-  <div class="audio-card bg-velvet-800 rounded-lg overflow-hidden p-6 transition-all duration-300">
-    <div class="flex flex-col gap-4">
-      <h3 class="text-xl font-bold text-cream">Animation Demo</h3>
-      <!-- Custom Audio Player -->
-      <audio id="animationAudio" class="w-full" controls preload="metadata">
-        <source src="/assets/demos/animation.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-    </div>
-  </div>
 
-  <div class="audio-card bg-velvet-800 rounded-lg overflow-hidden p-6 transition-all duration-300">
-    <div class="flex flex-col gap-4">
-      <h3 class="text-xl font-bold text-cream">Commercial Demo</h3>
-      <audio id="commercialAudio" class="w-full" controls preload="metadata">
-        <source src="/assets/demos/commercial.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
+    <!-- Demos Section -->
+    <div id="demos-header" class="pt-16">
+        <h2 class="text-4xl font-bold text-center mb-8 text-cream">
+            <span class="border-b-2 border-gold pb-2">DEMOS</span>
+        </h2>
     </div>
-  </div>
-</div>
-<!-- About Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-8">
+        <div class="audio-card bg-velvet-800 rounded-lg overflow-hidden p-6 transition-all duration-300">
+            <div class="flex flex-col gap-4">
+                <h3 class="text-xl font-bold text-cream">Animation Demo</h3>
+                <audio id="animationAudio" class="w-full" controls preload="metadata">
+                    <source src="/assets/demos/animation.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+        <div class="audio-card bg-velvet-800 rounded-lg overflow-hidden p-6 transition-all duration-300">
+            <div class="flex flex-col gap-4">
+                <h3 class="text-xl font-bold text-cream">Commercial Demo</h3>
+                <audio id="commercialAudio" class="w-full" controls preload="metadata">
+                    <source src="/assets/demos/commercial.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
     <section id="about" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row items-center gap-12">
                 <div class="lg:w-1/3">
                     <div class="relative group">
-                    <img src="/assets/images/DaneKeckleyModelHeadshot.jpg" alt="Dane Keckley" class="w-full rounded-lg shadow-xl transform group-hover:scale-105 transition-transform duration-300">
-<div class="absolute inset-0 bg-[#340E12]/10 rounded-lg border-2 border-[#340E12]/30 group-hover:opacity-0 transition-opacity duration-300"></div>
+                        <img src="/assets/images/DaneKeckleyModelHeadshot.jpg" alt="Dane Keckley" class="w-full rounded-lg shadow-xl transform group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-[#340E12]/10 rounded-lg border-2 border-[#340E12]/30 group-hover:opacity-0 transition-opacity duration-300"></div>
                     </div>
                 </div>
                 <div class="lg:w-2/3">
@@ -203,9 +191,7 @@ tailwind.config = {
                         <p class="text-lg">I JUST LOVE HER.</p>
                     </div>
                     <div class="mt-10">
-                        <a href="/assets/resume.pdf" download class="inline-flex items-center bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-full transition-all duration-300">
-                            <i data-feather="download" class="mr-2"></i> DOWNLOAD RESUME
-                        </a>
+                        <a href="/assets/resume.pdf" class="inline-block bg-gold text-velvet-900 font-bold py-3 px-8 rounded-full hover:bg-gold/90 transition duration-300">VIEW RESUME</a>
                     </div>
                 </div>
             </div>
@@ -213,60 +199,15 @@ tailwind.config = {
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="py-20 bg-velvet-800 border-t border-scarlet-700/20">
+    <section id="gallery" class="py-20 bg-velvet-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-16 text-cream">
+            <h2 class="text-4xl font-bold text-center mb-12 text-cream">
                 <span class="border-b-2 border-gold pb-2">GALLERY</span>
             </h2>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Gallery Item 1 -->
-                <div class="group relative overflow-hidden rounded-lg cursor-pointer">
-                    <img src="http://static.photos/studio/640x360/1" alt="Studio Session" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i data-feather="zoom-in" class="text-cream w-10 h-10"></i>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 2 -->
-                <div class="group relative overflow-hidden rounded-lg cursor-pointer">
-                    <img src="http://static.photos/studio/640x360/2" alt="Behind the Scenes" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i data-feather="zoom-in" class="text-cream w-10 h-10"></i>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 3 -->
-                <div class="group relative overflow-hidden rounded-lg cursor-pointer">
-                    <img src="http://static.photos/studio/640x360/3" alt="Voice Acting Workshop" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i data-feather="zoom-in" class="text-cream w-10 h-10"></i>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 4 -->
-                <div class="group relative overflow-hidden rounded-lg cursor-pointer">
-                    <img src="http://static.photos/studio/640x360/4" alt="Recording Session" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i data-feather="zoom-in" class="text-cream w-10 h-10"></i>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 5 -->
-                <div class="group relative overflow-hidden rounded-lg cursor-pointer">
-                    <img src="http://static.photos/studio/640x360/5" alt="Convention Appearance" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i data-feather="zoom-in" class="text-cream w-10 h-10"></i>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 6 -->
-                <div class="group relative overflow-hidden rounded-lg cursor-pointer">
-                    <img src="http://static.photos/studio/640x360/6" alt="Character Development" class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i data-feather="zoom-in" class="text-cream w-10 h-10"></i>
-                    </div>
-                </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <img src="/assets/images/gallery1.jpg" alt="Gallery Image 1" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+                <img src="/assets/images/gallery2.jpg" alt="Gallery Image 2" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+                <img src="/assets/images/gallery3.jpg" alt="Gallery Image 3" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
             </div>
         </div>
     </section>
@@ -274,142 +215,45 @@ tailwind.config = {
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-16 text-cream">
+            <h2 class="text-4xl font-bold text-center mb-12 text-cream">
                 <span class="border-b-2 border-gold pb-2">CONTACT</span>
             </h2>
-            
-            <div class="flex flex-col lg:flex-row gap-12">
-                <div class="lg:w-1/2">
-                    <form id="contact-form" class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-cream mb-2">NAME</label>
-                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-cream mb-2">EMAIL</label>
-                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-cream mb-2">MESSAGE</label>
-                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500"></textarea>
-                        </div>
-                            <button type="submit" class="w-full bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
-<i data-feather="send"></i> SEND MESSAGE
-                        </button>
-                    </form>
-                </div>
-                
-                <div class="lg:w-1/2">
-                    <div class="bg-velvet-800 rounded-lg p-8 h-full">
-                        <h3 class="text-2xl font-bold text-cream mb-6">LET'S WORK TOGETHER</h3>
-                        <div class="space-y-6 text-cream/90">
-                            <p>For voiceover inquiries, collaborations, or just to say hello, feel free to reach out through the form or directly via email.</p>
-                            <div class="flex items-start gap-4">
-                                <i data-feather="mail" class="text-gold"></i>
-                                <div>
-                                    <p class="font-bold">EMAIL</p>
-                                <p>danekeckley@gmail.com</p>
-</div>
-                            </div>
-<div class="flex items-start gap-4">
-                                <i data-feather="map-pin" class="text-gold"></i>
-                                <div>
-                                    <p class="font-bold">LOCATIONS</p>
-                                    <p>Los Angeles, CA</p>
-                                    <p class="mb-2"></p>
-                                    <p>Salt Lake City, UT</p>
-</div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-12">
-                            <h4 class="text-xl font-bold text-cream mb-4">CONNECT WITH ME</h4>
-                            <div class="flex gap-4">
-                                <a href="#" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
-                                    <i data-feather="twitter" class="text-gold"></i>
-                                </a>
-                                <a href="https://www.instagram.com/dane_keckley" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
-                                    <i data-feather="instagram" class="text-gold"></i>
-                                </a>
-                                <a href="https://www.imdb.com/name/nm14250926" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
-                                    <i data-feather="film" class="text-gold"></i>
-                                </a>
-                                <a href="https://www.youtube.com/@TrajanWeekly" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
-                                    <i data-feather="youtube" class="text-gold"></i>
-                                </a>
-</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <form id="contact-form" class="max-w-2xl mx-auto flex flex-col gap-6">
+                <input type="text" name="user_name" placeholder="Your Name" class="p-4 rounded-lg border border-scarlet-700 bg-velvet-800 text-cream focus:outline-none focus:ring-2 focus:ring-gold" required>
+                <input type="email" name="user_email" placeholder="Your Email" class="p-4 rounded-lg border border-scarlet-700 bg-velvet-800 text-cream focus:outline-none focus:ring-2 focus:ring-gold" required>
+                <textarea name="message" rows="5" placeholder="Your Message" class="p-4 rounded-lg border border-scarlet-700 bg-velvet-800 text-cream focus:outline-none focus:ring-2 focus:ring-gold" required></textarea>
+                <button type="submit" class="bg-gold text-velvet-900 font-bold py-3 px-8 rounded-full hover:bg-gold/90 transition duration-300">SEND MESSAGE</button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-velvet-900 border-t border-scarlet-700/20 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <span class="text-xl font-bold text-cream">DANE KECKLEY</span>
-                    <p class="text-cream/70 mt-2">Voice Actor | Performer | Storyteller</p>
-                </div>
-                <div class="flex flex-col md:flex-row gap-6 md:gap-12 text-center md:text-left">
-                    <div>
-                        <h5 class="text-cream font-bold mb-3">NAVIGATION</h5>
-                        <ul class="space-y-2">
-                            <li><a href="#home" class="text-cream/70 hover:text-gold transition-colors duration-300">Home</a></li>
-                            <li><a href="#demos" class="text-cream/70 hover:text-gold transition-colors duration-300">Demos</a></li>
-                            <li><a href="#about" class="text-cream/70 hover:text-gold transition-colors duration-300">About</a></li>
-                            <li><a href="#gallery" class="text-cream/70 hover:text-gold transition-colors duration-300">Gallery</a></li>
-                            <li><a href="#contact" class="text-cream/70 hover:text-gold transition-colors duration-300">Contact</a></li>
-</ul>
-</div>
-                    <div>
-                        <h5 class="text-cream font-bold mb-3">LEGAL</h5>
-                        <ul class="space-y-2">
-                            <li><a href="#" class="text-cream/70 hover:text-gold transition-colors duration-300">Privacy Policy</a></li>
-                            <li><a href="#" class="text-cream/70 hover:text-gold transition-colors duration-300">Terms of Service</a></li>
-                        </ul>
-                    </div>
-                </div>
+    <footer class="bg-velvet-900 py-8 border-t border-scarlet-700/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-cream/80">
+            <p>&copy; 2025 Dane Keckley. All rights reserved.</p>
+            <div class="flex justify-center gap-6 mt-4">
+                <a href="https://instagram.com" target="_blank"><i data-feather="instagram"></i></a>
+                <a href="https://twitter.com" target="_blank"><i data-feather="twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i data-feather="linkedin"></i></a>
             </div>
-            <div class="border-t border-scarlet-700/20 mt-12 pt-8 text-center text-cream/50">
-                <p>&copy; 2025 Dane Keckley. All rights reserved.</p>
-</div>
         </div>
     </footer>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center hidden">
-        <div class="relative max-w-5xl w-full mx-4">
-            <button id="close-lightbox" class="absolute -top-12 right-0 text-cream hover:text-gold">
-                <i data-feather="x" class="w-8 h-8"></i>
-            </button>
-            <img id="lightbox-image" src="" alt="" class="w-full max-h-[90vh] object-contain">
-        </div>
-    </div>
-    <!-- Add EmailJS SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Scripts -->
     <script>
-        // Initialize Feather Icons
-feather.replace();
-        
+        // Feather Icons
+        feather.replace();
+
         // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
             const icon = mobileMenuButton.querySelector('i');
-            if (mobileMenu.classList.contains('hidden')) {
-                feather.replace();
-            } else {
-                icon.setAttribute('data-feather', 'x');
-                feather.replace();
-            }
+            icon.setAttribute('data-feather', mobileMenu.classList.contains('hidden') ? 'menu' : 'x');
+            feather.replace();
         });
-        
-        // Close mobile menu when clicking a link
+
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
@@ -417,75 +261,30 @@ feather.replace();
                 feather.replace();
             });
         });
-        
-        // Lightbox functionality
-        const galleryItems = document.querySelectorAll('#gallery [class*="group"]');
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImage = document.getElementById('lightbox-image');
-        const closeLightbox = document.getElementById('close-lightbox');
-        
-        galleryItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const imgSrc = item.querySelector('img').src;
-                lightboxImage.src = imgSrc;
-                lightbox.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-        
-        closeLightbox.addEventListener('click', () => {
-            lightbox.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        });
-        
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                lightbox.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }
-        });
-        // Contact form submission with EmailJS
+
+        // EmailJS Contact Form
         const contactForm = document.getElementById('contact-form');
-        
-        // Initialize EmailJS (replace with your actual User ID)
-        emailjs.init('YOUR_EMAILJS_USER_ID');
-        
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
             try {
-                // Send email using EmailJS
-                await emailjs.sendForm('service_danekeckley', 'template_danekeckley', e.target);
-                
+                await emailjs.sendForm(
+                    'service_pfh0zod',       // service ID
+                    'template_4miydur',      // updated template ID
+                    e.target
+                );
                 alert('Thank you for your message! I will get back to you soon.');
                 contactForm.reset();
             } catch (error) {
                 console.error('Failed to send message:', error);
-                alert('Failed to send message. Please try again or email me directly at danekeckley@gmail.com');
+                alert('Oops! Something went wrong. Please email me directly at danekeckley@gmail.com.');
             }
-// In a real implementation, you might use EmailJS or Formspree:
-            // Example with EmailJS:
-            /*
-            emailjs.sendForm('service_id', 'template_id', e.target)
-                .then(() => {
-                    alert('Message sent successfully!');
-                    contactForm.reset();
-                }, (error) => {
-                    alert('Failed to send message. Please try again later.');
-                    console.error('EmailJS Error:', error);
-                });
-            */
         });
-        
-        // Smooth scrolling for anchor links
+
+        // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
+                const targetElement = document.querySelector(this.getAttribute('href'));
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,

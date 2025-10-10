@@ -10,7 +10,11 @@
     <meta property="og:image" content="https://danekeckley.com/assets/images/DaneKeckleyModelHeadshot.jpg">
     <meta property="og:url" content="https://danekeckley.com">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -19,8 +23,8 @@
     <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
 
     <script>
-        // Initialize EmailJS with your public key
-        emailjs.init('o-XjlNLzlQ99Lrq_k');
+        // Initialize EmailJS
+        emailjs.init('YOUR_PUBLIC_KEY_HERE');
 
         tailwind.config = {
             theme: {

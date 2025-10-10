@@ -19,7 +19,7 @@
     <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
 
     <script>
-        // Initialize EmailJS
+        // Initialize EmailJS with your public key
         emailjs.init('o-XjlNLzlQ99Lrq_k');
 
         tailwind.config = {
@@ -219,6 +219,10 @@
             <h2 class="text-4xl font-bold text-center mb-16 text-cream">
                 <span class="border-b-2 border-gold pb-2">CONTACT</span>
             </h2>
+
+            <!-- Contact message -->
+            <div id="contact-message" class="hidden mt-4 p-4 rounded-lg text-cream font-bold"></div>
+
             <div class="flex flex-col lg:flex-row gap-12">
                 <div class="lg:w-1/2">
                     <form id="contact-form" class="space-y-6">
@@ -239,6 +243,7 @@
                         </button>
                     </form>
                 </div>
+
                 <div class="lg:w-1/2">
                     <div class="bg-velvet-800 rounded-lg p-8 h-full">
                         <h3 class="text-2xl font-bold text-cream mb-6">LET'S WORK TOGETHER</h3>
@@ -324,7 +329,6 @@
                         behavior: 'smooth'
                     });
                 }
-                // Close mobile menu if open
                 if (!mobileMenu.classList.contains('hidden')) {
                     mobileMenu.classList.add('hidden');
                 }
@@ -333,25 +337,30 @@
 
         // EmailJS Form Submission
         const contactForm = document.getElementById('contact-form');
+        const contactMessage = document.getElementById('contact-message');
+
         contactForm.addEventListener('submit', function(event) {
             event.preventDefault();
-            emailjs.sendForm('service_XXXX', 'template_4miydur', this)
+            emailjs.sendForm('service_pfh0zod', 'template_4miydur', this)
                 .then(() => {
-                    alert('Message sent successfully!');
+                    contactMessage.textContent = '✅ Message sent successfully!';
+                    contactMessage.classList.remove('hidden', 'text-red-500');
+                    contactMessage.classList.add('text-green-400');
                     contactForm.reset();
-                }, (error) => {
-                    alert('Failed to send message. Please try again.');
-                    console.error('FAILED...', error);
+                })
+                .catch((error) => {
+                    console.error('EmailJS error:', error);
+                    contactMessage.textContent = '❌ Failed to send message. Please try again later.';
+                    contactMessage.classList.remove('hidden', 'text-green-400');
+                    contactMessage.classList.add('text-red-500');
                 });
         });
 
-        // Audio Pause on Other Play
+        // Pause other audios
         const audios = document.querySelectorAll('audio');
         audios.forEach(audio => {
             audio.addEventListener('play', () => {
-                audios.forEach(a => {
-                    if (a !== audio) a.pause();
-                });
+                audios.forEach(a => { if (a !== audio) a.pause(); });
             });
         });
     </script>

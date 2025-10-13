@@ -515,9 +515,17 @@ window.addEventListener('resize', () => {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Contact Header -->
-        <h2 class="text-4xl font-bold text-center mb-12 text-cream">
+<section id="contact-header" class="py-12 bg-velvet-900 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl font-bold text-cream">
             <span class="border-b-2 border-gold pb-2">CONTACT</span>
         </h2>
+    </div>
+</section>
+
+            <!-- Contact Section -->
+<section id="contact" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="flex flex-col lg:flex-row gap-12">
 
@@ -598,7 +606,7 @@ window.addEventListener('resize', () => {
 <!-- EmailJS Form Script -->
 <script>
 document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault();
     const messageEl = document.getElementById('form-message');
 
     emailjs.sendForm('service_pfh0zod', 'template_4miydur', this)
@@ -606,27 +614,14 @@ document.getElementById('contact-form').addEventListener('submit', function(even
             messageEl.textContent = "✅ Your message has been sent!";
             messageEl.classList.remove('hidden', 'text-red-500', 'opacity-0');
             messageEl.classList.add('text-gold');
-
-            // Fade out after 4 seconds
-            setTimeout(() => {
-                messageEl.classList.add('opacity-0');
-                setTimeout(() => messageEl.classList.add('hidden'), 500);
-            }, 4000);
-
-            // Reset form
+            setTimeout(() => { messageEl.classList.add('opacity-0'); setTimeout(() => messageEl.classList.add('hidden'), 500); }, 4000);
             document.getElementById('contact-form').reset();
         })
         .catch(function(error) {
             messageEl.textContent = "❌ Something went wrong. Please try again.";
             messageEl.classList.remove('hidden', 'opacity-0');
             messageEl.classList.add('text-red-500');
-
-            // Fade out after 4 seconds
-            setTimeout(() => {
-                messageEl.classList.add('opacity-0');
-                setTimeout(() => messageEl.classList.add('hidden'), 500);
-            }, 4000);
-
+            setTimeout(() => { messageEl.classList.add('opacity-0'); setTimeout(() => messageEl.classList.add('hidden'), 500); }, 4000);
             console.error('EmailJS Error:', error);
         });
 });

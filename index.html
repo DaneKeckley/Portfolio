@@ -249,7 +249,7 @@
 
     <div class="relative w-full overflow-hidden">
       <!-- Carousel Track -->
-      <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out gap-6">
+      <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out gap-6" style="padding-left: 2%;">
         <!-- Video Items -->
         <div class="carousel-item flex-shrink-0 w-[calc(100%-1.5rem)] sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
@@ -309,44 +309,53 @@ document.addEventListener('DOMContentLoaded', () => {
   feather.replace();
 
   const track = document.getElementById('carousel-track');
-  const items = Array.from(document.querySelectorAll('.carousel-item'));
+  let items = Array.from(document.querySelectorAll('.carousel-item'));
   const prevBtn = document.getElementById('carousel-prev');
   const nextBtn = document.getElementById('carousel-next');
+  const visibleCount = 3;
+  const offset = 2; // percent shift to hide 4th video's border
 
-  function getVisibleCount() {
-    const width = window.innerWidth;
-    if (width >= 1024) return 3; // Desktop
-    if (width >= 640) return 2;  // Tablet
-    return 1;                     // Mobile
+  // Clone first and last sets for seamless loop
+  for (let i = 0; i < visibleCount; i++) {
+    track.appendChild(items[i].cloneNode(true));
+    track.insertBefore(items[items.length - 1 - i].cloneNode(true), items[0]);
   }
 
-  let visibleCount = getVisibleCount();
-  let currentIndex = 0;
+  items = Array.from(document.querySelectorAll('.carousel-item'));
+  let currentIndex = visibleCount;
 
-  function updateCarousel() {
-    const itemWidth = items[0].offsetWidth + 24; // width + gap
-    const centerOffset = (track.offsetWidth - itemWidth * visibleCount) / 2;
-    track.style.transform = `translateX(${-currentIndex * itemWidth + centerOffset}px)`;
+  function updateCarousel(animate = true) {
+    track.style.transition = animate ? 'transform 0.7s ease-in-out' : 'none';
+    const translateX = -(currentIndex * (100 / visibleCount)) + offset;
+    track.style.transform = `translateX(${translateX}%)`;
   }
 
   nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % items.length;
+    currentIndex++;
     updateCarousel();
+    if (currentIndex >= items.length - visibleCount) {
+      setTimeout(() => {
+        currentIndex = visibleCount;
+        updateCarousel(false);
+      }, 710);
+    }
   });
 
   prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    currentIndex--;
     updateCarousel();
+    if (currentIndex < visibleCount) {
+      setTimeout(() => {
+        currentIndex = items.length - 2 * visibleCount;
+        updateCarousel(false);
+      }, 710);
+    }
   });
 
-  window.addEventListener('resize', () => {
-    visibleCount = getVisibleCount();
-    updateCarousel();
-  });
-
-  updateCarousel();
+  updateCarousel(false);
 });
 </script>
+
 
 <!-- Gallery Carousel JS -->
 <script>

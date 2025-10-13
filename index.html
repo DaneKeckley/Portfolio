@@ -189,7 +189,54 @@
         </div>
     </section>
 
-<!-- Gallery Section -->
+  <!-- About Section -->
+    <section id="about" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/3">
+                    <div class="relative group">
+                        <img src="/assets/images/DaneKeckleyModelHeadshot.jpg" alt="Dane Keckley" class="w-full rounded-lg shadow-xl transform group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-[#340E12]/10 rounded-lg border-2 border-[#340E12]/30 group-hover:opacity-0 transition-opacity duration-300"></div>
+                    </div>
+                </div>
+                <div class="lg:w-2/3">
+                    <h2 class="text-4xl font-bold mb-8 text-cream">
+                        <span class="border-b-2 border-gold pb-2">ABOUT</span>
+                    </h2>
+                    <div class="space-y-6 text-cream/90 text-lg leading-relaxed">
+                        <p>
+                            Dane Keckley is a professional voice actor whose craft lies in transforming words into living, breathing characters. 
+                            Known for his rich, versatile voice and refined control, Dane specializes in animation, delivering performances that range from heartfelt heroes to complex villains. 
+                            Whether voicing a spirited protagonist or an otherworldly creature, Dane brings a cinematic sensibility and a nuanced understanding of tone and rhythm to every session.
+                        </p>
+                        <p>
+                            Dane has built his career from the ground up and has landed himself in a multifaceted universe, playing diverging characters such as Yan Shu-Wen and the Dark One in The Bridge Curse 2,
+                            Gaia in Super Snail X, Patriot Sam in Enigma, Omus in Lone Soul, and William Afton and Michael Schmidt in The Return to Freddy's. 
+                        </p>
+                        <p>
+                            In addition to his variety in vocal range, Dane has versatility in talent. 
+                            He has made his mark in the modeling world, walking the Nordstrom runway and appearing in publications such as Vessel, Artells, Marika, and Top Posters. 
+                            These experiences amplify his ability and have shaped his creative presence to embody character through subtlety and expression.
+                        </p>
+                        <p>
+                            With a voice that carries warmth, power, and range, Dane Keckley continues to build a reputation as an accomplished performer who can adapt, elevate, and captivate. 
+                            For casting directors and creators seeking a voice that can give their worlds dimension, Dane offers not just sound, but <strong>soul.</strong> 
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-10">
+                        <a href="/assets/images/DaneKeckleyResume.pdf" target="_blank" class="inline-flex items-center bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-full transition-all duration-300">
+                            <i data-feather="eye" class="mr-2"></i> VIEW RESUME
+                        </a>
+                        <a href="/assets/images/DaneKeckleyResume.pdf" download class="inline-flex items-center bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-full transition-all duration-300">
+                            <i data-feather="download" class="mr-2"></i> DOWNLOAD RESUME
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
 <section id="gallery" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-4xl font-bold text-center mb-12 text-cream">
@@ -319,86 +366,8 @@ document.getElementById('photo-prev').addEventListener('click', () => {
 </script>
 
 
-// Video Carousel Scroll (unchanged)
-const videoTrack = document.getElementById('carousel-track');
-let videoScroll = 0;
-const videoItemWidth = videoTrack.querySelector('.carousel-item').offsetWidth + 24;
 
-document.getElementById('carousel-next').addEventListener('click', () => {
-    videoScroll += videoItemWidth;
-    if(videoScroll > videoTrack.scrollWidth - videoTrack.clientWidth) videoScroll = videoTrack.scrollWidth - videoTrack.clientWidth;
-    videoTrack.style.transform = `translateX(-${videoScroll}px)`;
-});
-document.getElementById('carousel-prev').addEventListener('click', () => {
-    videoScroll -= videoItemWidth;
-    if(videoScroll < 0) videoScroll = 0;
-    videoTrack.style.transform = `translateX(-${videoScroll}px)`;
-});
-
-// Photo Carousel Scroll
-const photoTrack = document.getElementById('photo-carousel-track');
-let photoScroll = 0;
-const photoItemWidth = photoTrack.querySelector('.carousel-item').offsetWidth + 24;
-
-document.getElementById('photo-next').addEventListener('click', () => {
-    photoScroll += photoItemWidth;
-    if(photoScroll > photoTrack.scrollWidth - photoTrack.clientWidth) photoScroll = photoTrack.scrollWidth - photoTrack.clientWidth;
-    photoTrack.style.transform = `translateX(-${photoScroll}px)`;
-});
-document.getElementById('photo-prev').addEventListener('click', () => {
-    photoScroll -= photoItemWidth;
-    if(photoScroll < 0) photoScroll = 0;
-    photoTrack.style.transform = `translateX(-${photoScroll}px)`;
-});
-</script>
-
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
-                <div class="lg:w-1/3">
-                    <div class="relative group">
-                        <img src="/assets/images/DaneKeckleyModelHeadshot.jpg" alt="Dane Keckley" class="w-full rounded-lg shadow-xl transform group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-[#340E12]/10 rounded-lg border-2 border-[#340E12]/30 group-hover:opacity-0 transition-opacity duration-300"></div>
-                    </div>
-                </div>
-                <div class="lg:w-2/3">
-                    <h2 class="text-4xl font-bold mb-8 text-cream">
-                        <span class="border-b-2 border-gold pb-2">ABOUT</span>
-                    </h2>
-                    <div class="space-y-6 text-cream/90 text-lg leading-relaxed">
-                        <p>
-                            Dane Keckley is a professional voice actor whose craft lies in transforming words into living, breathing characters. 
-                            Known for his rich, versatile voice and refined control, Dane specializes in animation, delivering performances that range from heartfelt heroes to complex villains. 
-                            Whether voicing a spirited protagonist or an otherworldly creature, Dane brings a cinematic sensibility and a nuanced understanding of tone and rhythm to every session.
-                        </p>
-                        <p>
-                            Dane has built his career from the ground up and has landed himself in a multifaceted universe, playing diverging characters such as Yan Shu-Wen and the Dark One in The Bridge Curse 2,
-                            Gaia in Super Snail X, Patriot Sam in Enigma, Omus in Lone Soul, and William Afton and Michael Schmidt in The Return to Freddy's. 
-                        </p>
-                        <p>
-                            In addition to his variety in vocal range, Dane has versatility in talent. 
-                            He has made his mark in the modeling world, walking the Nordstrom runway and appearing in publications such as Vessel, Artells, Marika, and Top Posters. 
-                            These experiences amplify his ability and have shaped his creative presence to embody character through subtlety and expression.
-                        </p>
-                        <p>
-                            With a voice that carries warmth, power, and range, Dane Keckley continues to build a reputation as an accomplished performer who can adapt, elevate, and captivate. 
-                            For casting directors and creators seeking a voice that can give their worlds dimension, Dane offers not just sound, but <strong>soul.</strong> 
-                        </p>
-                    </div>
-                    <div class="flex flex-col sm:flex-row gap-4 mt-10">
-                        <a href="/assets/images/DaneKeckleyResume.pdf" target="_blank" class="inline-flex items-center bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-full transition-all duration-300">
-                            <i data-feather="eye" class="mr-2"></i> VIEW RESUME
-                        </a>
-                        <a href="/assets/images/DaneKeckleyResume.pdf" download class="inline-flex items-center bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-full transition-all duration-300">
-                            <i data-feather="download" class="mr-2"></i> DOWNLOAD RESUME
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">

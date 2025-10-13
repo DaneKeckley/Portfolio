@@ -412,6 +412,39 @@ document.addEventListener('DOMContentLoaded', () => {
           </button>
         </form>
       </div>
+        <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+
+        // Collect form data
+        const formData = {
+            from_name: form.name.value,
+            from_email: form.email.value,
+            message: form.message.value
+        };
+
+        // Send email using EmailJS
+        emailjs.send(
+            'service_pfh0zod',      // <-- replace with your EmailJS Service ID
+            'template_4miydur',     // <-- replace with your EmailJS Template ID
+            formData,
+            'o-XjlNLzlQ99Lrq_k'       // <-- replace with your EmailJS Public Key
+        ).then(
+            (response) => {
+                alert('Message sent successfully! ✅');
+                form.reset();
+            },
+            (error) => {
+                console.error('FAILED...', error);
+                alert('Failed to send message. Please try again.');
+            }
+        );
+    });
+});
+</script>
 
       <!-- Contact Info -->
       <div class="lg:w-1/2">

@@ -249,7 +249,7 @@
 
     <div class="relative w-full overflow-hidden">
       <!-- Carousel Track -->
-      <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out gap-6">
+      <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out gap-6 pl-8"> <!-- Shifted right with pl-8 -->
         <!-- Video Items -->
         <div class="carousel-item flex-shrink-0 w-[calc(100%-1.5rem)] sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
@@ -293,12 +293,12 @@
         </div>
       </div>
 
-      <!-- Carousel Arrows -->
-      <button id="carousel-prev" class="absolute top-1/2 left-[-1.5rem] transform -translate-y-1/2 bg-velvet-900 hover:bg-velvet-700 text-cream p-3 rounded-full shadow-lg z-10">
-        <i data-feather="chevron-left" class="w-6 h-6"></i>
+      <!-- Custom Carousel Arrows -->
+      <button id="carousel-prev" class="absolute top-1/2 left-[-3rem] transform -translate-y-1/2 bg-gold text-velvet-900 p-4 rounded-full shadow-lg z-10 hover:scale-110 transition-transform duration-300">
+        &#10094; <!-- Left arrow -->
       </button>
-      <button id="carousel-next" class="absolute top-1/2 right-[-1.5rem] transform -translate-y-1/2 bg-velvet-900 hover:bg-velvet-700 text-cream p-3 rounded-full shadow-lg z-10">
-        <i data-feather="chevron-right" class="w-6 h-6"></i>
+      <button id="carousel-next" class="absolute top-1/2 right-[-3rem] transform -translate-y-1/2 bg-red-600 text-cream p-4 rounded-full shadow-lg z-10 hover:scale-110 transition-transform duration-300">
+        &#10095; <!-- Right arrow -->
       </button>
     </div>
   </div>
@@ -306,8 +306,6 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  feather.replace();
-
   const track = document.getElementById('carousel-track');
   const items = Array.from(document.querySelectorAll('.carousel-item'));
   const prevBtn = document.getElementById('carousel-prev');
@@ -315,9 +313,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function getVisibleCount() {
     const width = window.innerWidth;
-    if (width >= 1024) return 3; // Desktop
-    if (width >= 640) return 2;  // Tablet
-    return 1;                     // Mobile
+    if (width >= 1024) return 3;
+    if (width >= 640) return 2;
+    return 1;
   }
 
   let visibleCount = getVisibleCount();
@@ -325,7 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateCarousel() {
     const itemWidth = items[0].offsetWidth + 24; // width + gap
-    const centerOffset = (track.offsetWidth - itemWidth * visibleCount) / 2;
+    const centerOffset = (track.offsetWidth - itemWidth * visibleCount) / 2 + 24; // shift a little right
     track.style.transform = `translateX(${-currentIndex * itemWidth + centerOffset}px)`;
   }
 

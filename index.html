@@ -375,6 +375,13 @@ const photos = [
 
 const track = document.getElementById('photo-carousel-track');
 
+// Preload all images
+photos.forEach(photo => {
+    const preloaded = new Image();
+    preloaded.src = `assets/images/${photo.src}`;
+});
+
+// Add images to carousel
 photos.forEach(photo => {
     const div = document.createElement('div');
     div.className = "carousel-item flex-shrink-0";
@@ -420,6 +427,7 @@ document.getElementById('photo-prev').addEventListener('click', () => {
     track.style.transform = `translateX(-${photoScroll}px)`;
 });
 </script>
+
 
 
   

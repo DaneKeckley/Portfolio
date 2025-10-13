@@ -241,144 +241,99 @@
     </section>
 
 <!-- Gallery Section -->
-<section id="gallery" class="py-24 bg-velvet-800 border-t border-scarlet-700/20">
-  <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-0">
+<section id="gallery" class="py-24 bg-velvet-800 border-t border-scarlet-700/20 relative overflow-visible">
+  <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative">
     <h2 class="text-4xl font-bold text-center mb-12 text-cream">
       <span class="border-b-2 border-gold pb-2">GALLERY</span>
     </h2>
 
-    <div class="relative w-full overflow-hidden">
+    <div class="relative flex justify-center overflow-hidden">
       <!-- Carousel Track -->
-      <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out gap-6 pl-8"> <!-- Shifted right with pl-8 -->
+      <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out gap-8 w-max">
         <!-- Video Items -->
-        <div class="carousel-item flex-shrink-0 w-[calc(100%-1.5rem)] sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
+        <div class="carousel-item flex-shrink-0 w-[30%] border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
             <iframe src="https://www.youtube.com/embed/c8vsu3dp_Ow?start=0" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
         </div>
-        <div class="carousel-item flex-shrink-0 w-[calc(100%-1.5rem)] sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
+        <div class="carousel-item flex-shrink-0 w-[30%] border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
             <iframe src="https://www.youtube.com/embed/HZeioUxnKdw?start=0" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
         </div>
-        <div class="carousel-item flex-shrink-0 w-[calc(100%-1.5rem)] sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
+        <div class="carousel-item flex-shrink-0 w-[30%] border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
             <iframe src="https://www.youtube.com/embed/BZhbLHZDaLA?start=0" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
         </div>
-        <div class="carousel-item flex-shrink-0 w-[calc(100%-1.5rem)] sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
+        <div class="carousel-item flex-shrink-0 w-[30%] border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
             <iframe src="https://www.youtube.com/embed/4Y7T4t23AiM?start=137" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
         </div>
-        <div class="carousel-item flex-shrink-0 w-[calc(100%-1.5rem)] sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
+        <div class="carousel-item flex-shrink-0 w-[30%] border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
             <iframe src="https://www.youtube.com/embed/kSYN8Ez1YpY?start=245" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
         </div>
-        <div class="carousel-item flex-shrink-0 w-[calc(100%-1.5rem)] sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
+        <div class="carousel-item flex-shrink-0 w-[30%] border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
             <iframe src="https://www.youtube.com/embed/TtwRsnzXHiM?start=394" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
         </div>
-        <div class="carousel-item flex-shrink-0 w-[calc(100%-1.5rem)] sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
+        <div class="carousel-item flex-shrink-0 w-[30%] border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
             <iframe src="https://www.youtube.com/embed/h4_fuKJHz5E?start=245" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
         </div>
-        <div class="carousel-item flex-shrink-0 w-[calc(100%-1.5rem)] sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
+        <div class="carousel-item flex-shrink-0 w-[30%] border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
             <iframe src="https://www.youtube.com/embed/ZsgK0lzA0PE?start=11" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
         </div>
       </div>
 
-      <!-- Custom Carousel Arrows -->
-      <button id="carousel-prev" class="absolute top-1/2 left-[-3rem] transform -translate-y-1/2 bg-gold text-velvet-900 p-4 rounded-full shadow-lg z-10 hover:scale-110 transition-transform duration-300">
-        &#10094; <!-- Left arrow -->
+      <!-- Carousel Arrows -->
+      <button id="carousel-prev" class="absolute top-1/2 left-[-3rem] transform -translate-y-1/2 w-14 h-14 rounded-full bg-gold/20 text-gold flex items-center justify-center shadow-lg z-10 transition-all duration-300 hover:bg-gold/40 hover:shadow-[0_0_15px_rgba(229,196,122,0.6)]">
+        &#10094;
       </button>
-      <button id="carousel-next" class="absolute top-1/2 right-[-3rem] transform -translate-y-1/2 bg-red-600 text-cream p-4 rounded-full shadow-lg z-10 hover:scale-110 transition-transform duration-300">
-        &#10095; <!-- Right arrow -->
+      <button id="carousel-next" class="absolute top-1/2 right-[-3rem] transform -translate-y-1/2 w-14 h-14 rounded-full bg-red-600/20 text-red-600 flex items-center justify-center shadow-lg z-10 transition-all duration-300 hover:bg-red-600/40 hover:shadow-[0_0_15px_rgba(229,50,50,0.6)]">
+        &#10095;
       </button>
     </div>
   </div>
 </section>
 
+<!-- Gallery Carousel JS -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const track = document.getElementById('carousel-track');
   const items = Array.from(document.querySelectorAll('.carousel-item'));
   const prevBtn = document.getElementById('carousel-prev');
   const nextBtn = document.getElementById('carousel-next');
-
-  function getVisibleCount() {
-    const width = window.innerWidth;
-    if (width >= 1024) return 3;
-    if (width >= 640) return 2;
-    return 1;
-  }
-
-  let visibleCount = getVisibleCount();
-  let currentIndex = 0;
-
-  function updateCarousel() {
-    const itemWidth = items[0].offsetWidth + 24; // width + gap
-    const centerOffset = (track.offsetWidth - itemWidth * visibleCount) / 2 + 24; // shift a little right
-    track.style.transform = `translateX(${-currentIndex * itemWidth + centerOffset}px)`;
-  }
-
-  nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % items.length;
-    updateCarousel();
-  });
-
-  prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + items.length) % items.length;
-    updateCarousel();
-  });
-
-  window.addEventListener('resize', () => {
-    visibleCount = getVisibleCount();
-    updateCarousel();
-  });
-
-  updateCarousel();
-});
-</script>
-
-<!-- Gallery Carousel JS -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  feather.replace();
-
-  const track = document.getElementById('carousel-track');
-  let items = Array.from(document.querySelectorAll('.carousel-item'));
-  const prevBtn = document.getElementById('carousel-prev');
-  const nextBtn = document.getElementById('carousel-next');
-
-  let visibleCount = 3;
+  
+  const visibleCount = 3;
   let currentIndex = visibleCount;
 
-  function setupCarousel() {
-    // Clone first & last sets for seamless loop
-    for (let i = 0; i < visibleCount; i++) {
-      track.appendChild(items[i].cloneNode(true));
-      track.insertBefore(items[items.length - 1 - i].cloneNode(true), items[0]);
-    }
-    items = Array.from(document.querySelectorAll('.carousel-item'));
-    updateCarousel(false);
+  // Clone for seamless loop
+  for (let i = 0; i < visibleCount; i++) {
+    track.appendChild(items[i].cloneNode(true));
+    track.insertBefore(items[items.length - 1 - i].cloneNode(true), track.firstChild);
   }
+
+  const allItems = Array.from(track.querySelectorAll('.carousel-item'));
 
   function updateCarousel(animate = true) {
     track.style.transition = animate ? 'transform 0.7s ease-in-out' : 'none';
-    const translateX = -(currentIndex * (100 / visibleCount));
-    track.style.transform = `translateX(${translateX}%)`;
+    const itemWidth = allItems[0].getBoundingClientRect().width + 32; // includes gap
+    const offset = (currentIndex - Math.floor(visibleCount/2)) * itemWidth;
+    track.style.transform = `translateX(-${offset}px)`;
   }
 
   nextBtn.addEventListener('click', () => {
     currentIndex++;
     updateCarousel();
-    if (currentIndex >= items.length - visibleCount) {
+    if (currentIndex >= allItems.length - visibleCount) {
       setTimeout(() => {
         currentIndex = visibleCount;
         updateCarousel(false);
@@ -391,13 +346,14 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarousel();
     if (currentIndex < visibleCount) {
       setTimeout(() => {
-        currentIndex = items.length - 2 * visibleCount;
+        currentIndex = allItems.length - 2 * visibleCount;
         updateCarousel(false);
       }, 710);
     }
   });
 
-  setupCarousel();
+  window.addEventListener('resize', updateCarousel);
+  updateCarousel(false);
 });
 </script>
 

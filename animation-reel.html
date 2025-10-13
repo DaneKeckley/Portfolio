@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dane Keckley | Animation Reel</title>
+  <meta name="description" content="Animation Reel – Audio Demo by Dane Keckley.">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            scarlet: { 500: '#340E12', 600: '#2A0B0E', 700: '#20090A' },
+            gold: '#E5C47A',
+            cream: '#F5F3F0'
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&display=swap');
+
+    body {
+      background: radial-gradient(circle at center, #1a0a0a 0%, #340E12 70%, #1a0a0a 100%);
+      color: #F5F3F0;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .audio-container {
+      position: relative;
+      background: rgba(0, 0, 0, 0.55);
+      border: 2px solid #E5C47A;
+      border-radius: 1rem;
+      padding: 2rem;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 0 40px rgba(229, 196, 122, 0.15);
+      z-index: 10;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1.5s ease-out forwards;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    audio {
+      width: 100%;
+      outline: none;
+      border-radius: 0.5rem;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="audio-container">
+    <h1 class="text-3xl font-bold mb-3 text-gold">Animation Reel</h1>
+    <p class="text-lg italic mb-6">Audio Demo</p>
+
+    <audio controls preload="metadata">
+      <source src="/assets/demos/animation.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <p class="text-sm text-cream/70 mt-6">
+      © Dane Keckley — Private Demo | For casting reference only.
+    </p>
+  </div>
+</body>
+</html>
+

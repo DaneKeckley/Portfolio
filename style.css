@@ -66,14 +66,11 @@
     /* Carousel Styles */
     .carousel-container {
         overflow-x: auto;
-        padding: 8px;
         margin-top: 20px;
     }
 
     .carousel-track {
         display: flex;
-        gap: 8px; /* spacing between videos */
-        scroll-snap-type: x mandatory;
     }
 
     .carousel-item {
@@ -81,9 +78,14 @@
         border: 3px solid #E5C47A; /* gold border */
         border-radius: 12px;
         overflow: hidden;
-        scroll-snap-align: center;
         width: 220px; /* fixed width for videos */
         height: 124px; /* 16:9 ratio */
+        scroll-snap-align: center;
+    }
+
+    /* Add spacing between videos */
+    .carousel-item + .carousel-item {
+        margin-left: 8px; /* small gap between videos */
     }
 
     .carousel-item iframe {

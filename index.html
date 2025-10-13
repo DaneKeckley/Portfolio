@@ -271,26 +271,7 @@
             <iframe src="https://www.youtube.com/embed/4Y7T4t23AiM?start=137" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
         </div>
-        <div class="carousel-item flex-shrink-0 w-[calc(100%-1.5rem)] sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
-          <div class="relative pb-[56.25%] h-0">
-            <iframe src="https://www.youtube.com/embed/kSYN8Ez1YpY?start=245" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="carousel-item flex-shrink-0 w-[calc(100%-1.5rem)] sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
-          <div class="relative pb-[56.25%] h-0">
-            <iframe src="https://www.youtube.com/embed/TtwRsnzXHiM?start=394" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="carousel-item flex-shrink-0 w-[calc(100%-1.5rem)] sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
-          <div class="relative pb-[56.25%] h-0">
-            <iframe src="https://www.youtube.com/embed/h4_fuKJHz5E?start=245" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
-          </div>
-        </div>
-        <div class="carousel-item flex-shrink-0 w-[calc(100%-1.5rem)] sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
-          <div class="relative pb-[56.25%] h-0">
-            <iframe src="https://www.youtube.com/embed/ZsgK0lzA0PE?start=11" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
-          </div>
-        </div>
+        <!-- Add more videos here if needed -->
       </div>
 
       <!-- Carousel Arrows -->
@@ -313,15 +294,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const prevBtn = document.getElementById('carousel-prev');
   const nextBtn = document.getElementById('carousel-next');
   const visibleCount = 3;
-  const offset = 2; // percent shift to hide 4th video's border
+  const offset = 2; // shift left to hide part of the 4th video
 
-function updateCarousel(animate = true) {
-    track.style.transition = animate ? 'transform 0.7s ease-in-out' : 'none';
-    const translateX = -(currentIndex * (100 / visibleCount)) - offset; // subtract offset
-    track.style.transform = `translateX(${translateX}%)`;
-}
-
-  // Clone first and last sets for seamless loop
+  // Clone first & last sets for seamless loop
   for (let i = 0; i < visibleCount; i++) {
     track.appendChild(items[i].cloneNode(true));
     track.insertBefore(items[items.length - 1 - i].cloneNode(true), items[0]);
@@ -332,7 +307,7 @@ function updateCarousel(animate = true) {
 
   function updateCarousel(animate = true) {
     track.style.transition = animate ? 'transform 0.7s ease-in-out' : 'none';
-    const translateX = -(currentIndex * (100 / visibleCount)) + offset;
+    const translateX = -(currentIndex * (100 / visibleCount)) - offset;
     track.style.transform = `translateX(${translateX}%)`;
   }
 

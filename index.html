@@ -232,17 +232,44 @@
     </div>
 </section>
 
-    <!-- Gallery Section -->
     <section id="gallery" class="py-20 bg-velvet-800 border-t border-scarlet-700/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-16 text-cream">
-                <span class="border-b-2 border-gold pb-2">GALLERY</span>
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Keep gallery exactly as before -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-bold text-center mb-16 text-cream">
+            <span class="border-b-2 border-gold pb-2">GALLERY</span>
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Image item -->
+            <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
+                <img src="/assets/images/photo1.jpg" alt="Gallery image" class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
             </div>
+
+            <!-- Video item -->
+            <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
+                <video class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105" controls preload="metadata" poster="/assets/images/video1-poster.jpg">
+                    <source src="/assets/videos/clip1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Another image -->
+            <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
+                <img src="/assets/images/photo2.jpg" alt="Gallery image" class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+            </div>
+
+            <!-- Another video -->
+            <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
+                <video class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105" controls preload="metadata" poster="/assets/images/video2-poster.jpg">
+                    <source src="/assets/videos/clip2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Add more images/videos the same way -->
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">

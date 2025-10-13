@@ -249,29 +249,29 @@
 
     <div class="relative w-full overflow-hidden">
       <!-- Carousel Track -->
-      <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out gap-6" style="padding-left: 2%;">
+      <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out gap-6">
         <!-- Video Items -->
-        <div class="carousel-item flex-shrink-0 w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
+        <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
             <iframe src="https://www.youtube.com/embed/c8vsu3dp_Ow?start=0" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
         </div>
-        <div class="carousel-item flex-shrink-0 w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
+        <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
             <iframe src="https://www.youtube.com/embed/HZeioUxnKdw?start=0" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
         </div>
-        <div class="carousel-item flex-shrink-0 w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
+        <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
             <iframe src="https://www.youtube.com/embed/BZhbLHZDaLA?start=0" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
         </div>
-        <div class="carousel-item flex-shrink-0 w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
+        <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
             <iframe src="https://www.youtube.com/embed/4Y7T4t23AiM?start=137" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
         </div>
-        <div class="carousel-item flex-shrink-0 w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
+        <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
             <iframe src="https://www.youtube.com/embed/kSYN8Ez1YpY?start=245" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
@@ -295,19 +295,40 @@ document.addEventListener('DOMContentLoaded', () => {
   feather.replace();
 
   const track = document.getElementById('carousel-track');
-  const items = Array.from(document.querySelectorAll('.carousel-item'));
+  let items = Array.from(track.children);
   const prevBtn = document.getElementById('carousel-prev');
   const nextBtn = document.getElementById('carousel-next');
-  const visibleCount = 3;
+
+  let visibleCount = getVisibleCount();
   let currentIndex = visibleCount;
 
-  // Clone first & last sets for seamless loop
-  for (let i = 0; i < visibleCount; i++) {
-    track.appendChild(items[i].cloneNode(true));
-    track.insertBefore(items[items.length - 1 - i].cloneNode(true), items[0]);
+  // Clone items for seamless looping
+  function cloneItems() {
+    // Remove old clones
+    track.querySelectorAll('.clone').forEach(c => c.remove());
+
+    items.forEach(item => item.classList.remove('clone'));
+
+    for (let i = 0; i < visibleCount; i++) {
+      const firstClone = items[i].cloneNode(true);
+      firstClone.classList.add('clone');
+      track.appendChild(firstClone);
+
+      const lastClone = items[items.length - 1 - i].cloneNode(true);
+      lastClone.classList.add('clone');
+      track.insertBefore(lastClone, track.firstChild);
+    }
+
+    items = Array.from(track.children);
+    currentIndex = visibleCount;
+    updateCarousel(false);
   }
 
-  const allItems = Array.from(document.querySelectorAll('.carousel-item'));
+  function getVisibleCount() {
+    if (window.innerWidth >= 1024) return 3; // lg
+    if (window.innerWidth >= 640) return 2;  // sm
+    return 1; // mobile
+  }
 
   function updateCarousel(animate = true) {
     track.style.transition = animate ? 'transform 0.7s ease-in-out' : 'none';
@@ -318,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
   nextBtn.addEventListener('click', () => {
     currentIndex++;
     updateCarousel();
-    if (currentIndex >= allItems.length - visibleCount) {
+    if (currentIndex >= items.length - visibleCount) {
       setTimeout(() => {
         currentIndex = visibleCount;
         updateCarousel(false);
@@ -331,15 +352,19 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarousel();
     if (currentIndex < visibleCount) {
       setTimeout(() => {
-        currentIndex = allItems.length - 2 * visibleCount;
+        currentIndex = items.length - 2 * visibleCount;
         updateCarousel(false);
       }, 710);
     }
   });
 
-  updateCarousel(false);
+  window.addEventListener('resize', () => {
+    visibleCount = getVisibleCount();
+    cloneItems();
+  });
+
+  cloneItems();
 });
-</script>
 
 
 

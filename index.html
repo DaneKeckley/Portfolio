@@ -189,47 +189,47 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+<!-- Gallery Section -->
 <section id="gallery" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-4xl font-bold text-center mb-12 text-cream">
             <span class="border-b-2 border-gold pb-2">GALLERY</span>
         </h2>
 
-        <!-- Video Carousel Container -->
+        <!-- Video Carousel -->
         <div class="relative overflow-hidden mb-12">
-            <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out">
+            <div class="flex gap-6 transition-transform duration-700 ease-in-out" id="video-carousel-track">
                 <!-- Video Items -->
-                <div class="carousel-item px-3">
+                <div class="carousel-item flex-shrink-0 w-64">
                     <div class="border-2 border-gold rounded-lg overflow-hidden">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/c8vsu3dp_Ow?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/c8vsu3dp_Ow?start=0" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
-                <div class="carousel-item px-3">
+                <div class="carousel-item flex-shrink-0 w-64">
                     <div class="border-2 border-gold rounded-lg overflow-hidden">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/HZeioUxnKdw?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/HZeioUxnKdw?start=0" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
-                <div class="carousel-item px-3">
+                <div class="carousel-item flex-shrink-0 w-64">
                     <div class="border-2 border-gold rounded-lg overflow-hidden">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/BZhbLHZDaLA?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/BZhbLHZDaLA?start=0" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
-                <!-- Add the rest of your video items here -->
+                <!-- Add more video items here -->
             </div>
 
-            <!-- Carousel Buttons -->
-            <button id="carousel-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
+            <!-- Buttons -->
+            <button id="video-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
                 <i data-feather="chevron-left"></i>
             </button>
-            <button id="carousel-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
+            <button id="video-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
                 <i data-feather="chevron-right"></i>
             </button>
         </div>
 
-        <!-- Photo Carousel Container -->
+        <!-- Photo Carousel -->
         <div class="relative overflow-hidden">
-            <div id="photo-carousel-track" class="flex transition-transform duration-700 ease-in-out">
+            <div class="flex gap-6 transition-transform duration-700 ease-in-out" id="photo-carousel-track">
                 <!-- Photo Items -->
                 <script>
                     const photos = [
@@ -240,7 +240,7 @@
                     ];
                     photos.forEach(photo => {
                         document.write(`
-                            <div class="carousel-item px-3">
+                            <div class="carousel-item flex-shrink-0 w-64">
                                 <div class="border-2 border-gold rounded-lg overflow-hidden cursor-pointer">
                                     <img src="assets/images/${photo}" alt="Model Photo" class="w-full h-64 object-cover" onclick="openModal(this)">
                                 </div>
@@ -250,18 +250,18 @@
                 </script>
             </div>
 
-            <!-- Carousel Buttons -->
-            <button id="photo-carousel-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
+            <!-- Buttons -->
+            <button id="photo-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
                 <i data-feather="chevron-left"></i>
             </button>
-            <button id="photo-carousel-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
+            <button id="photo-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
                 <i data-feather="chevron-right"></i>
             </button>
         </div>
     </div>
 </section>
 
-<!-- Modal for Enlarged Photos -->
+<!-- Modal -->
 <div id="photoModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50">
     <span class="absolute top-5 right-5 text-3xl text-cream cursor-pointer" onclick="closeModal()">&times;</span>
     <img id="modalImage" src="" class="max-h-[90%] max-w-[90%] rounded-lg border-2 border-gold" alt="Enlarged Photo">
@@ -275,8 +275,31 @@ function openModal(img) {
 function closeModal() {
     document.getElementById('photoModal').classList.add('hidden');
 }
-</script>
 
+// Carousel Scroll Logic
+function setupCarousel(prevBtn, nextBtn, track) {
+    const trackEl = document.getElementById(track);
+    const prev = document.getElementById(prevBtn);
+    const next = document.getElementById(nextBtn);
+    let scrollAmount = 0;
+    const itemWidth = trackEl.querySelector('.carousel-item').offsetWidth + 24; // includes gap
+
+    next.addEventListener('click', () => {
+        scrollAmount += itemWidth;
+        if(scrollAmount > trackEl.scrollWidth - trackEl.clientWidth) scrollAmount = trackEl.scrollWidth - trackEl.clientWidth;
+        trackEl.style.transform = `translateX(-${scrollAmount}px)`;
+    });
+
+    prev.addEventListener('click', () => {
+        scrollAmount -= itemWidth;
+        if(scrollAmount < 0) scrollAmount = 0;
+        trackEl.style.transform = `translateX(-${scrollAmount}px)`;
+    });
+}
+
+setupCarousel('video-prev','video-next','video-carousel-track');
+setupCarousel('photo-prev','photo-next','photo-carousel-track');
+</script>
 
 
     <!-- About Section -->

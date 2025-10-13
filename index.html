@@ -496,3 +496,202 @@
                 const translateX = -(currentIndex * (100 / visibleCount));
                 track.style.transform = `translateX(${translateX}%)`;
             }
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex++;
+                updateCarousel();
+                
+                if (currentIndex >= originalItems.length) {
+                    setTimeout(() => {
+                        currentIndex = 0;
+                        updateCarousel(false);
+                    }, 710);
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex === 0) {
+                    currentIndex = originalItems.length;
+                    updateCarousel(false);
+                    setTimeout(() => {
+                        currentIndex--;
+                        updateCarousel();
+                    }, 20);
+                } else {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                const newVisibleCount = getVisibleCount();
+                if (newVisibleCount !== visibleCount) {
+                    visibleCount = newVisibleCount;
+                    currentIndex = 0;
+                    setItemWidths();
+                    updateCarousel(false);
+                }
+            });
+
+            cloneItems();
+
+            // Photo Gallery
+            const photos = [
+                { src:'21239384.jpg', focus:'0%' },        
+                { src:'21433567.jpeg', focus:'0%' },       
+                { src:'21433542.jpeg', focus:'0%' },       
+                { src:'21433503.jpeg', focus:'33%' },      
+                { src:'21433588.jpeg', focus:'0%' },       
+                { src:'21433546.jpeg', focus:'0%' },       
+                { src:'21433509.jpeg', focus:'40%' },      
+                { src:'IMG_5879.JPG', focus:'00%' },      
+                { src:'IMG_9981.JPG', focus:'5%' },       
+                { src:'IMG_5872.JPG', focus:'10%' },      
+                { src:'F45365FF-AA72-4825-A3DF-E4DBEF3E0DD4.jpg', focus:'50%' }, 
+                { src:'IMG_5856.JPG', focus:'0%' },       
+                { src:'D32BC33C-2F22-4594-A752-5518E10C4199.jpg', focus:'10%' }, 
+                { src:'IMG_9988.JPG', focus:'10%' },      
+                { src:'21433502.jpeg', focus:'0%' },       
+                { src:'21433529.jpeg', focus:'0%' }
+            ];
+
+            const photoTrack = document.getElementById('photo-carousel-track');
+
+            // Inject photos into carousel
+            photos.forEach(photo => {
+                const div = document.createElement('div');
+                div.className = "carousel-item px-3 flex-shrink-0";
+                div.style.flexBasis = "calc(25% - 0.75rem)";
+
+                const innerDiv = document.createElement('div');
+                innerDiv.className = "border-2 border-gold rounded-lg overflow-hidden cursor-pointer";
+
+                const img = document.createElement('img');
+                img.src = `assets/images/${photo.src}`;
+                img.alt = "Model Photo";
+                img.style.objectPosition = `50% ${photo.focus}`;
+                img.className = "w-full h-64 object-cover";
+                img.onclick = () => openModal(img);
+
+                innerDiv.appendChild(img);
+                div.appendChild(innerDiv);
+                photoTrack.appendChild(div);
+            });
+
+            // Clone photos for infinite scroll
+            photos.forEach(photo => {
+                const div = document.createElement('div');
+                div.className = "carousel-item px-3 flex-shrink-0 clone";
+                div.style.flexBasis = "calc(25% - 0.75rem)";
+
+                const innerDiv = document.createElement('div');
+                innerDiv.className = "border-2 border-gold rounded-lg overflow-hidden cursor-pointer";
+
+                const img = document.createElement('img');
+                img.src = `assets/images/${photo.src}`;
+                img.alt = "Model Photo";
+                img.style.objectPosition = `50% ${photo.focus}`;
+                img.className = "w-full h-64 object-cover";
+                img.onclick = () => openModal(img);
+
+                innerDiv.appendChild(img);
+                div.appendChild(innerDiv);
+                photoTrack.appendChild(div);
+            });
+
+            // Modal functions
+            window.openModal = function(img) {
+                const modal = document.getElementById('photoModal');
+                const modalImg = document.getElementById('modalImage');
+                modalImg.src = img.src;
+                modal.classList.remove('hidden');
+
+                modal.addEventListener('click', function handler(e) {
+                    if (e.target === modal) {
+                        closeModal();
+                        modal.removeEventListener('click', handler);
+                    }
+                });
+            }
+
+            window.closeModal = function() {
+                document.getElementById('photoModal').classList.add('hidden');
+            }
+
+            // Infinite Scroll Functionality for Photos
+            const photoNextBtn = document.getElementById('photo-next');
+            const photoPrevBtn = document.getElementById('photo-prev');
+            let photoScrollIndex = 0;
+
+            function updatePhotoScroll() {
+                const itemWidth = photoTrack.querySelector('.carousel-item').offsetWidth + 16;
+                photoTrack.style.transition = 'transform 0.7s ease-in-out';
+                photoTrack.style.transform = `translateX(-${photoScrollIndex * itemWidth}px)`;
+            }
+
+            photoNextBtn.addEventListener('click', () => {
+                photoScrollIndex++;
+                updatePhotoScroll();
+
+                if (photoScrollIndex >= photos.length) {
+                    setTimeout(() => {
+                        photoTrack.style.transition = 'none';
+                        photoScrollIndex = 0;
+                        updatePhotoScroll();
+                    }, 710);
+                }
+            });
+
+            photoPrevBtn.addEventListener('click', () => {
+                photoScrollIndex--;
+                photoTrack.style.transition = 'transform 0.7s ease-in-out';
+                updatePhotoScroll();
+
+                if (photoScrollIndex < 0) {
+                    setTimeout(() => {
+                        photoTrack.style.transition = 'none';
+                        photoScrollIndex = photos.length - 1;
+                        updatePhotoScroll();
+                    }, 710);
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                updatePhotoScroll();
+            });
+
+            // Contact Form
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const messageEl = document.getElementById('form-message');
+
+                emailjs.sendForm('service_pfh0zod', 'template_4miydur', this)
+                    .then(function() {
+                        messageEl.textContent = "✅ Your message has been sent successfully!";
+                        messageEl.classList.remove('hidden', 'text-red-500', 'opacity-0');
+                        messageEl.classList.add('text-gold');
+
+                        setTimeout(() => {
+                            messageEl.classList.add('opacity-0');
+                            setTimeout(() => messageEl.classList.add('hidden'), 500);
+                        }, 4000);
+
+                        document.getElementById('contact-form').reset();
+                    })
+                    .catch(function(error) {
+                        messageEl.textContent = "❌ Failed to send message. Please try again.";
+                        messageEl.classList.remove('hidden', 'text-gold', 'opacity-0');
+                        messageEl.classList.add('text-red-500');
+
+                        setTimeout(() => {
+                            messageEl.classList.add('opacity-0');
+                            setTimeout(() => messageEl.classList.add('hidden'), 500);
+                        }, 4000);
+
+                        console.error('EmailJS Error:', error);
+                    });
+            });
+        });
+    </script>
+</body>
+</html>

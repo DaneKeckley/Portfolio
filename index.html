@@ -248,70 +248,109 @@
     </h2>
 
     <div class="relative w-full flex justify-center overflow-hidden">
-      <!-- Carousel viewport width = exactly 3 items -->
-      <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out gap-6 w-[calc(33.3333%*8 + 1.5rem*7)]">
-        <!-- Each item 33.3333% of the viewport (1/3) -->
-        <div class="carousel-item flex-shrink-0 w-[33.3333%] border-2 border-gold rounded-lg overflow-hidden">
+      <!-- Carousel track -->
+      <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out gap-6 w-max">
+        
+        <!-- Video Items -->
+        <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
             <iframe src="https://www.youtube.com/embed/c8vsu3dp_Ow?start=0" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
         </div>
 
-        <div class="carousel-item flex-shrink-0 w-[33.3333%] border-2 border-gold rounded-lg overflow-hidden">
+        <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
             <iframe src="https://www.youtube.com/embed/HZeioUxnKdw?start=0" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
         </div>
 
-        <div class="carousel-item flex-shrink-0 w-[33.3333%] border-2 border-gold rounded-lg overflow-hidden">
+        <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
             <iframe src="https://www.youtube.com/embed/BZhbLHZDaLA?start=0" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
         </div>
 
-        <div class="carousel-item flex-shrink-0 w-[33.3333%] border-2 border-gold rounded-lg overflow-hidden">
-          <div class="relative pb-[56.25%] h-0">
-            <iframe src="https://www.youtube.com/embed/4Y7T4t23AiM?start=137" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div class="carousel-item flex-shrink-0 w-[33.3333%] border-2 border-gold rounded-lg overflow-hidden">
-          <div class="relative pb-[56.25%] h-0">
-            <iframe src="https://www.youtube.com/embed/kSYN8Ez1YpY?start=245" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div class="carousel-item flex-shrink-0 w-[33.3333%] border-2 border-gold rounded-lg overflow-hidden">
-          <div class="relative pb-[56.25%] h-0">
-            <iframe src="https://www.youtube.com/embed/TtwRsnzXHiM?start=394" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div class="carousel-item flex-shrink-0 w-[33.3333%] border-2 border-gold rounded-lg overflow-hidden">
-          <div class="relative pb-[56.25%] h-0">
-            <iframe src="https://www.youtube.com/embed/h4_fuKJHz5E?start=245" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div class="carousel-item flex-shrink-0 w-[33.3333%] border-2 border-gold rounded-lg overflow-hidden">
-          <div class="relative pb-[56.25%] h-0">
-            <iframe src="https://www.youtube.com/embed/ZsgK0lzA0PE?start=11" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
-          </div>
-        </div>
+        <!-- Add more videos as needed -->
       </div>
 
-      <!-- Left Arrow -->
+      <!-- Carousel Arrows -->
       <button id="carousel-prev" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-velvet-900 hover:bg-velvet-700 text-cream p-3 rounded-full shadow-lg z-10">
         <i data-feather="chevron-left" class="w-6 h-6"></i>
       </button>
 
-      <!-- Right Arrow -->
       <button id="carousel-next" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-velvet-900 hover:bg-velvet-700 text-cream p-3 rounded-full shadow-lg z-10">
         <i data-feather="chevron-right" class="w-6 h-6"></i>
       </button>
     </div>
   </div>
 </section>
+
+<!-- Responsive Carousel JS -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  feather.replace();
+
+  const track = document.getElementById('carousel-track');
+  let items = Array.from(document.querySelectorAll('.carousel-item'));
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+
+  let visibleCount = getVisibleCount();
+
+  // Clone first & last sets for infinite loop
+  for (let i = 0; i < visibleCount; i++) {
+    track.appendChild(items[i].cloneNode(true));
+    track.insertBefore(items[items.length - 1 - i].cloneNode(true), items[0]);
+  }
+
+  items = Array.from(document.querySelectorAll('.carousel-item'));
+  let currentIndex = visibleCount;
+
+  function getVisibleCount() {
+    const width = window.innerWidth;
+    if (width >= 1024) return 3; // Desktop
+    if (width >= 640) return 2;  // Tablet
+    return 1;                     // Mobile
+  }
+
+  function updateCarousel(animate = true) {
+    track.style.transition = animate ? 'transform 0.7s ease-in-out' : 'none';
+    const translateX = -(currentIndex * (100 / visibleCount));
+    track.style.transform = `translateX(${translateX}%)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex++;
+    updateCarousel();
+    if (currentIndex >= items.length - visibleCount) {
+      setTimeout(() => {
+        currentIndex = visibleCount;
+        updateCarousel(false);
+      }, 710);
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex--;
+    updateCarousel();
+    if (currentIndex < visibleCount) {
+      setTimeout(() => {
+        currentIndex = items.length - 2 * visibleCount;
+        updateCarousel(false);
+      }, 710);
+    }
+  });
+
+  // Adjust visibleCount on window resize
+  window.addEventListener('resize', () => {
+    visibleCount = getVisibleCount();
+    updateCarousel(false);
+  });
+
+  updateCarousel(false);
+});
+</script>
+
 
 
 <!-- Contact Section -->

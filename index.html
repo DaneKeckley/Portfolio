@@ -251,27 +251,31 @@
       <!-- Carousel Track -->
       <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out gap-6" style="padding-left: 2%;">
         <!-- Video Items -->
-        <div class="carousel-item flex-shrink-0 w-[calc(100%-1.5rem)] sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
+        <div class="carousel-item flex-shrink-0 w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
             <iframe src="https://www.youtube.com/embed/c8vsu3dp_Ow?start=0" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
         </div>
-        <div class="carousel-item flex-shrink-0 w-[calc(100%-1.5rem)] sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
+        <div class="carousel-item flex-shrink-0 w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
             <iframe src="https://www.youtube.com/embed/HZeioUxnKdw?start=0" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
         </div>
-        <div class="carousel-item flex-shrink-0 w-[calc(100%-1.5rem)] sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
+        <div class="carousel-item flex-shrink-0 w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
             <iframe src="https://www.youtube.com/embed/BZhbLHZDaLA?start=0" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
         </div>
-        <div class="carousel-item flex-shrink-0 w-[calc(100%-1.5rem)] sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
+        <div class="carousel-item flex-shrink-0 w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
             <iframe src="https://www.youtube.com/embed/4Y7T4t23AiM?start=137" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
         </div>
-        <!-- Add more videos here if needed -->
+        <div class="carousel-item flex-shrink-0 w-[calc(33.333%-1.5rem)] border-2 border-gold rounded-lg overflow-hidden">
+          <div class="relative pb-[56.25%] h-0">
+            <iframe src="https://www.youtube.com/embed/kSYN8Ez1YpY?start=245" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
+          </div>
+        </div>
       </div>
 
       <!-- Carousel Arrows -->
@@ -285,16 +289,17 @@
   </div>
 </section>
 
+<!-- Carousel JS -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   feather.replace();
 
   const track = document.getElementById('carousel-track');
-  let items = Array.from(document.querySelectorAll('.carousel-item'));
+  const items = Array.from(document.querySelectorAll('.carousel-item'));
   const prevBtn = document.getElementById('carousel-prev');
   const nextBtn = document.getElementById('carousel-next');
   const visibleCount = 3;
-  const offset = 2; // shift left to hide part of the 4th video
+  let currentIndex = visibleCount;
 
   // Clone first & last sets for seamless loop
   for (let i = 0; i < visibleCount; i++) {
@@ -302,64 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
     track.insertBefore(items[items.length - 1 - i].cloneNode(true), items[0]);
   }
 
-  items = Array.from(document.querySelectorAll('.carousel-item'));
-  let currentIndex = visibleCount;
-
-  function updateCarousel(animate = true) {
-    track.style.transition = animate ? 'transform 0.7s ease-in-out' : 'none';
-    const translateX = -(currentIndex * (100 / visibleCount)) - offset;
-    track.style.transform = `translateX(${translateX}%)`;
-  }
-
-  nextBtn.addEventListener('click', () => {
-    currentIndex++;
-    updateCarousel();
-    if (currentIndex >= items.length - visibleCount) {
-      setTimeout(() => {
-        currentIndex = visibleCount;
-        updateCarousel(false);
-      }, 710);
-    }
-  });
-
-  prevBtn.addEventListener('click', () => {
-    currentIndex--;
-    updateCarousel();
-    if (currentIndex < visibleCount) {
-      setTimeout(() => {
-        currentIndex = items.length - 2 * visibleCount;
-        updateCarousel(false);
-      }, 710);
-    }
-  });
-
-  updateCarousel(false);
-});
-</script>
-
-
-<!-- Gallery Carousel JS -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  feather.replace();
-
-  const track = document.getElementById('carousel-track');
-  let items = Array.from(document.querySelectorAll('.carousel-item'));
-  const prevBtn = document.getElementById('carousel-prev');
-  const nextBtn = document.getElementById('carousel-next');
-
-  let visibleCount = 3;
-  let currentIndex = visibleCount;
-
-  function setupCarousel() {
-    // Clone first & last sets for seamless loop
-    for (let i = 0; i < visibleCount; i++) {
-      track.appendChild(items[i].cloneNode(true));
-      track.insertBefore(items[items.length - 1 - i].cloneNode(true), items[0]);
-    }
-    items = Array.from(document.querySelectorAll('.carousel-item'));
-    updateCarousel(false);
-  }
+  const allItems = Array.from(document.querySelectorAll('.carousel-item'));
 
   function updateCarousel(animate = true) {
     track.style.transition = animate ? 'transform 0.7s ease-in-out' : 'none';
@@ -370,7 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
   nextBtn.addEventListener('click', () => {
     currentIndex++;
     updateCarousel();
-    if (currentIndex >= items.length - visibleCount) {
+    if (currentIndex >= allItems.length - visibleCount) {
       setTimeout(() => {
         currentIndex = visibleCount;
         updateCarousel(false);
@@ -383,15 +331,16 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarousel();
     if (currentIndex < visibleCount) {
       setTimeout(() => {
-        currentIndex = items.length - 2 * visibleCount;
+        currentIndex = allItems.length - 2 * visibleCount;
         updateCarousel(false);
       }, 710);
     }
   });
 
-  setupCarousel();
+  updateCarousel(false);
 });
 </script>
+
 
 
 <!-- Contact Section -->

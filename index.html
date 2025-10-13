@@ -240,52 +240,44 @@
         </div>
     </section>
 
-<section id="gallery" class="py-16 bg-black text-center">
-  <h2 class="text-4xl font-bold text-gold mb-12">Gallery</h2>
-  <div class="relative max-w-5xl mx-auto overflow-hidden">
-    <div id="carousel-track" class="flex justify-center transition-transform duration-700 ease-in-out">
-      <!-- Video 1 -->
-      <div class="carousel-item border-2 border-gold rounded-lg overflow-hidden mr-4">
-        <div class="relative pb-[56.25%] h-0">
-          <iframe 
-            src="https://www.youtube.com/embed/c8vsu3dp_Ow" 
-            class="absolute top-0 left-0 w-full h-full" 
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-      <!-- Video 2 (centered) -->
-      <div class="carousel-item border-2 border-gold rounded-lg overflow-hidden mr-4">
-        <div class="relative pb-[56.25%] h-0">
-          <iframe 
-            src="https://www.youtube.com/embed/HZeioUxnKdw" 
-            class="absolute top-0 left-0 w-full h-full" 
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-      <!-- Video 3 -->
-      <div class="carousel-item border-2 border-gold rounded-lg overflow-hidden">
-        <div class="relative pb-[56.25%] h-0">
-          <iframe 
-            src="https://www.youtube.com/embed/BZhbLHZDaLA" 
-            class="absolute top-0 left-0 w-full h-full" 
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </div>
+<!-- Gallery Section -->
+<section id="gallery" class="py-24 bg-velvet-800 border-t border-scarlet-700/20">
+  <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-0">
+    <h2 class="text-4xl font-bold text-center mb-12 text-cream">
+      <span class="border-b-2 border-gold pb-2">GALLERY</span>
+    </h2>
 
-    <!-- Carousel Buttons -->
-    <button id="prevBtn" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gold text-black p-2 rounded-full hover:bg-yellow-400 transition">
-      &#10094;
-    </button>
-    <button id="nextBtn" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gold text-black p-2 rounded-full hover:bg-yellow-400 transition">
-      &#10095;
-    </button>
+    <div class="relative w-full overflow-hidden px-4 lg:px-8">
+      <!-- Carousel Track -->
+      <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out">
+        <!-- Only 3 Videos -->
+        <div class="carousel-item border-2 border-gold rounded-lg overflow-hidden">
+          <div class="relative pb-[56.25%] h-0">
+            <iframe src="https://www.youtube.com/embed/c8vsu3dp_Ow" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="carousel-item border-2 border-gold rounded-lg overflow-hidden">
+          <div class="relative pb-[56.25%] h-0">
+            <iframe src="https://www.youtube.com/embed/HZeioUxnKdw" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="carousel-item border-2 border-gold rounded-lg overflow-hidden">
+          <div class="relative pb-[56.25%] h-0">
+            <iframe src="https://www.youtube.com/embed/BZhbLHZDaLA" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Arrows -->
+      <button id="carousel-prev" class="absolute top-1/2 left-[-1.5rem] transform -translate-y-1/2 bg-velvet-900 hover:bg-velvet-700 text-cream p-3 rounded-full shadow-lg z-10">
+        <i data-feather="chevron-left" class="w-6 h-6"></i>
+      </button>
+      <button id="carousel-next" class="absolute top-1/2 right-[-1.5rem] transform -translate-y-1/2 bg-velvet-900 hover:bg-velvet-700 text-cream p-3 rounded-full shadow-lg z-10">
+        <i data-feather="chevron-right" class="w-6 h-6"></i>
+      </button>
+    </div>
   </div>
 </section>
-
 
 <!-- Fixed Carousel Script for 3 Videos -->
 <script>

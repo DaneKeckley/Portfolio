@@ -247,9 +247,10 @@
       <span class="border-b-2 border-gold pb-2">GALLERY</span>
     </h2>
 
-    <div class="relative overflow-hidden w-full flex justify-center">
-      <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out gap-6 max-w-[calc(33.3333%*3 + 2*1.5rem)]">
-        <!-- Video items -->
+    <div class="relative w-full flex justify-center overflow-hidden">
+      <!-- Carousel viewport width = exactly 3 items -->
+      <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out gap-6 w-[calc(33.3333%*8 + 1.5rem*7)]">
+        <!-- Each item 33.3333% of the viewport (1/3) -->
         <div class="carousel-item flex-shrink-0 w-[33.3333%] border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
             <iframe src="https://www.youtube.com/embed/c8vsu3dp_Ow?start=0" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
@@ -311,6 +312,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- Contact Section -->
 <section id="contact" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">

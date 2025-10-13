@@ -190,68 +190,136 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12 text-cream">
-                <span class="border-b-2 border-gold pb-2">GALLERY</span>
-            </h2>
+<section id="gallery" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-bold text-center mb-12 text-cream">
+            <span class="border-b-2 border-gold pb-2">GALLERY</span>
+        </h2>
 
-            <!-- Carousel Container -->
-            <div class="relative overflow-hidden">
-                <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out">
-                    <!-- Video Items -->
-                    <div class="carousel-item px-3">
-                        <div class="border-2 border-gold rounded-lg overflow-hidden">
-                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/c8vsu3dp_Ow?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="carousel-item px-3">
-                        <div class="border-2 border-gold rounded-lg overflow-hidden">
-                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/HZeioUxnKdw?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="carousel-item px-3">
-                        <div class="border-2 border-gold rounded-lg overflow-hidden">
-                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/BZhbLHZDaLA?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="carousel-item px-3">
-                        <div class="border-2 border-gold rounded-lg overflow-hidden">
-                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/4Y7T4t23AiM?start=137" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="carousel-item px-3">
-                        <div class="border-2 border-gold rounded-lg overflow-hidden">
-                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/kSYN8Ez1YpY?start=245" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="carousel-item px-3">
-                        <div class="border-2 border-gold rounded-lg overflow-hidden">
-                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/TtwRsnzXHiM?start=394" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="carousel-item px-3">
-                        <div class="border-2 border-gold rounded-lg overflow-hidden">
-                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/h4_fuKJHz5E?start=245" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="carousel-item px-3">
-                        <div class="border-2 border-gold rounded-lg overflow-hidden">
-                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/ZsgK0lzA0PE?start=11" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                        </div>
+        <!-- Video Carousel Container -->
+        <div class="relative overflow-hidden mb-12">
+            <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out">
+                <!-- Video Items -->
+                <!-- ... Your existing video carousel items ... -->
+            </div>
+
+            <!-- Carousel Buttons -->
+            <button id="carousel-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
+                <i data-feather="chevron-left"></i>
+            </button>
+            <button id="carousel-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
+                <i data-feather="chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Photo Carousel Container -->
+        <div class="relative overflow-hidden">
+            <div id="photo-carousel-track" class="flex transition-transform duration-700 ease-in-out">
+                <!-- Photo Items -->
+                <div class="carousel-item px-3">
+                    <div class="border-2 border-gold rounded-lg overflow-hidden cursor-pointer">
+                        <img src="assets/images/21239384.jpg" alt="Model Photo" class="w-full h-64 object-cover" onclick="openModal(this)">
                     </div>
                 </div>
-
-                <!-- Carousel Buttons -->
-                <button id="carousel-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
-                    <i data-feather="chevron-left"></i>
-                </button>
-                <button id="carousel-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
-                    <i data-feather="chevron-right"></i>
-                </button>
+                <div class="carousel-item px-3">
+                    <div class="border-2 border-gold rounded-lg overflow-hidden cursor-pointer">
+                        <img src="assets/images/IMG_9981.JPG" alt="Model Photo" class="w-full h-64 object-cover" onclick="openModal(this)">
+                    </div>
+                </div>
+                <div class="carousel-item px-3">
+                    <div class="border-2 border-gold rounded-lg overflow-hidden cursor-pointer">
+                        <img src="assets/images/IMG_9988.JPG" alt="Model Photo" class="w-full h-64 object-cover" onclick="openModal(this)">
+                    </div>
+                </div>
+                <div class="carousel-item px-3">
+                    <div class="border-2 border-gold rounded-lg overflow-hidden cursor-pointer">
+                        <img src="assets/images/21433502.jpeg" alt="Model Photo" class="w-full h-64 object-cover" onclick="openModal(this)">
+                    </div>
+                </div>
+                <div class="carousel-item px-3">
+                    <div class="border-2 border-gold rounded-lg overflow-hidden cursor-pointer">
+                        <img src="assets/images/21433503.jpeg" alt="Model Photo" class="w-full h-64 object-cover" onclick="openModal(this)">
+                    </div>
+                </div>
+                <div class="carousel-item px-3">
+                    <div class="border-2 border-gold rounded-lg overflow-hidden cursor-pointer">
+                        <img src="assets/images/21433509.jpeg" alt="Model Photo" class="w-full h-64 object-cover" onclick="openModal(this)">
+                    </div>
+                </div>
+                <div class="carousel-item px-3">
+                    <div class="border-2 border-gold rounded-lg overflow-hidden cursor-pointer">
+                        <img src="assets/images/21433515.jpeg" alt="Model Photo" class="w-full h-64 object-cover" onclick="openModal(this)">
+                    </div>
+                </div>
+                <div class="carousel-item px-3">
+                    <div class="border-2 border-gold rounded-lg overflow-hidden cursor-pointer">
+                        <img src="assets/images/21433524.jpeg" alt="Model Photo" class="w-full h-64 object-cover" onclick="openModal(this)">
+                    </div>
+                </div>
+                <div class="carousel-item px-3">
+                    <div class="border-2 border-gold rounded-lg overflow-hidden cursor-pointer">
+                        <img src="assets/images/21433528.jpeg" alt="Model Photo" class="w-full h-64 object-cover" onclick="openModal(this)">
+                    </div>
+                </div>
+                <div class="carousel-item px-3">
+                    <div class="border-2 border-gold rounded-lg overflow-hidden cursor-pointer">
+                        <img src="assets/images/21433529.jpeg" alt="Model Photo" class="w-full h-64 object-cover" onclick="openModal(this)">
+                    </div>
+                </div>
+                <div class="carousel-item px-3">
+                    <div class="border-2 border-gold rounded-lg overflow-hidden cursor-pointer">
+                        <img src="assets/images/21433542.jpeg" alt="Model Photo" class="w-full h-64 object-cover" onclick="openModal(this)">
+                    </div>
+                </div>
+                <div class="carousel-item px-3">
+                    <div class="border-2 border-gold rounded-lg overflow-hidden cursor-pointer">
+                        <img src="assets/images/21433546.jpeg" alt="Model Photo" class="w-full h-64 object-cover" onclick="openModal(this)">
+                    </div>
+                </div>
+                <div class="carousel-item px-3">
+                    <div class="border-2 border-gold rounded-lg overflow-hidden cursor-pointer">
+                        <img src="assets/images/21433567.jpeg" alt="Model Photo" class="w-full h-64 object-cover" onclick="openModal(this)">
+                    </div>
+                </div>
+                <div class="carousel-item px-3">
+                    <div class="border-2 border-gold rounded-lg overflow-hidden cursor-pointer">
+                        <img src="assets/images/21433576.jpeg" alt="Model Photo" class="w-full h-64 object-cover" onclick="openModal(this)">
+                    </div>
+                </div>
+                <div class="carousel-item px-3">
+                    <div class="border-2 border-gold rounded-lg overflow-hidden cursor-pointer">
+                        <img src="assets/images/21433588.jpeg" alt="Model Photo" class="w-full h-64 object-cover" onclick="openModal(this)">
+                    </div>
+                </div>
             </div>
+
+            <!-- Carousel Buttons -->
+            <button id="photo-carousel-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
+                <i data-feather="chevron-left"></i>
+            </button>
+            <button id="photo-carousel-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
+                <i data-feather="chevron-right"></i>
+            </button>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- Modal for Enlarged Photos -->
+<div id="photoModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50">
+    <span class="absolute top-5 right-5 text-3xl text-cream cursor-pointer" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" class="max-h-[90%] max-w-[90%] rounded-lg border-2 border-gold" alt="Enlarged Photo">
+</div>
+
+<script>
+function openModal(img) {
+    document.getElementById('modalImage').src = img.src;
+    document.getElementById('photoModal').classList.remove('hidden');
+}
+function closeModal() {
+    document.getElementById('photoModal').classList.add('hidden');
+}
+</script>
+
 
     <!-- About Section -->
     <section id="about" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">

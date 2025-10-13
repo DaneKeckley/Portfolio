@@ -347,125 +347,97 @@
 </div>
 
 <script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    feather.replace();
+const photos = [
+    { src:'21239384.jpg', focus:'0%' },        // Grey (1) — keep first
+    { src:'21433567.jpeg', focus:'0%' },       // Black (13)
+    { src:'21433542.jpeg', focus:'0%' },       // Orange (11)
+    { src:'21433503.jpeg', focus:'33%' },      // Grey/Purple (5)
+    { src:'21433588.jpeg', focus:'0%' },       // Red (15)
+    { src:'21433546.jpeg', focus:'0%' },       // Purple (12)
+    { src:'21433509.jpeg', focus:'40%' },      // Yellow-white (6)
+    { src:'IMG_5879.JPG', focus:'00%' },       // Brown (19)
+    { src:'IMG_9981.JPG', focus:'5%' },        // White (2) — moved here
+    { src:'IMG_5872.JPG', focus:'10%' },       // Purple 21
+    { src:'F45365FF-AA72-4825-A3DF-E4DBEF3E0DD4.jpg', focus:'50%' }, // White & blue (20)
+    { src:'IMG_5856.JPG', focus:'0%' },        // White (16)
+    { src:'D32BC33C-2F22-4594-A752-5518E10C4199.jpg', focus:'10%' }, // Purple & blue
+    { src:'IMG_9988.JPG', focus:'10%' },       // White (3)
+    { src:'21433502.jpeg', focus:'0%' },       // Grey (4)
+    { src:'21433529.jpeg', focus:'0%' },       // White (10)
+];
 
-    // Mobile menu toggle
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
 
-    mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
-    });
 
-    // --- Photo Carousel ---
-    const photoTrack = document.getElementById('photo-carousel-track');
-    const photos = [
-        { src:'21239384.jpg', focus:'0%' }, { src:'21433567.jpeg', focus:'0%' },
-        { src:'21433542.jpeg', focus:'0%' }, { src:'21433503.jpeg', focus:'33%' },
-        { src:'21433588.jpeg', focus:'0%' }, { src:'21433546.jpeg', focus:'0%' },
-        { src:'21433509.jpeg', focus:'40%' }, { src:'IMG_5879.JPG', focus:'0%' },
-        { src:'IMG_9981.JPG', focus:'5%' }, { src:'IMG_5872.JPG', focus:'10%' },
-        { src:'F45365FF-AA72-4825-A3DF-E4DBEF3E0DD4.jpg', focus:'50%' },
-        { src:'IMG_5856.JPG', focus:'0%' }, { src:'D32BC33C-2F22-4594-A752-5518E10C4199.jpg', focus:'10%' },
-        { src:'IMG_9988.JPG', focus:'10%' }, { src:'21433502.jpeg', focus:'0%' },
-        { src:'21433529.jpeg', focus:'0%' }
-    ];
 
-    // Preload images
-    photos.forEach(photo => new Image().src = `assets/images/${photo.src}`);
 
-    // Create carousel item
-    function createCarouselItem(photo) {
-        const div = document.createElement('div');
-        div.className = "carousel-item flex-shrink-0";
-        div.style.flexBasis = "calc(25% - 0.75rem)";
 
-        const innerDiv = document.createElement('div');
-        innerDiv.className = "border-2 border-gold rounded-lg overflow-hidden cursor-pointer";
+const track = document.getElementById('photo-carousel-track');
 
-        const img = document.createElement('img');
-        img.src = `assets/images/${photo.src}`;
-        img.alt = "Model Photo";
-        img.style.objectPosition = `50% ${photo.focus}`;
-        img.className = "w-full h-64 object-cover";
-        img.onclick = () => openModal(img);
+// Preload all images
+photos.forEach(photo => {
+    const preloaded = new Image();
+    preloaded.src = `assets/images/${photo.src}`;
+});
 
-        innerDiv.appendChild(img);
-        div.appendChild(innerDiv);
-        return div;
-    }
+// Add images to carousel
+photos.forEach(photo => {
+    const div = document.createElement('div');
+    div.className = "carousel-item flex-shrink-0";
+    div.style.flexBasis = "calc(25% - 0.75rem)";
 
-    // Populate carousel with looping
-    const loopCount = 3;
-    const totalPhotos = photos.length;
-    for (let i = totalPhotos - loopCount; i < totalPhotos; i++) photoTrack.appendChild(createCarouselItem(photos[i]));
-    photos.forEach(photo => photoTrack.appendChild(createCarouselItem(photo)));
-    for (let i = 0; i < loopCount; i++) photoTrack.appendChild(createCarouselItem(photos[i]));
+    const innerDiv = document.createElement('div');
+    innerDiv.className = "border-2 border-gold rounded-lg overflow-hidden cursor-pointer";
 
-    let photoItemWidth = photoTrack.querySelector('.carousel-item').offsetWidth + 16;
-    let photoScroll = loopCount * photoItemWidth;
-    photoTrack.style.transform = `translateX(-${photoScroll}px)`;
+    const img = document.createElement('img');
+    img.src = `assets/images/${photo.src}`;
+    img.alt = "Model Photo";
+    img.dataset.focus = photo.focus;
+    img.className = "w-full h-64 object-cover";
+    img.onclick = () => openModal(img);
+    img.style.objectPosition = `50% ${photo.focus}`;
 
-    // Next / Prev buttons
-    document.getElementById('photo-next').addEventListener('click', () => {
-        photoScroll += photoItemWidth;
-        photoTrack.style.transition = "transform 0.7s ease-in-out";
-        photoTrack.style.transform = `translateX(-${photoScroll}px)`;
+    innerDiv.appendChild(img);
+    div.appendChild(innerDiv);
+    track.appendChild(div);
+});
 
-        if (photoScroll >= (totalPhotos + loopCount) * photoItemWidth) {
-            setTimeout(() => {
-                photoTrack.style.transition = "none";
-                photoScroll = loopCount * photoItemWidth;
-                photoTrack.style.transform = `translateX(-${photoScroll}px)`;
-            }, 700);
-        }
-    });
-
-    document.getElementById('photo-prev').addEventListener('click', () => {
-        photoScroll -= photoItemWidth;
-        photoTrack.style.transition = "transform 0.7s ease-in-out";
-        photoTrack.style.transform = `translateX(-${photoScroll}px)`;
-
-        if (photoScroll < loopCount * photoItemWidth) {
-            setTimeout(() => {
-                photoTrack.style.transition = "none";
-                photoScroll = totalPhotos * photoItemWidth;
-                photoTrack.style.transform = `translateX(-${photoScroll}px)`;
-            }, 700);
-        }
-    });
-
-    // --- Modal ---
+// Modal functions
+function openModal(img) {
     const modal = document.getElementById('photoModal');
     const modalImg = document.getElementById('modalImage');
+    
+    modalImg.src = img.src;
+    modal.classList.remove('hidden');
 
-    function openModal(img) {
-        modalImg.src = img.src;
-        modal.classList.remove('hidden');
+    // Close modal when clicking outside the image
+    modal.addEventListener('click', function handler(e) {
+        if (e.target === modal) { // Only if clicking the backdrop
+            closeModal();
+            modal.removeEventListener('click', handler); // Clean up the listener
+        }
+    });
+}
 
-        modal.addEventListener('click', function handler(e) {
-            if (e.target === modal) {
-                closeModal();
-                modal.removeEventListener('click', handler);
-            }
-        });
-    }
+function closeModal() {
+    document.getElementById('photoModal').classList.add('hidden');
+}
 
-    function closeModal() {
-        modal.classList.add('hidden');
-    }
 
+// Photo Carousel Scroll
+let photoScroll = 0;
+const photoItemWidth = track.querySelector('.carousel-item').offsetWidth + 16;
+
+document.getElementById('photo-next').addEventListener('click', () => {
+    photoScroll += photoItemWidth;
+    if(photoScroll > track.scrollWidth - track.clientWidth) photoScroll = track.scrollWidth - track.clientWidth;
+    track.style.transform = `translateX(-${photoScroll}px)`;
+});
+document.getElementById('photo-prev').addEventListener('click', () => {
+    photoScroll -= photoItemWidth;
+    if(photoScroll < 0) photoScroll = 0;
+    track.style.transform = `translateX(-${photoScroll}px)`;
 });
 </script>
-
 
 
 

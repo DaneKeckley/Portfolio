@@ -89,7 +89,7 @@
             border-bottom: 2px solid #E5C47A;
         }
 
-        /* Listen button hover effect */
+        /* Listen button hover glow */
         .listen-btn:hover {
             box-shadow: 0 0 15px rgba(229, 196, 122, 0.6), 0 5px 15px rgba(229, 196, 122, 0.3);
         }
@@ -143,7 +143,7 @@
                 <p class="text-lg md:text-xl font-serif italic text-cream mb-4">Velvet Tone. Scarlet Passion.</p>
                 <p class="text-xl md:text-2xl font-serif italic text-gold mb-10">Voice Actor, Actor, Model</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <!-- Listen Button -->
+                    <!-- Button -->
                     <a href="#demos-header" class="listen-btn relative font-bold py-3 px-8 rounded-full transition-all duration-300 flex items-center justify-center gap-2 
                         bg-gold text-[#0C0C0C] shadow-lg hover:bg-[#d4b36b]">
                         <i data-feather="headphones"></i> LISTEN TO MY WORK
@@ -205,16 +205,32 @@
                         <span class="border-b-2 border-gold pb-2">ABOUT</span>
                     </h2>
                     <div class="space-y-6 text-cream/90 text-lg leading-relaxed">
-                        <p>Dane Keckley is a professional voice actor whose craft lies in transforming words into living, breathing characters...</p>
-                        <p>Dane has built his career from the ground up and has landed himself in a multifaceted universe...</p>
-                        <p>In addition to his variety in vocal range, Dane has versatility in talent...</p>
-                        <p>With a voice that carries warmth, power, and range, Dane Keckley continues to build a reputation...</p>
+                        <p>
+                            Dane Keckley is a professional voice actor whose craft lies in transforming words into living, breathing characters. 
+                            Known for his rich, versatile voice and refined control, Dane specializes in animation, delivering performances that range from heartfelt heroes to complex villains. 
+                            Whether voicing a spirited protagonist or an otherworldly creature, Dane brings a cinematic sensibility and a nuanced understanding of tone and rhythm to every session.
+                        </p>
+                        <p>
+                            Dane has built his career from the ground up and has landed himself in a multifaceted universe, playing diverging characters such as Yan Shu-Wen and the Dark One in The Bridge Curse 2,
+                            Gaia in Super Snail X, Patriot Sam in Enigma, Omus in Lone Soul, and William Afton and Michael Schmidt in The Return to Freddy’s. 
+                        </p>
+                        <p>
+                            In addition to his variety in vocal range, Dane has versatility in talent. 
+                            He has made his mark in the modeling world, walking the Nordstrom runway and appearing in publications such as Vessel, Artells, Marika, and Top Posters. 
+                            These experiences amplify his ability and have shaped his creative presence to embody character through subtlety and expression.
+                        </p>
+                        <p>
+                            With a voice that carries warmth, power, and range, Dane Keckley continues to build a reputation as an accomplished performer who can adapt, elevate, and captivate. 
+                            For casting directors and creators seeking a voice that can give their worlds dimension, Dane offers not just sound, but <strong>soul.</strong> 
+                        </p>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4 mt-10">
-                        <!-- Resume Buttons -->
+                        <!-- View Resume Button -->
                         <a href="/assets/images/DaneKeckleyResume.pdf" target="_blank" class="inline-flex items-center bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-full transition-all duration-300">
                             <i data-feather="eye" class="mr-2"></i> VIEW RESUME
                         </a>
+
+                        <!-- Download Resume Button -->
                         <a href="/assets/images/DaneKeckleyResume.pdf" download class="inline-flex items-center bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-full transition-all duration-300">
                             <i data-feather="download" class="mr-2"></i> DOWNLOAD RESUME
                         </a>
@@ -232,30 +248,32 @@
             </h2>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Image item -->
                 <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
                     <img src="/assets/images/photo1.jpg" alt="Gallery image" class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
                 </div>
 
+                <!-- YouTube Visual Reel -->
                 <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
-                    <video class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105" controls preload="metadata" poster="/assets/images/video1-poster.jpg">
-                        <source src="/assets/videos/clip1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                    <div class="relative pb-[56.25%] h-0 overflow-hidden">
+                        <iframe class="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg" 
+                            src="https://www.youtube.com/embed/c8vsu3dp_Ow" 
+                            title="Dane Keckley Visual Reel" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                        </iframe>
+                    </div>
                 </div>
 
+                <!-- Another image -->
                 <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
                     <img src="/assets/images/photo2.jpg" alt="Gallery image" class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
                 </div>
 
-                <!-- YouTube Visual Reel -->
-                <div class="bg-velvet-800 rounded-lg overflow-hidden p-4 col-span-1 sm:col-span-2 lg:col-span-3">
-                    <iframe class="w-full h-96 rounded-lg shadow-lg" 
-                        src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
-                        title="Dane Keckley Visual Reel" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+                <!-- Another video -->
+                <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
+                    <video class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105" controls preload="metadata" poster="/assets/images/video2-poster.jpg">
+                        <source src="/assets/videos/clip2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
         </div>
@@ -263,24 +281,108 @@
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
-        <!-- Contact code remains unchanged -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 text-cream">
+                <span class="border-b-2 border-gold pb-2">CONTACT</span>
+            </h2>
+
+            <!-- Contact message -->
+            <div id="contact-message" class="hidden mt-4 p-4 rounded-lg text-cream font-bold"></div>
+
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-cream mb-2">NAME</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-cream mb-2">EMAIL</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-cream mb-2">MESSAGE</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
+                            <i data-feather="send"></i> SEND MESSAGE
+                        </button>
+                    </form>
+                </div>
+
+                <div class="lg:w-1/2">
+                    <div class="bg-velvet-800 rounded-lg p-8 h-full">
+                        <h3 class="text-2xl font-bold text-cream mb-6">LET'S WORK TOGETHER</h3>
+                        <div class="space-y-6 text-cream/90">
+                            <p>For voiceover inquiries, collaborations, or just to say hello, feel free to reach out through the form or directly via email.</p>
+                            <div class="flex items-start gap-4">
+                                <i data-feather="mail" class="text-gold"></i>
+                                <div>
+                                    <p class="font-bold">EMAIL</p>
+                                    <p>danekeckley@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i data-feather="map-pin" class="text-gold"></i>
+                                <div>
+                                    <p class="font-bold">LOCATIONS</p>
+                                    <p>Los Angeles, CA</p>
+                                    <p>Salt Lake City, UT</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-12">
+                            <h4 class="text-xl font-bold text-cream mb-4">CONNECT WITH ME</h4>
+                            <div class="flex gap-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
+                                    <i data-feather="twitter" class="text-gold"></i>
+                                </a>
+                                <a href="https://www.instagram.com/dane_keckley" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
+                                    <i data-feather="instagram" class="text-gold"></i>
+                                </a>
+                                <a href="https://www.imdb.com/name/nm14250926" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
+                                    <i data-feather="film" class="text-gold"></i>
+                                </a>
+                                <a href="https://www.youtube.com/@TrajanWeekly" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
+                                    <i data-feather="youtube" class="text-gold"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-velvet-900 border-t border-scarlet-700/20 py-12">
-        <!-- Footer code remains unchanged -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <span class="text-cream font-bold">&copy; 2025 Dane Keckley</span>
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="text-cream hover:text-gold transition-colors duration-300"><i data-feather="twitter"></i></a>
+                    <a href="#" class="text-cream hover:text-gold transition-colors duration-300"><i data-feather="instagram"></i></a>
+                    <a href="#" class="text-cream hover:text-gold transition-colors duration-300"><i data-feather="film"></i></a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- Scripts -->
     <script>
         feather.replace();
 
+        // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
+
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -289,7 +391,7 @@
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - 80, // offset for fixed navbar
                         behavior: 'smooth'
                     });
                 }
@@ -299,8 +401,10 @@
             });
         });
 
+        // EmailJS Form Submission
         const contactForm = document.getElementById('contact-form');
         const contactMessage = document.getElementById('contact-message');
+
         contactForm.addEventListener('submit', function(event) {
             event.preventDefault();
             emailjs.sendForm('service_pfh0zod', 'template_4miydur', this)
@@ -318,6 +422,7 @@
                 });
         });
 
+        // Pause other audios
         const audios = document.querySelectorAll('audio');
         audios.forEach(audio => {
             audio.addEventListener('play', () => {

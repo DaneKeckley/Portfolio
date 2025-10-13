@@ -24,7 +24,7 @@
 
     <script>
         // Initialize EmailJS
-        emailjs.init('YOUR_PUBLIC_KEY_HERE');
+        emailjs.init('o-XjlNLzlQ99Lrq_k');
 
         tailwind.config = {
             theme: {
@@ -672,5 +672,20 @@ window.addEventListener('resize', () => {
             cloneItems();
         });
     </script>
+        <script>
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    emailjs.sendForm('service_pfh0zod', 'template_4miydur', this)
+        .then(function() {
+            alert('Message sent successfully!');
+            document.getElementById('contact-form').reset(); // Optional: reset form after sending
+        }, function(error) {
+            alert('Oops! Something went wrong. Please try again.');
+            console.error('EmailJS Error:', error);
+        });
+});
+</script>
+
 </body>
 </html>

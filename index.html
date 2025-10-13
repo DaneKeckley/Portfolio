@@ -252,38 +252,40 @@
         </div>
 
         <!-- Photo Carousel -->
-        <div class="relative overflow-hidden">
-            <div id="photo-carousel-track" class="flex gap-6 transition-transform duration-700 ease-in-out">
-                <!-- Photo Items -->
-                <script>
-                    const photos = [
-                        '21239384.jpg','IMG_9981.JPG','IMG_9988.JPG','21433502.jpeg',
-                        '21433503.jpeg','21433509.jpeg','21433515.jpeg','21433524.jpeg',
-                        '21433528.jpeg','21433529.jpeg','21433542.jpeg','21433546.jpeg',
-                        '21433567.jpeg','21433576.jpeg','21433588.jpeg'
-                    ];
-                    photos.forEach(photo => {
-                        document.write(`
-                            <div class="carousel-item flex-shrink-0 w-64">
-                                <div class="border-2 border-gold rounded-lg overflow-hidden cursor-pointer">
-                                    <img src="assets/images/${photo}" alt="Model Photo" class="w-full h-64 object-cover" onclick="openModal(this)">
-                                </div>
-                            </div>
-                        `);
-                    });
-                </script>
-            </div>
-
-            <!-- Photo Carousel Buttons -->
-            <button id="photo-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
-                <i data-feather="chevron-left"></i>
-            </button>
-            <button id="photo-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
-                <i data-feather="chevron-right"></i>
-            </button>
-        </div>
+<div class="relative overflow-hidden">
+    <div id="photo-carousel-track" class="flex gap-6 transition-transform duration-700 ease-in-out">
+        <!-- Photo Items -->
+        <script>
+            const photos = [
+                '21239384.jpg','IMG_9981.JPG','IMG_9988.JPG','21433502.jpeg',
+                '21433503.jpeg','21433509.jpeg','21433515.jpeg','21433524.jpeg',
+                '21433528.jpeg','21433529.jpeg','21433542.jpeg','21433546.jpeg',
+                '21433567.jpeg','21433576.jpeg','21433588.jpeg'
+            ];
+            photos.forEach(photo => {
+                document.write(`
+                    <div class="carousel-item flex-shrink-0 w-64">
+                        <div class="border-2 border-gold rounded-lg overflow-hidden cursor-pointer">
+                            <img src="assets/images/${photo}" 
+                                 alt="Model Photo" 
+                                 class="w-full h-64 object-cover object-top" 
+                                 onclick="openModal(this)">
+                        </div>
+                    </div>
+                `);
+            });
+        </script>
     </div>
-</section>
+
+    <!-- Photo Carousel Buttons -->
+    <button id="photo-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
+        <i data-feather="chevron-left"></i>
+    </button>
+    <button id="photo-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
+        <i data-feather="chevron-right"></i>
+    </button>
+</div>
+
 
 <!-- Modal for Enlarged Photos -->
 <div id="photoModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50">

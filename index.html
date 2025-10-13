@@ -315,6 +315,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const visibleCount = 3;
   const offset = 2; // percent shift to hide 4th video's border
 
+function updateCarousel(animate = true) {
+    track.style.transition = animate ? 'transform 0.7s ease-in-out' : 'none';
+    const translateX = -(currentIndex * (100 / visibleCount)) - offset; // subtract offset
+    track.style.transform = `translateX(${translateX}%)`;
+}
+
   // Clone first and last sets for seamless loop
   for (let i = 0; i < visibleCount; i++) {
     track.appendChild(items[i].cloneNode(true));

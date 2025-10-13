@@ -676,16 +676,34 @@ window.addEventListener('resize', () => {
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
 
+    const messageEl = document.getElementById('form-message');
+
     emailjs.sendForm('service_pfh0zod', 'template_4miydur', this)
         .then(function() {
-            alert('Message sent successfully!');
-            document.getElementById('contact-form').reset(); // Optional: reset form after sending
+            messageEl.textContent = "✅ Your message has been sent!";
+            messageEl.classList.remove('hidden', 'text-red-500');
+            messageEl.classList.add('text-gold', 'opacity-0', 'transition-opacity', 'duration-700');
+
+            // Fade in
+            setTimeout(() => messageEl.classList.remove('opacity-0'), 10);
+
+            // Fade out after 5 seconds
+            setTimeout(() => {
+                messageEl.classList.add('opacity-0');
+                setTimeout(() => messageEl.classList.add('hidden'), 700);
+            }, 5000);
+
+            // Reset form
+            document.getElementById('contact-form').reset();
         }, function(error) {
-            alert('Oops! Something went wrong. Please try again.');
+            messageEl.textContent = "❌ Something went wrong. Please try again.";
+            messageEl.classList.remove('hidden', 'text-gold', 'opacity-0');
+            messageEl.classList.add('text-red-500');
             console.error('EmailJS Error:', error);
         });
 });
 </script>
+
 
 </body>
 </html>

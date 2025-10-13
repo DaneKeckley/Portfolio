@@ -514,7 +514,7 @@ window.addEventListener('resize', () => {
 <section id="contact" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <!-- Contact Header -->
+<!-- Contact Header -->
 <section id="contact-header" class="py-12 bg-velvet-900 scroll-mt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-4xl font-bold text-cream">
@@ -523,41 +523,33 @@ window.addEventListener('resize', () => {
     </div>
 </section>
 
-            <!-- Contact Section -->
+<!-- Contact Section -->
 <section id="contact" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         <div class="flex flex-col lg:flex-row gap-12">
-
             <!-- Contact Form -->
             <div class="lg:w-1/2">
                 <form id="contact-form" class="space-y-6">
                     <div>
                         <label for="name" class="block text-sm font-medium text-cream mb-2">NAME</label>
-                        <input type="text" id="name" name="name" required
-                               class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500">
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500">
                     </div>
                     <div>
                         <label for="email" class="block text-sm font-medium text-cream mb-2">EMAIL</label>
-                        <input type="email" id="email" name="email" required
-                               class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500">
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500">
                     </div>
                     <div>
                         <label for="message" class="block text-sm font-medium text-cream mb-2">MESSAGE</label>
-                        <textarea id="message" name="message" rows="5" required
-                                  class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500"></textarea>
+                        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500"></textarea>
                     </div>
-                    <button type="submit"
-                            class="w-full bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
+                    <button type="submit" class="w-full bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
                         <i data-feather="send"></i> SEND MESSAGE
                     </button>
-
-                    <!-- Success/Error Message -->
                     <p id="form-message" class="hidden mt-3 text-center font-medium transition-opacity duration-500"></p>
                 </form>
             </div>
 
-            <!-- Contact Info & Socials -->
+            <!-- Contact Info -->
             <div class="lg:w-1/2">
                 <div class="bg-velvet-800 rounded-lg p-8 h-full">
                     <h3 class="text-2xl font-bold text-cream mb-6">LET'S WORK TOGETHER</h3>
@@ -598,34 +590,6 @@ window.addEventListener('resize', () => {
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
-
-<!-- EmailJS Form Script -->
-<script>
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const messageEl = document.getElementById('form-message');
-
-    emailjs.sendForm('service_pfh0zod', 'template_4miydur', this)
-        .then(function() {
-            messageEl.textContent = "✅ Your message has been sent!";
-            messageEl.classList.remove('hidden', 'text-red-500', 'opacity-0');
-            messageEl.classList.add('text-gold');
-            setTimeout(() => { messageEl.classList.add('opacity-0'); setTimeout(() => messageEl.classList.add('hidden'), 500); }, 4000);
-            document.getElementById('contact-form').reset();
-        })
-        .catch(function(error) {
-            messageEl.textContent = "❌ Something went wrong. Please try again.";
-            messageEl.classList.remove('hidden', 'opacity-0');
-            messageEl.classList.add('text-red-500');
-            setTimeout(() => { messageEl.classList.add('opacity-0'); setTimeout(() => messageEl.classList.add('hidden'), 500); }, 4000);
-            console.error('EmailJS Error:', error);
-        });
-});
-</script>
-
-</body>
-</html>

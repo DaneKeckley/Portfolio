@@ -43,7 +43,6 @@
     }
 
     .audio-container {
-      position: relative;
       background: rgba(0, 0, 0, 0.55);
       border: 2px solid #E5C47A;
       border-radius: 1rem;
@@ -51,7 +50,6 @@
       width: 90%;
       max-width: 600px;
       box-shadow: 0 0 40px rgba(229, 196, 122, 0.15);
-      z-index: 10;
       opacity: 0;
       transform: translateY(30px);
       animation: fadeInUp 1.5s ease-out forwards;
@@ -67,17 +65,6 @@
       border-radius: 0.5rem;
     }
 
-    #particles {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-    }
-
-    @keyframes glow {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 0.7; }
-    }
-
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -91,8 +78,6 @@
   </style>
 </head>
 <body>
-  <canvas id="particles"></canvas>
-
   <div class="audio-container">
     <h1 class="text-3xl font-bold mb-3 text-gold">Animation Character Demo</h1>
     <p class="text-lg italic mb-6">“Inspired Monologue (‘The Gamble Pays Off’)”</p>
@@ -106,53 +91,5 @@
       © Dane Keckley — Private Demo | For casting reference only.
     </p>
   </div>
-
-  <script>
-    // Subtle particle background
-    const canvas = document.getElementById('particles');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    for (let i = 0; i < 45; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 2.2 + 0.8,
-        dx: (Math.random() - 0.5) * 0.2,
-        dy: (Math.random() - 0.5) * 0.2,
-        color: Math.random() > 0.6 ? '#E5C47A' : '#A61C1C'
-      });
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => {
-        ctx.beginPath();
-        const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 4);
-        gradient.addColorStop(0, p.color);
-        gradient.addColorStop(1, 'transparent');
-        ctx.fillStyle = gradient;
-        ctx.arc(p.x, p.y, p.r * 4, 0, Math.PI * 2);
-        ctx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
-
-        if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width) p.x = 0;
-        if (p.y < 0) p.y = canvas.height;
-        if (p.y > canvas.height) p.y = 0;
-      });
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-  </script>
 </body>
 </html>

@@ -240,60 +240,69 @@
     </div>
 </section>
 
- <!-- Gallery Section -->
-<section id="gallery" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-bold text-center mb-12 text-cream">
-            <span class="border-b-2 border-gold pb-2">GALLERY</span>
-        </h2>
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 text-cream">
+                <span class="border-b-2 border-gold pb-2">GALLERY</span>
+            </h2>
 
-        <!-- Carousel Container -->
-        <div class="relative overflow-hidden">
-            <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out">
-                <!-- Existing Video Items -->
-                <div class="carousel-item px-3">
-                    <div class="border-2 border-gold rounded-lg overflow-hidden">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/HZeioUxnKdw?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+            <!-- Carousel Container -->
+            <div class="relative overflow-hidden">
+                <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out">
+                    <!-- Video Items -->
+                    <div class="carousel-item px-3">
+                        <div class="border-2 border-gold rounded-lg overflow-hidden">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/HZeioUxnKdw?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="carousel-item px-3">
+                        <div class="border-2 border-gold rounded-lg overflow-hidden">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/c8vsu3dp_Ow?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="carousel-item px-3">
+                        <div class="border-2 border-gold rounded-lg overflow-hidden">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/BZhbLHZDaLA?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="carousel-item px-3">
+                        <div class="border-2 border-gold rounded-lg overflow-hidden">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/4Y7T4t23AiM?start=24" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="carousel-item px-3">
+                        <div class="border-2 border-gold rounded-lg overflow-hidden">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/kSYN8Ez1YpY?start=245" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="carousel-item px-3">
+                        <div class="border-2 border-gold rounded-lg overflow-hidden">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/TtwRsnzXHiM?start=394" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="carousel-item px-3">
+                        <div class="border-2 border-gold rounded-lg overflow-hidden">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/h4_fuKJHz5E?start=245" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="carousel-item px-3">
+                        <div class="border-2 border-gold rounded-lg overflow-hidden">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/ZsgK0lzA0PE?start=11" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
-                <div class="carousel-item px-3">
-                    <div class="border-2 border-gold rounded-lg overflow-hidden">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/c8vsu3dp_Ow?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="carousel-item px-3">
-                    <div class="border-2 border-gold rounded-lg overflow-hidden">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/BZhbLHZDaLA?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <!-- New Videos -->
-                <div class="carousel-item px-3">
-                    <div class="border-2 border-gold rounded-lg overflow-hidden">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/pamThbZFalY?start=33" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="carousel-item px-3">
-                    <div class="border-2 border-gold rounded-lg overflow-hidden">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/mTc5LFDyAzA?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="carousel-item px-3">
-                    <div class="border-2 border-gold rounded-lg overflow-hidden">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/EIjzqcql_sc?start=877" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
+
+                <!-- Carousel Buttons -->
+                <button id="carousel-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
+                    <i data-feather="chevron-left"></i>
+                </button>
+                <button id="carousel-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
+                    <i data-feather="chevron-right"></i>
+                </button>
             </div>
-
-            <!-- Carousel Buttons -->
-            <button id="carousel-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
-                <i data-feather="chevron-left"></i>
-            </button>
-            <button id="carousel-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
-                <i data-feather="chevron-right"></i>
-            </button>
         </div>
-    </div>
-</section>
+    </section>
 
    <!-- Contact Section -->
 <section id="contact" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">

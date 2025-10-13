@@ -302,24 +302,36 @@
             </button>
         </div>
 
-<!-- Photo Carousel -->
+<!-- Photo Gallery Section -->
 <div class="relative overflow-hidden">
     <div id="photo-carousel-track" class="flex transition-transform duration-700 ease-in-out" style="gap:1rem;">
-        <!-- Photo Items -->
         <script>
             const photos = [
-                '21239384.jpg','IMG_9981.JPG','IMG_9988.JPG','21433502.jpeg',
-                '21433503.jpeg','21433509.jpeg','21433515.jpeg','21433524.jpeg',
-                '21433528.jpeg','21433529.jpeg','21433542.jpeg','21433546.jpeg',
-                '21433567.jpeg','21433576.jpeg','21433588.jpeg'
+                { src:'21239384.jpg', focus:'40%' },
+                { src:'IMG_9981.JPG', focus:'35%' },
+                { src:'IMG_9988.JPG', focus:'45%' },
+                { src:'21433502.jpeg', focus:'50%' },
+                { src:'21433503.jpeg', focus:'40%' },
+                { src:'21433509.jpeg', focus:'45%' },
+                { src:'21433515.jpeg', focus:'50%' },
+                { src:'21433524.jpeg', focus:'40%' },
+                { src:'21433528.jpeg', focus:'45%' },
+                { src:'21433529.jpeg', focus:'50%' },
+                { src:'21433542.jpeg', focus:'40%' },
+                { src:'21433546.jpeg', focus:'45%' },
+                { src:'21433567.jpeg', focus:'50%' },
+                { src:'21433576.jpeg', focus:'40%' },
+                { src:'21433588.jpeg', focus:'45%' }
             ];
+            
             photos.forEach(photo => {
                 document.write(`
                     <div class="carousel-item flex-shrink-0" style="flex-basis: calc(25% - 0.75rem);">
                         <div class="border-2 border-gold rounded-lg overflow-hidden cursor-pointer">
-                            <img src="assets/images/${photo}" 
+                            <img src="assets/images/${photo.src}" 
                                  alt="Model Photo" 
-                                 class="w-full h-64 object-cover object-top" 
+                                 data-focus="${photo.focus}"
+                                 class="w-full h-64 object-cover"
                                  onclick="openModal(this)">
                         </div>
                     </div>

@@ -16,8 +16,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
-    <!-- Optional SVG for Safari pinned tabs -->
-    <!-- <link rel="mask-icon" href="/assets/images/favicon.svg" color="#E5C47A"> -->
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -83,6 +81,12 @@
         .audio-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(140, 28, 19, 0.3);
+        }
+
+        /* Semi-transparent navbar with gold trim */
+        nav {
+            background-color: rgba(0,0,0,0.85);
+            border-bottom: 2px solid #E5C47A;
         }
     </style>
 </head>
@@ -180,96 +184,95 @@
     </div>
 
     <!-- About Section -->
-    <!-- About Section -->
-<section id="about" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col lg:flex-row items-center gap-12">
-            <div class="lg:w-1/3">
-                <div class="relative group">
-                    <img src="/assets/images/DaneKeckleyModelHeadshot.jpg" alt="Dane Keckley" class="w-full rounded-lg shadow-xl transform group-hover:scale-105 transition-transform duration-300">
-                    <div class="absolute inset-0 bg-[#340E12]/10 rounded-lg border-2 border-[#340E12]/30 group-hover:opacity-0 transition-opacity duration-300"></div>
+    <section id="about" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/3">
+                    <div class="relative group">
+                        <img src="/assets/images/DaneKeckleyModelHeadshot.jpg" alt="Dane Keckley" class="w-full rounded-lg shadow-xl transform group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-[#340E12]/10 rounded-lg border-2 border-[#340E12]/30 group-hover:opacity-0 transition-opacity duration-300"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="lg:w-2/3">
-                <h2 class="text-4xl font-bold mb-8 text-cream">
-                    <span class="border-b-2 border-gold pb-2">ABOUT</span>
-                </h2>
-                <div class="space-y-6 text-cream/90 text-lg leading-relaxed">
-                    <p>
-                        Dane Keckley is a professional voice actor whose craft lies in transforming words into living, breathing characters. 
-                        Known for his <strong>rich, versatile voice</strong> and <strong>refined control</strong>, Dane specializes in animation, 
-                        delivering performances that range from heartfelt heroes to complex villains — always anchored in emotional truth.
-                    </p>
-                    <p>
-                        His approach to voice acting is rooted in a deep respect for story and collaboration. Whether voicing a spirited protagonist 
-                        or an otherworldly creature, Dane brings a cinematic sensibility and a nuanced understanding of tone and rhythm to every session.
-                    </p>
-                    <p>
-                        Complementing his voice work, Dane’s experience in the modeling world — walking the 
-                        <strong>Nordstrom runway</strong> and appearing in publications such as 
-                        <em>Vessel</em>, <em>Artells</em>, <em>Marika</em>, and <em>Top Posters</em> — 
-                        has shaped his creative presence and his ability to embody character through subtlety and expression.
-                    </p>
-                    <p>
-                        With a voice that carries warmth, power, and range, Dane Keckley continues to build a reputation as a performer who can 
-                        <strong>adapt, elevate, and captivate</strong>. For casting directors and creators seeking a voice that can give their worlds 
-                        dimension, Dane offers not just sound — but soul.
-                    </p>
-                </div>
-                <div class="flex flex-col sm:flex-row gap-4 mt-10">
-    <!-- View Resume Button -->
-    <a href="/assets/images/DaneKeckleyResume.pdf" target="_blank" class="inline-flex items-center bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-full transition-all duration-300">
-        <i data-feather="eye" class="mr-2"></i> VIEW RESUME
-    </a>
+                <div class="lg:w-2/3">
+                    <h2 class="text-4xl font-bold mb-8 text-cream">
+                        <span class="border-b-2 border-gold pb-2">ABOUT</span>
+                    </h2>
+                    <div class="space-y-6 text-cream/90 text-lg leading-relaxed">
+                        <p>
+                            Dane Keckley is a professional voice actor whose craft lies in transforming words into living, breathing characters. 
+                            Known for his <strong>rich, versatile voice</strong> and <strong>refined control</strong>, Dane specializes in animation, 
+                            delivering performances that range from heartfelt heroes to complex villains — always anchored in emotional truth.
+                        </p>
+                        <p>
+                            His approach to voice acting is rooted in a deep respect for story and collaboration. Whether voicing a spirited protagonist 
+                            or an otherworldly creature, Dane brings a cinematic sensibility and a nuanced understanding of tone and rhythm to every session.
+                        </p>
+                        <p>
+                            Complementing his voice work, Dane’s experience in the modeling world — walking the 
+                            <strong>Nordstrom runway</strong> and appearing in publications such as 
+                            <em>Vessel</em>, <em>Artells</em>, <em>Marika</em>, and <em>Top Posters</em> — 
+                            has shaped his creative presence and his ability to embody character through subtlety and expression.
+                        </p>
+                        <p>
+                            With a voice that carries warmth, power, and range, Dane Keckley continues to build a reputation as a performer who can 
+                            <strong>adapt, elevate, and captivate</strong>. For casting directors and creators seeking a voice that can give their worlds 
+                            dimension, Dane offers not just sound — but soul.
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-10">
+                        <!-- View Resume Button -->
+                        <a href="/assets/images/DaneKeckleyResume.pdf" target="_blank" class="inline-flex items-center bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-full transition-all duration-300">
+                            <i data-feather="eye" class="mr-2"></i> VIEW RESUME
+                        </a>
 
-    <!-- Download Resume Button -->
-    <a href="/assets/images/DaneKeckleyResume.pdf" download class="inline-flex items-center bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-full transition-all duration-300">
-        <i data-feather="download" class="mr-2"></i> DOWNLOAD RESUME
-    </a>
-</div>
+                        <!-- Download Resume Button -->
+                        <a href="/assets/images/DaneKeckleyResume.pdf" download class="inline-flex items-center bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-full transition-all duration-300">
+                            <i data-feather="download" class="mr-2"></i> DOWNLOAD RESUME
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- Gallery Section -->
     <section id="gallery" class="py-20 bg-velvet-800 border-t border-scarlet-700/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-bold text-center mb-16 text-cream">
-            <span class="border-b-2 border-gold pb-2">GALLERY</span>
-        </h2>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 text-cream">
+                <span class="border-b-2 border-gold pb-2">GALLERY</span>
+            </h2>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Image item -->
-            <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
-                <img src="/assets/images/photo1.jpg" alt="Gallery image" class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Image item -->
+                <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
+                    <img src="/assets/images/photo1.jpg" alt="Gallery image" class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+                </div>
+
+                <!-- Video item -->
+                <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
+                    <video class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105" controls preload="metadata" poster="/assets/images/video1-poster.jpg">
+                        <source src="/assets/videos/clip1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- Another image -->
+                <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
+                    <img src="/assets/images/photo2.jpg" alt="Gallery image" class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+                </div>
+
+                <!-- Another video -->
+                <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
+                    <video class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105" controls preload="metadata" poster="/assets/images/video2-poster.jpg">
+                        <source src="/assets/videos/clip2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- Add more images/videos the same way -->
             </div>
-
-            <!-- Video item -->
-            <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
-                <video class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105" controls preload="metadata" poster="/assets/images/video1-poster.jpg">
-                    <source src="/assets/videos/clip1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <!-- Another image -->
-            <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
-                <img src="/assets/images/photo2.jpg" alt="Gallery image" class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
-            </div>
-
-            <!-- Another video -->
-            <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
-                <video class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105" controls preload="metadata" poster="/assets/images/video2-poster.jpg">
-                    <source src="/assets/videos/clip2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <!-- Add more images/videos the same way -->
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">

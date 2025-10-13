@@ -677,41 +677,48 @@ window.addEventListener('resize', () => {
         <script>
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
-    <button type="submit" class="w-full bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
+<button type="submit" class="w-full bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
     <i data-feather="send"></i> SEND MESSAGE
 </button>
 
-<p id="form-message" class="hidden mt-3 text-gold text-center font-medium"></p>
+<!-- Success/Error Message -->
+<p id="form-message" class="hidden mt-3 text-center font-medium transition-opacity duration-500"></p>
 
-
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
     const messageEl = document.getElementById('form-message');
 
     emailjs.sendForm('service_pfh0zod', 'template_4miydur', this)
         .then(function() {
             messageEl.textContent = "✅ Your message has been sent!";
-            messageEl.classList.remove('hidden', 'text-red-500');
-            messageEl.classList.add('text-gold', 'opacity-0', 'transition-opacity', 'duration-700');
+            messageEl.classList.remove('hidden', 'text-red-500', 'opacity-0');
+            messageEl.classList.add('text-gold');
 
-            // Fade in
-            setTimeout(() => messageEl.classList.remove('opacity-0'), 10);
-
-            // Fade out after 5 seconds
+            // Fade out after 4 seconds
             setTimeout(() => {
                 messageEl.classList.add('opacity-0');
-                setTimeout(() => messageEl.classList.add('hidden'), 700);
-            }, 5000);
+                setTimeout(() => messageEl.classList.add('hidden'), 500);
+            }, 4000);
 
             // Reset form
             document.getElementById('contact-form').reset();
-        }, function(error) {
+        })
+        .catch(function(error) {
             messageEl.textContent = "❌ Something went wrong. Please try again.";
-            messageEl.classList.remove('hidden', 'text-gold', 'opacity-0');
+            messageEl.classList.remove('hidden', 'opacity-0');
             messageEl.classList.add('text-red-500');
+
+            // Fade out after 4 seconds
+            setTimeout(() => {
+                messageEl.classList.add('opacity-0');
+                setTimeout(() => messageEl.classList.add('hidden'), 500);
+            }, 4000);
+
             console.error('EmailJS Error:', error);
         });
 });
 </script>
-
 
 </body>
 </html>

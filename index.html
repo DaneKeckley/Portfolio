@@ -198,38 +198,62 @@
 
         <!-- Video Carousel -->
         <div class="relative overflow-hidden mb-12">
-            <div class="flex gap-6 transition-transform duration-700 ease-in-out" id="video-carousel-track">
+            <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out">
                 <!-- Video Items -->
-                <div class="carousel-item flex-shrink-0 w-64">
+                <div class="carousel-item px-3">
                     <div class="border-2 border-gold rounded-lg overflow-hidden">
                         <iframe class="w-full h-64" src="https://www.youtube.com/embed/c8vsu3dp_Ow?start=0" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
-                <div class="carousel-item flex-shrink-0 w-64">
+                <div class="carousel-item px-3">
                     <div class="border-2 border-gold rounded-lg overflow-hidden">
                         <iframe class="w-full h-64" src="https://www.youtube.com/embed/HZeioUxnKdw?start=0" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
-                <div class="carousel-item flex-shrink-0 w-64">
+                <div class="carousel-item px-3">
                     <div class="border-2 border-gold rounded-lg overflow-hidden">
                         <iframe class="w-full h-64" src="https://www.youtube.com/embed/BZhbLHZDaLA?start=0" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
-                <!-- Add more video items here -->
+                <div class="carousel-item px-3">
+                    <div class="border-2 border-gold rounded-lg overflow-hidden">
+                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/4Y7T4t23AiM?start=137" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="carousel-item px-3">
+                    <div class="border-2 border-gold rounded-lg overflow-hidden">
+                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/kSYN8Ez1YpY?start=245" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="carousel-item px-3">
+                    <div class="border-2 border-gold rounded-lg overflow-hidden">
+                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/TtwRsnzXHiM?start=394" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="carousel-item px-3">
+                    <div class="border-2 border-gold rounded-lg overflow-hidden">
+                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/h4_fuKJHz5E?start=245" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="carousel-item px-3">
+                    <div class="border-2 border-gold rounded-lg overflow-hidden">
+                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/ZsgK0lzA0PE?start=11" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
 
-            <!-- Buttons -->
-            <button id="video-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
+            <!-- Video Carousel Buttons -->
+            <button id="carousel-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
                 <i data-feather="chevron-left"></i>
             </button>
-            <button id="video-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
+            <button id="carousel-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
                 <i data-feather="chevron-right"></i>
             </button>
         </div>
 
         <!-- Photo Carousel -->
         <div class="relative overflow-hidden">
-            <div class="flex gap-6 transition-transform duration-700 ease-in-out" id="photo-carousel-track">
+            <div id="photo-carousel-track" class="flex gap-6 transition-transform duration-700 ease-in-out">
                 <!-- Photo Items -->
                 <script>
                     const photos = [
@@ -250,7 +274,7 @@
                 </script>
             </div>
 
-            <!-- Buttons -->
+            <!-- Photo Carousel Buttons -->
             <button id="photo-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
                 <i data-feather="chevron-left"></i>
             </button>
@@ -261,7 +285,7 @@
     </div>
 </section>
 
-<!-- Modal -->
+<!-- Modal for Enlarged Photos -->
 <div id="photoModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50">
     <span class="absolute top-5 right-5 text-3xl text-cream cursor-pointer" onclick="closeModal()">&times;</span>
     <img id="modalImage" src="" class="max-h-[90%] max-w-[90%] rounded-lg border-2 border-gold" alt="Enlarged Photo">
@@ -276,29 +300,37 @@ function closeModal() {
     document.getElementById('photoModal').classList.add('hidden');
 }
 
-// Carousel Scroll Logic
-function setupCarousel(prevBtn, nextBtn, track) {
-    const trackEl = document.getElementById(track);
-    const prev = document.getElementById(prevBtn);
-    const next = document.getElementById(nextBtn);
-    let scrollAmount = 0;
-    const itemWidth = trackEl.querySelector('.carousel-item').offsetWidth + 24; // includes gap
+// Video Carousel Scroll (unchanged)
+const videoTrack = document.getElementById('carousel-track');
+let videoScroll = 0;
+const videoItemWidth = videoTrack.querySelector('.carousel-item').offsetWidth + 24;
 
-    next.addEventListener('click', () => {
-        scrollAmount += itemWidth;
-        if(scrollAmount > trackEl.scrollWidth - trackEl.clientWidth) scrollAmount = trackEl.scrollWidth - trackEl.clientWidth;
-        trackEl.style.transform = `translateX(-${scrollAmount}px)`;
-    });
+document.getElementById('carousel-next').addEventListener('click', () => {
+    videoScroll += videoItemWidth;
+    if(videoScroll > videoTrack.scrollWidth - videoTrack.clientWidth) videoScroll = videoTrack.scrollWidth - videoTrack.clientWidth;
+    videoTrack.style.transform = `translateX(-${videoScroll}px)`;
+});
+document.getElementById('carousel-prev').addEventListener('click', () => {
+    videoScroll -= videoItemWidth;
+    if(videoScroll < 0) videoScroll = 0;
+    videoTrack.style.transform = `translateX(-${videoScroll}px)`;
+});
 
-    prev.addEventListener('click', () => {
-        scrollAmount -= itemWidth;
-        if(scrollAmount < 0) scrollAmount = 0;
-        trackEl.style.transform = `translateX(-${scrollAmount}px)`;
-    });
-}
+// Photo Carousel Scroll
+const photoTrack = document.getElementById('photo-carousel-track');
+let photoScroll = 0;
+const photoItemWidth = photoTrack.querySelector('.carousel-item').offsetWidth + 24;
 
-setupCarousel('video-prev','video-next','video-carousel-track');
-setupCarousel('photo-prev','photo-next','photo-carousel-track');
+document.getElementById('photo-next').addEventListener('click', () => {
+    photoScroll += photoItemWidth;
+    if(photoScroll > photoTrack.scrollWidth - photoTrack.clientWidth) photoScroll = photoTrack.scrollWidth - photoTrack.clientWidth;
+    photoTrack.style.transform = `translateX(-${photoScroll}px)`;
+});
+document.getElementById('photo-prev').addEventListener('click', () => {
+    photoScroll -= photoItemWidth;
+    if(photoScroll < 0) photoScroll = 0;
+    photoTrack.style.transform = `translateX(-${photoScroll}px)`;
+});
 </script>
 
 

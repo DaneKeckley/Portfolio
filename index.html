@@ -294,20 +294,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function getVisibleCount() {
     const width = window.innerWidth;
-    if (width >= 1024) return 3; // Desktop
-    if (width >= 640) return 2;  // Tablet
-    return 1;                     // Mobile
+    if (width >= 1024) return 2; // Desktop shows 2 videos
+    if (width >= 640) return 2;  // Tablet shows 2 videos
+    return 1;                     // Mobile shows 1 video
   }
 
   let visibleCount = getVisibleCount();
 
-  // Clone first & last sets for infinite loop
-  for (let i = 0; i < visibleCount; i++) {
-    track.appendChild(items[i].cloneNode(true));
-    track.insertBefore(items[items.length - 1 - i].cloneNode(true), items[0]);
+  // Remove any existing clones
+  items.forEach(item => item.classList.remove('clone'));
+
+  function setupCarousel() {
+    items = Array.from(document.querySelectorAll('.carousel-item'));
+
+    // Clear any old clones
+    const clones = track.querySelectorAll('.clone');
+    clones.forEach(clone => clone.remove());
+
+    // Clone first & last sets for seamless looping
+    for (let i = 0; i < visibleCount; i++) {
+      const firstClone = items[i].cloneNode(true);
+      firstClone.classList.add('clone');
+      track.appendChild(firstClone);
+
+      const lastClone = items[items.length - 1 - i].cloneNode(true);
+      lastClone.classList.add('clone');
+      track.insertBefore(lastClone, items[0]);
+    }
+
+    items = Array.from(document.querySelectorAll('.carousel-item'));
+    currentIndex = visibleCount;
+    updateCarousel(false);
   }
 
-  items = Array.from(document.querySelectorAll('.carousel-item'));
   let currentIndex = visibleCount;
 
   function updateCarousel(animate = true) {
@@ -339,12 +358,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   window.addEventListener('resize', () => {
-    visibleCount = getVisibleCount();
-    updateCarousel(false);
+    const newVisible = getVisibleCount();
+    if (newVisible !== visibleCount) {
+      visibleCount = newVisible;
+      setupCarousel();
+    }
   });
 
-  updateCarousel(false);
+  setupCarousel();
 });
+
 </script>
 
 

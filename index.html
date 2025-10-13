@@ -240,85 +240,118 @@
 
 
     
-    <!-- Gallery Section -->
+    <!-- GALLERY SECTION -->
 <section id="gallery" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-bold text-center mb-12 text-cream">
-            <span class="border-b-2 border-gold pb-2">GALLERY</span>
-        </h2>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-bold text-center mb-12 text-cream">
+      <span class="border-b-2 border-gold pb-2">GALLERY</span>
+    </h2>
 
-<!-- Video Carousel Section -->
-<div class="relative overflow-hidden mt-12">
-    <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out" style="gap:1rem;">
-        <!-- Video Items -->
-        <div class="carousel-item flex-shrink-0" style="flex-basis: calc(33.333% - 0.75rem);">
-            <div class="border-2 border-gold rounded-lg overflow-hidden">
-                <iframe class="w-full h-64" src="https://www.youtube.com/embed/c8vsu3dp_Ow?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-        <div class="carousel-item flex-shrink-0" style="flex-basis: calc(33.333% - 0.75rem);">
-            <div class="border-2 border-gold rounded-lg overflow-hidden">
-                <iframe class="w-full h-64" src="https://www.youtube.com/embed/HZeioUxnKdw?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-        <div class="carousel-item flex-shrink-0" style="flex-basis: calc(33.333% - 0.75rem);">
-            <div class="border-2 border-gold rounded-lg overflow-hidden">
-                <iframe class="w-full h-64" src="https://www.youtube.com/embed/BZhbLHZDaLA?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-        <div class="carousel-item flex-shrink-0" style="flex-basis: calc(33.333% - 0.75rem);">
-            <div class="border-2 border-gold rounded-lg overflow-hidden">
-                <iframe class="w-full h-64" src="https://www.youtube.com/embed/4Y7T4t23AiM?start=137" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-        <div class="carousel-item flex-shrink-0" style="flex-basis: calc(33.333% - 0.75rem);">
-            <div class="border-2 border-gold rounded-lg overflow-hidden">
-                <iframe class="w-full h-64" src="https://www.youtube.com/embed/kSYN8Ez1YpY?start=245" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-        <div class="carousel-item flex-shrink-0" style="flex-basis: calc(33.333% - 0.75rem);">
-            <div class="border-2 border-gold rounded-lg overflow-hidden">
-                <iframe class="w-full h-64" src="https://www.youtube.com/embed/TtwRsnzXHiM?start=394" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-        <div class="carousel-item flex-shrink-0" style="flex-basis: calc(33.333% - 0.75rem);">
-            <div class="border-2 border-gold rounded-lg overflow-hidden">
-                <iframe class="w-full h-64" src="https://www.youtube.com/embed/h4_fuKJHz5E?start=245" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-        <div class="carousel-item flex-shrink-0" style="flex-basis: calc(33.333% - 0.75rem);">
-            <div class="border-2 border-gold rounded-lg overflow-hidden">
-                <iframe class="w-full h-64" src="https://www.youtube.com/embed/ZsgK0lzA0PE?start=11" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
+    <!-- Carousel Container -->
+    <div class="relative overflow-hidden">
+      <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out">
 
-    <!-- Video Carousel Buttons -->
-    <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
+        <!-- Existing Videos -->
+        <div class="carousel-item px-3">
+          <div class="border-2 border-gold rounded-lg overflow-hidden">
+            <iframe class="w-full h-64" src="https://www.youtube.com/embed/HZeioUxnKdw?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="carousel-item px-3">
+          <div class="border-2 border-gold rounded-lg overflow-hidden">
+            <iframe class="w-full h-64" src="https://www.youtube.com/embed/c8vsu3dp_Ow?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="carousel-item px-3">
+          <div class="border-2 border-gold rounded-lg overflow-hidden">
+            <iframe class="w-full h-64" src="https://www.youtube.com/embed/BZhbLHZDaLA?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="carousel-item px-3">
+          <div class="border-2 border-gold rounded-lg overflow-hidden">
+            <iframe class="w-full h-64" src="https://www.youtube.com/embed/4Y7T4t23AiM?start=24" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="carousel-item px-3">
+          <div class="border-2 border-gold rounded-lg overflow-hidden">
+            <iframe class="w-full h-64" src="https://www.youtube.com/embed/kSYN8Ez1YpY?start=245" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="carousel-item px-3">
+          <div class="border-2 border-gold rounded-lg overflow-hidden">
+            <iframe class="w-full h-64" src="https://www.youtube.com/embed/TtwRsnzXHiM?start=394" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="carousel-item px-3">
+          <div class="border-2 border-gold rounded-lg overflow-hidden">
+            <iframe class="w-full h-64" src="https://www.youtube.com/embed/h4_fuKJHz5E?start=245" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="carousel-item px-3">
+          <div class="border-2 border-gold rounded-lg overflow-hidden">
+            <iframe class="w-full h-64" src="https://www.youtube.com/embed/ZsgK0lzA0PE?start=11" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <!-- New Videos -->
+        <div class="carousel-item px-3">
+          <div class="border-2 border-gold rounded-lg overflow-hidden">
+            <iframe class="w-full h-64" src="https://www.youtube.com/embed/EIjzqcql_sc?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="carousel-item px-3">
+          <div class="border-2 border-gold rounded-lg overflow-hidden">
+            <iframe class="w-full h-64" src="https://www.youtube.com/embed/RnG-EjOX0_o?start=624" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="carousel-item px-3">
+          <div class="border-2 border-gold rounded-lg overflow-hidden">
+            <iframe class="w-full h-64" src="https://www.youtube.com/embed/mTc5LFDyAzA?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="carousel-item px-3">
+          <div class="border-2 border-gold rounded-lg overflow-hidden">
+            <iframe class="w-full h-64" src="https://www.youtube.com/embed/pamThbZFalY?start=33" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Carousel Buttons -->
+      <button id="carousel-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-cream p-4 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
         <i data-feather="chevron-left"></i>
-    </button>
-    <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
+      </button>
+      <button id="carousel-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-cream p-4 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
         <i data-feather="chevron-right"></i>
-    </button>
-</div>
+      </button>
+    </div>
+  </div>
+</section>
 
+<!-- Carousel Loop Script -->
 <script>
-const track = document.getElementById('carousel-track');
-let scrollPos = 0;
-const itemWidth = track.querySelector('.carousel-item').offsetWidth + 16;
+const carouselTrack = document.getElementById('carousel-track');
+const carouselItems = carouselTrack.querySelectorAll('.carousel-item');
+const totalVideos = carouselItems.length;
 
-document.getElementById('next').addEventListener('click', () => {
-    scrollPos += itemWidth;
-    if (scrollPos > track.scrollWidth - track.clientWidth) scrollPos = track.scrollWidth - track.clientWidth;
-    track.style.transform = `translateX(-${scrollPos}px)`;
+let videoIndex = 0;
+
+function updateCarousel() {
+  const itemWidth = carouselItems[0].offsetWidth + 24; // width + gap
+  carouselTrack.style.transform = `translateX(-${videoIndex * itemWidth}px)`;
+}
+
+document.getElementById('carousel-next').addEventListener('click', () => {
+  videoIndex = (videoIndex + 1) % totalVideos; // loops forward
+  updateCarousel();
 });
 
-document.getElementById('prev').addEventListener('click', () => {
-    scrollPos -= itemWidth;
-    if (scrollPos < 0) scrollPos = 0;
-    track.style.transform = `translateX(-${scrollPos}px)`;
+document.getElementById('carousel-prev').addEventListener('click', () => {
+  videoIndex = (videoIndex - 1 + totalVideos) % totalVideos; // loops backward
+  updateCarousel();
 });
 </script>
+
 
 
 <!-- Photo Gallery Section -->
@@ -344,78 +377,147 @@ document.getElementById('prev').addEventListener('click', () => {
 </div>
 
 <script>
-const photos = [
-    { src:'21433528.jpeg', focus:'0%' },
-    { src:'D32BC33C-2F22-4594-A752-5518E10C4199.jpg', focus:'0%' },
-    { src:'21433515.jpeg', focus:'0%' },
-    { src:'21433509.jpeg', focus:'40%' },
-    { src:'21433524.jpeg', focus:'0%' },
-    { src:'IMG_5856.JPG', focus:'0%' },
-    { src:'21433576.jpeg', focus:'0%' },
-    { src:'21433542.jpeg', focus:'0%' },
-    { src:'IMG_9988.JPG', focus:'10%' },
-    { src:'IMG_5872.JPG', focus:'0%' },
-    { src:'21433502.jpeg', focus:'0%' },
-    { src:'IMG_5861.JPG', focus:'0%' },
-    { src:'21433546.jpeg', focus:'0%' },
-    { src:'IMG_9981.JPG', focus:'5%' },
-    { src:'21433567.jpeg', focus:'0%' },
-    { src:'21433503.jpeg', focus:'33%' },
-    { src:'IMG_5879.JPG', focus:'0%' },
-    { src:'F45365FF-AA72-4825-A3DF-E4DBEF3E0DD4.jpg', focus:'0%' },
-    { src:'21433588.jpeg', focus:'0%' },
-    { src:'21239384.jpg', focus:'0%' },
-    { src:'21433529.jpeg', focus:'0%' }
-];
+document.addEventListener('DOMContentLoaded', () => {
+    const photoTrack = document.getElementById('photo-carousel-track');
+    const photosData = [
+        { src:'21433528.jpeg', focus:'0%' },
+        { src:'D32BC33C-2F22-4594-A752-5518E10C4199.jpg', focus:'0%' },
+        { src:'21433515.jpeg', focus:'0%' }, 
+        { src:'21433509.jpeg', focus:'40%' },
+        { src:'21433524.jpeg', focus:'0%' },
+        { src:'IMG_5856.JPG', focus:'0%' },
+        { src:'21433576.jpeg', focus:'0%' },
+        { src:'21433542.jpeg', focus:'0%' },
+        { src:'IMG_9988.JPG', focus:'10%' },
+        { src:'IMG_5872.JPG', focus:'0%' },
+        { src:'21433502.jpeg', focus:'0%' },
+        { src:'IMG_5861.JPG', focus:'0%' },
+        { src:'21433546.jpeg', focus:'0%' },
+        { src:'IMG_9981.JPG', focus:'5%' },
+        { src:'21433567.jpeg', focus:'0%' },
+        { src:'21433503.jpeg', focus:'33%' },
+        { src:'IMG_5879.JPG', focus:'0%' },
+        { src:'F45365FF-AA72-4825-A3DF-E4DBEF3E0DD4.jpg', focus:'0%' },
+        { src:'21433588.jpeg', focus:'0%' },
+        { src:'21239384.jpg', focus:'0%' },
+        { src:'21433529.jpeg', focus:'0%' }
+    ];
 
-const track = document.getElementById('photo-carousel-track');
+    let originalPhotoItems = [];
 
-photos.forEach(photo => {
-    const div = document.createElement('div');
-    div.className = "carousel-item flex-shrink-0";
-    div.style.flexBasis = "calc(25% - 0.75rem)";
+    function createPhotoItem(photo) {
+        const div = document.createElement('div');
+        div.className = "carousel-item flex-shrink-0";
 
-    const innerDiv = document.createElement('div');
-    innerDiv.className = "border-2 border-gold rounded-lg overflow-hidden cursor-pointer";
+        const innerDiv = document.createElement('div');
+        innerDiv.className = "border-2 border-gold rounded-lg overflow-hidden cursor-pointer";
 
-    const img = document.createElement('img');
-    img.src = `assets/images/${photo.src}`;
-    img.alt = "Model Photo";
-    img.dataset.focus = photo.focus;
-    img.className = "w-full h-64 object-cover";
-    img.onclick = () => openModal(img);
-    img.style.objectPosition = `50% ${photo.focus}`;
+        const img = document.createElement('img');
+        img.src = `assets/images/${photo.src}`;
+        img.alt = "Model Photo";
+        img.dataset.focus = photo.focus;
+        img.className = "w-full h-64 object-cover";
+        img.style.objectPosition = `50% ${photo.focus}`;
+        img.onclick = () => openModal(img);
 
-    innerDiv.appendChild(img);
-    div.appendChild(innerDiv);
-    track.appendChild(div);
-});
+        innerDiv.appendChild(img);
+        div.appendChild(innerDiv);
+        return div;
+    }
 
-// Modal functions
-function openModal(img) {
-    document.getElementById('modalImage').src = img.src;
-    document.getElementById('photoModal').classList.remove('hidden');
-}
-function closeModal() {
-    document.getElementById('photoModal').classList.add('hidden');
-}
+    // Populate track
+    photosData.forEach(photo => {
+        const item = createPhotoItem(photo);
+        photoTrack.appendChild(item);
+        originalPhotoItems.push(item);
+    });
 
-// Photo Carousel Scroll
-let photoScroll = 0;
-const photoItemWidth = track.querySelector('.carousel-item').offsetWidth + 16;
+    // Clone items for infinite scroll
+    function clonePhotoItems() {
+        photoTrack.querySelectorAll('.clone').forEach(c => c.remove());
 
-document.getElementById('photo-next').addEventListener('click', () => {
-    photoScroll += photoItemWidth;
-    if(photoScroll > track.scrollWidth - track.clientWidth) photoScroll = track.scrollWidth - track.clientWidth;
-    track.style.transform = `translateX(-${photoScroll}px)`;
-});
-document.getElementById('photo-prev').addEventListener('click', () => {
-    photoScroll -= photoItemWidth;
-    if(photoScroll < 0) photoScroll = 0;
-    track.style.transform = `translateX(-${photoScroll}px)`;
+        originalPhotoItems.forEach(item => {
+            const clone = item.cloneNode(true);
+            clone.classList.add('clone');
+            photoTrack.appendChild(clone);
+        });
+
+        setPhotoWidths();
+        updatePhotoCarousel(false);
+    }
+
+    function getVisibleCount() {
+        if (window.innerWidth >= 1024) return 4;
+        if (window.innerWidth >= 768) return 3;
+        if (window.innerWidth >= 640) return 2;
+        return 1;
+    }
+
+    let visibleCount = getVisibleCount();
+    let currentIndex = 0;
+
+    function setPhotoWidths() {
+        const widthPercentage = 100 / visibleCount;
+        photoTrack.querySelectorAll('.carousel-item').forEach(item => {
+            item.style.width = `${widthPercentage}%`;
+        });
+    }
+
+    function updatePhotoCarousel(animate = true) {
+        photoTrack.style.transition = animate ? 'transform 0.7s ease-in-out' : 'none';
+        const translateX = -(currentIndex * (100 / visibleCount));
+        photoTrack.style.transform = `translateX(${translateX}%)`;
+    }
+
+    document.getElementById('photo-next').addEventListener('click', () => {
+        currentIndex++;
+        updatePhotoCarousel();
+
+        if (currentIndex >= originalPhotoItems.length) {
+            setTimeout(() => {
+                currentIndex = 0;
+                updatePhotoCarousel(false);
+            }, 710);
+        }
+    });
+
+    document.getElementById('photo-prev').addEventListener('click', () => {
+        if (currentIndex === 0) {
+            currentIndex = originalPhotoItems.length;
+            updatePhotoCarousel(false);
+            setTimeout(() => {
+                currentIndex--;
+                updatePhotoCarousel();
+            }, 20);
+        } else {
+            currentIndex--;
+            updatePhotoCarousel();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        const newVisibleCount = getVisibleCount();
+        if (newVisibleCount !== visibleCount) {
+            visibleCount = newVisibleCount;
+            currentIndex = 0;
+            setPhotoWidths();
+            updatePhotoCarousel(false);
+        }
+    });
+
+    clonePhotoItems();
+
+    // Modal functions
+    function openModal(img) {
+        document.getElementById('modalImage').src = img.src;
+        document.getElementById('photoModal').classList.remove('hidden');
+    }
+
+    window.closeModal = function() {
+        document.getElementById('photoModal').classList.add('hidden');
+    }
 });
 </script>
-
 
   
 

@@ -24,7 +24,7 @@
 
     <script>
         // Initialize EmailJS
-        emailjs.init('YOUR_PUBLIC_KEY_HERE');
+        emailjs.init('o-XjlNLzlQ99Lrq_k');
 
         tailwind.config = {
             theme: {
@@ -474,7 +474,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+        emailjs.sendForm('service_pfh0zod', 'template_4miydur', this)
             .then(() => {
                 feedback.textContent = "Message sent successfully!";
                 feedback.classList.remove('hidden');

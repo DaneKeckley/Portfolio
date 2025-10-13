@@ -308,12 +308,12 @@
     <!-- Carousel Track -->
     <div id="photo-carousel-track" class="flex transition-transform duration-700 ease-in-out" style="gap:1rem;"></div>
 
-    <!-- Carousel Buttons -->
-    <button id="photo-prev" class="absolute top-1/2 left-2 transform -translate-y-1/2 text-cream p-3 sm:p-4 md:p-5 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-20 flex items-center justify-center">
-        <i data-feather="chevron-left" class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"></i>
+    <!-- Photo Carousel Buttons (matching video scroller buttons) -->
+    <button id="photo-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
+        <i data-feather="chevron-left"></i>
     </button>
-    <button id="photo-next" class="absolute top-1/2 right-2 transform -translate-y-1/2 text-cream p-3 sm:p-4 md:p-5 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-20 flex items-center justify-center">
-        <i data-feather="chevron-right" class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"></i>
+    <button id="photo-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
+        <i data-feather="chevron-right"></i>
     </button>
 
 </div>
@@ -327,10 +327,10 @@
 <script>
 const photos = [
     { src:'21239384.jpg', focus:'0%' },
-    { src:'IMG_9981.JPG', focus:'0%' },
+    { src:'IMG_9981.JPG', focus:'5%' },
     { src:'IMG_9988.JPG', focus:'10%' },
     { src:'21433502.jpeg', focus:'0%' },
-    { src:'21433503.jpeg', focus:'30%' },
+    { src:'21433503.jpeg', focus:'33%' },
     { src:'21433509.jpeg', focus:'40%' },
     { src:'21433515.jpeg', focus:'0%' },
     { src:'21433524.jpeg', focus:'0%' },

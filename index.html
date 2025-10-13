@@ -304,13 +304,31 @@
 
 <!-- Photo Gallery Section -->
 <div class="relative overflow-hidden">
+
+    <!-- Carousel Track -->
     <div id="photo-carousel-track" class="flex transition-transform duration-700 ease-in-out" style="gap:1rem;"></div>
+
+    <!-- Carousel Buttons -->
+    <button id="photo-prev" class="absolute top-1/2 left-2 transform -translate-y-1/2 text-cream p-3 sm:p-4 md:p-5 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-20 flex items-center justify-center">
+        <i data-feather="chevron-left" class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"></i>
+    </button>
+    <button id="photo-next" class="absolute top-1/2 right-2 transform -translate-y-1/2 text-cream p-3 sm:p-4 md:p-5 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-20 flex items-center justify-center">
+        <i data-feather="chevron-right" class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"></i>
+    </button>
+
+</div>
+
+<!-- Modal for Enlarged Photos -->
+<div id="photoModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50">
+    <span class="absolute top-5 right-5 text-3xl text-cream cursor-pointer" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" class="max-h-[90%] max-w-[90%] rounded-lg border-2 border-gold" alt="Enlarged Photo">
+</div>
 
 <script>
 const photos = [
     { src:'21239384.jpg', focus:'0%' },
     { src:'IMG_9981.JPG', focus:'0%' },
-    { src:'IMG_9988.JPG', focus:'0%' },
+    { src:'IMG_9988.JPG', focus:'10%' },
     { src:'21433502.jpeg', focus:'0%' },
     { src:'21433503.jpeg', focus:'30%' },
     { src:'21433509.jpeg', focus:'40%' },
@@ -341,34 +359,14 @@ photos.forEach(photo => {
     img.dataset.focus = photo.focus;
     img.className = "w-full h-64 object-cover";
     img.onclick = () => openModal(img);
-
-    // Apply the object position dynamically
     img.style.objectPosition = `50% ${photo.focus}`;
 
     innerDiv.appendChild(img);
     div.appendChild(innerDiv);
     track.appendChild(div);
 });
-</script>
 
-    </div>
-
-    <!-- Photo Carousel Buttons -->
-    <button id="photo-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
-        <i data-feather="chevron-left"></i>
-    </button>
-    <button id="photo-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
-        <i data-feather="chevron-right"></i>
-    </button>
-</div>
-
-<!-- Modal for Enlarged Photos -->
-<div id="photoModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50">
-    <span class="absolute top-5 right-5 text-3xl text-cream cursor-pointer" onclick="closeModal()">&times;</span>
-    <img id="modalImage" src="" class="max-h-[90%] max-w-[90%] rounded-lg border-2 border-gold" alt="Enlarged Photo">
-</div>
-
-<script>
+// Modal functions
 function openModal(img) {
     document.getElementById('modalImage').src = img.src;
     document.getElementById('photoModal').classList.remove('hidden');
@@ -378,22 +376,20 @@ function closeModal() {
 }
 
 // Photo Carousel Scroll
-const photoTrack = document.getElementById('photo-carousel-track');
 let photoScroll = 0;
-const photoItemWidth = photoTrack.querySelector('.carousel-item').offsetWidth + 16; // includes gap
+const photoItemWidth = track.querySelector('.carousel-item').offsetWidth + 16;
 
 document.getElementById('photo-next').addEventListener('click', () => {
     photoScroll += photoItemWidth;
-    if(photoScroll > photoTrack.scrollWidth - photoTrack.clientWidth) photoScroll = photoTrack.scrollWidth - photoTrack.clientWidth;
-    photoTrack.style.transform = `translateX(-${photoScroll}px)`;
+    if(photoScroll > track.scrollWidth - track.clientWidth) photoScroll = track.scrollWidth - track.clientWidth;
+    track.style.transform = `translateX(-${photoScroll}px)`;
 });
 document.getElementById('photo-prev').addEventListener('click', () => {
     photoScroll -= photoItemWidth;
     if(photoScroll < 0) photoScroll = 0;
-    photoTrack.style.transform = `translateX(-${photoScroll}px)`;
+    track.style.transform = `translateX(-${photoScroll}px)`;
 });
 </script>
-
 
 
   

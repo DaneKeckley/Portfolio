@@ -23,7 +23,8 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
     <script>
-
+        // Initialize EmailJS
+        emailjs.init('YOUR_PUBLIC_KEY_HERE');
 
         tailwind.config = {
             theme: {
@@ -177,7 +178,7 @@
                 </div>
                 <div class="audio-card bg-velvet-800 rounded-lg overflow-hidden p-6 transition-all duration-300">
                     <div class="flex flex-col gap-4">
-                        <h3 class="text-xl font-bold text-cream">Promo Demo</h3>
+                        <h3 class="text-xl font-bold text-cream">Commercial Demo</h3>
                         <audio class="w-full" controls preload="metadata">
                             <source src="/assets/demos/commercial.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
@@ -188,331 +189,284 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 text-cream">
+                <span class="border-b-2 border-gold pb-2">GALLERY</span>
+            </h2>
+
+            <!-- Carousel Container -->
+            <div class="relative overflow-hidden">
+                <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out">
+                    <!-- Video Items -->
+                    <div class="carousel-item px-3">
+                        <div class="border-2 border-gold rounded-lg overflow-hidden">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/c8vsu3dp_Ow?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="carousel-item px-3">
+                        <div class="border-2 border-gold rounded-lg overflow-hidden">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/HZeioUxnKdw?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="carousel-item px-3">
+                        <div class="border-2 border-gold rounded-lg overflow-hidden">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/BZhbLHZDaLA?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="carousel-item px-3">
+                        <div class="border-2 border-gold rounded-lg overflow-hidden">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/4Y7T4t23AiM?start=137" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="carousel-item px-3">
+                        <div class="border-2 border-gold rounded-lg overflow-hidden">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/kSYN8Ez1YpY?start=245" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="carousel-item px-3">
+                        <div class="border-2 border-gold rounded-lg overflow-hidden">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/TtwRsnzXHiM?start=394" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="carousel-item px-3">
+                        <div class="border-2 border-gold rounded-lg overflow-hidden">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/h4_fuKJHz5E?start=245" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="carousel-item px-3">
+                        <div class="border-2 border-gold rounded-lg overflow-hidden">
+                            <iframe class="w-full h-64" src="https://www.youtube.com/embed/ZsgK0lzA0PE?start=11" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Buttons -->
+                <button id="carousel-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
+                    <i data-feather="chevron-left"></i>
+                </button>
+                <button id="carousel-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
+                    <i data-feather="chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
 
     <!-- About Section -->
-<section id="about" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col lg:flex-row items-center gap-12">
-            <!-- Headshot -->
-            <div class="lg:w-1/2 w-full">
-                <div class="relative group">
-                    <img src="/assets/images/DaneKeckleyModelHeadshot.jpg" 
-                         alt="Dane Keckley" 
-                         class="w-full rounded-lg shadow-xl transform group-hover:scale-105 transition-transform duration-300">
+    <section id="about" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/3">
+                    <div class="relative group">
+                        <img src="/assets/images/DaneKeckleyModelHeadshot.jpg" alt="Dane Keckley" class="w-full rounded-lg shadow-xl transform group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-[#340E12]/10 rounded-lg border-2 border-[#340E12]/30 group-hover:opacity-0 transition-opacity duration-300"></div>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Text -->
-            <div class="lg:w-1/2 w-full">
-                <h2 class="text-4xl font-bold mb-8 text-cream">
-                    <span class="border-b-2 border-gold pb-2">ABOUT</span>
-                </h2>
-                <div class="space-y-6 text-cream/90 text-lg leading-relaxed">
-                    <p>
-                        Dane Keckley is a professional voice actor whose craft lies in transforming words into living, breathing characters. 
-                        Known for his rich, versatile voice and refined control, Dane specializes in animation, delivering performances that range from heartfelt heroes to complex villains. 
-                        Whether voicing a spirited protagonist or an otherworldly creature, Dane brings a cinematic sensibility and a nuanced understanding of tone and rhythm to every session.
-                    </p>
-                    <p>
-                        Dane has built his career from the ground up and has landed himself in a multifaceted universe, playing diverging characters such as Yan Shu-Wen and the Dark One in The Bridge Curse 2,
-                        Gaia in Super Snail X, Patriot Sam in Enigma, Omus in Lone Soul, and William Afton and Michael Schmidt in The Return to Freddy's. 
-                    </p>
-                    <p>
-                        In addition to his variety in vocal range, Dane has versatility in talent. 
-                        He has made his mark in the modeling world, walking the Nordstrom runway and appearing in publications such as Vessel, Artells, Marika, and Top Posters. 
-                        These experiences amplify his ability and have shaped his creative presence to embody character through subtlety and expression.
-                    </p>
-                    <p>
-                        With a voice that carries warmth, power, and range, Dane Keckley continues to build a reputation as an accomplished performer who can adapt, elevate, and captivate. 
-                        For casting directors and creators seeking a voice that can give their worlds dimension, Dane offers not just sound, but <strong>soul.</strong> 
-                    </p>
-                </div>
-                <div class="flex flex-col sm:flex-row gap-4 mt-10">
-                    <a href="/assets/images/DaneKeckleyResume.pdf" target="_blank" class="inline-flex items-center bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-full transition-all duration-300">
-                        <i data-feather="eye" class="mr-2"></i> VIEW RESUME
-                    </a>
-                    <a href="/assets/images/DaneKeckleyResume.pdf" download class="inline-flex items-center bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-full transition-all duration-300">
-                        <i data-feather="download" class="mr-2"></i> DOWNLOAD RESUME
-                    </a>
+                <div class="lg:w-2/3">
+                    <h2 class="text-4xl font-bold mb-8 text-cream">
+                        <span class="border-b-2 border-gold pb-2">ABOUT</span>
+                    </h2>
+                    <div class="space-y-6 text-cream/90 text-lg leading-relaxed">
+                        <p>
+                            Dane Keckley is a professional voice actor whose craft lies in transforming words into living, breathing characters. 
+                            Known for his rich, versatile voice and refined control, Dane specializes in animation, delivering performances that range from heartfelt heroes to complex villains. 
+                            Whether voicing a spirited protagonist or an otherworldly creature, Dane brings a cinematic sensibility and a nuanced understanding of tone and rhythm to every session.
+                        </p>
+                        <p>
+                            Dane has built his career from the ground up and has landed himself in a multifaceted universe, playing diverging characters such as Yan Shu-Wen and the Dark One in The Bridge Curse 2,
+                            Gaia in Super Snail X, Patriot Sam in Enigma, Omus in Lone Soul, and William Afton and Michael Schmidt in The Return to Freddy's. 
+                        </p>
+                        <p>
+                            In addition to his variety in vocal range, Dane has versatility in talent. 
+                            He has made his mark in the modeling world, walking the Nordstrom runway and appearing in publications such as Vessel, Artells, Marika, and Top Posters. 
+                            These experiences amplify his ability and have shaped his creative presence to embody character through subtlety and expression.
+                        </p>
+                        <p>
+                            With a voice that carries warmth, power, and range, Dane Keckley continues to build a reputation as an accomplished performer who can adapt, elevate, and captivate. 
+                            For casting directors and creators seeking a voice that can give their worlds dimension, Dane offers not just sound, but <strong>soul.</strong> 
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-10">
+                        <a href="/assets/images/DaneKeckleyResume.pdf" target="_blank" class="inline-flex items-center bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-full transition-all duration-300">
+                            <i data-feather="eye" class="mr-2"></i> VIEW RESUME
+                        </a>
+                        <a href="/assets/images/DaneKeckleyResume.pdf" download class="inline-flex items-center bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-full transition-all duration-300">
+                            <i data-feather="download" class="mr-2"></i> DOWNLOAD RESUME
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Gallery Section -->
-<section id="gallery" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-bold text-center mb-12 text-cream">
-            <span class="border-b-2 border-gold pb-2">GALLERY</span>
-        </h2>
-
-        <!-- Carousel Container -->
-        <div class="relative overflow-hidden">
-            <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out">
-
-                <!-- Existing Videos -->
-                <div class="carousel-item px-3">
-                    <div class="border-2 border-gold rounded-lg overflow-hidden">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/HZeioUxnKdw?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="carousel-item px-3">
-                    <div class="border-2 border-gold rounded-lg overflow-hidden">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/c8vsu3dp_Ow?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="carousel-item px-3">
-                    <div class="border-2 border-gold rounded-lg overflow-hidden">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/BZhbLHZDaLA?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="carousel-item px-3">
-                    <div class="border-2 border-gold rounded-lg overflow-hidden">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/4Y7T4t23AiM?start=24" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="carousel-item px-3">
-                    <div class="border-2 border-gold rounded-lg overflow-hidden">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/kSYN8Ez1YpY?start=245" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="carousel-item px-3">
-                    <div class="border-2 border-gold rounded-lg overflow-hidden">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/TtwRsnzXHiM?start=394" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="carousel-item px-3">
-                    <div class="border-2 border-gold rounded-lg overflow-hidden">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/h4_fuKJHz5E?start=245" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="carousel-item px-3">
-                    <div class="border-2 border-gold rounded-lg overflow-hidden">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/ZsgK0lzA0PE?start=11" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                    </div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-cream mb-2">NAME</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-cream mb-2">EMAIL</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-cream mb-2">MESSAGE</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
+                            <i data-feather="send"></i> SEND MESSAGE
+                        </button>
+                    </form>
                 </div>
 
-                <!-- New Videos -->
-                <div class="carousel-item px-3">
-                    <div class="border-2 border-gold rounded-lg overflow-hidden">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/EIjzqcql_sc?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="carousel-item px-3">
-                    <div class="border-2 border-gold rounded-lg overflow-hidden">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/RnG-EjOX0_o?start=624" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="carousel-item px-3">
-                    <div class="border-2 border-gold rounded-lg overflow-hidden">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/mTc5LFDyAzA?start=0" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="carousel-item px-3">
-                    <div class="border-2 border-gold rounded-lg overflow-hidden">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/pamThbZFalY?start=33" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Carousel Buttons -->
-            <button id="carousel-prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
-                <i data-feather="chevron-left"></i>
-            </button>
-            <button id="carousel-next" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-cream p-3 bg-velvet-800/80 rounded-full hover:bg-velvet-800 z-10">
-                <i data-feather="chevron-right"></i>
-            </button>
-        </div>
-    </div>
-</section>
-
-
-   <!-- Contact Section -->
-<section id="contact" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col lg:flex-row gap-12">
-            <div class="lg:w-1/2">
-                <form id="contact-form" class="space-y-6">
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-cream mb-2">NAME</label>
-                        <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-cream mb-2">EMAIL</label>
-                        <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500">
-                    </div>
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-cream mb-2">MESSAGE</label>
-                        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500"></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
-                        <i data-feather="send"></i> SEND MESSAGE
-                    </button>
-                </form>
-                <!-- Feedback message will appear here -->
-                <div id="form-feedback" class="mt-4 text-center text-gold hidden"></div>
-            </div>
-
-            <div class="lg:w-1/2">
-                <div class="bg-velvet-800 rounded-lg p-8 h-full">
-                    <h3 class="text-2xl font-bold text-cream mb-6">LET'S WORK TOGETHER</h3>
-                    <div class="space-y-6 text-cream/90">
-                        <p>For voiceover inquiries, collaborations, or just to say hello, reach out through the form or directly via email.</p>
-                        <div class="flex items-start gap-4">
-                            <i data-feather="mail" class="text-gold"></i>
-                            <div>
-                                <p class="font-bold">EMAIL</p>
-                                <p>danekeckley@gmail.com</p>
+                <div class="lg:w-1/2">
+                    <div class="bg-velvet-800 rounded-lg p-8 h-full">
+                        <h3 class="text-2xl font-bold text-cream mb-6">LET'S WORK TOGETHER</h3>
+                        <div class="space-y-6 text-cream/90">
+                            <p>For voiceover inquiries, collaborations, or just to say hello, reach out through the form or directly via email.</p>
+                            <div class="flex items-start gap-4">
+                                <i data-feather="mail" class="text-gold"></i>
+                                <div>
+                                    <p class="font-bold">EMAIL</p>
+                                    <p>danekeckley@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i data-feather="map-pin" class="text-gold"></i>
+                                <div>
+                                    <p class="font-bold">LOCATIONS</p>
+                                    <p>Los Angeles, CA</p>
+                                    <p>Salt Lake City, UT</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="flex items-start gap-4">
-                            <i data-feather="map-pin" class="text-gold"></i>
-                            <div>
-                                <p class="font-bold">LOCATIONS</p>
-                                <p>Los Angeles, CA</p>
-                                <p>Salt Lake City, UT</p>
+                        <div class="mt-12">
+                            <h4 class="text-xl font-bold text-cream mb-4">CONNECT WITH ME</h4>
+                            <div class="flex gap-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
+                                    <i data-feather="twitter" class="text-gold"></i>
+                                </a>
+                                <a href="https://www.instagram.com/dane_keckley" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
+                                    <i data-feather="instagram" class="text-gold"></i>
+                                </a>
+                                <a href="https://www.imdb.com/name/nm14250926" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
+                                    <i data-feather="film" class="text-gold"></i>
+                                </a>
+                                <a href="https://www.youtube.com/@TrajanWeekly" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
+                                    <i data-feather="youtube" class="text-gold"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="mt-12">
-                        <h4 class="text-xl font-bold text-cream mb-4">CONNECT WITH ME</h4>
-                        <div class="flex gap-4">
-                            <a href="#" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
-                                <i data-feather="twitter" class="text-gold"></i>
-                            </a>
-                            <a href="https://www.instagram.com/dane_keckley" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
-                                <i data-feather="instagram" class="text-gold"></i>
-                            </a>
-                            <a href="https://www.imdb.com/name/nm14250926" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
-                                <i data-feather="film" class="text-gold"></i>
-                            </a>
-                            <a href="https://www.youtube.com/@TrajanWeekly" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
-                                <i data-feather="youtube" class="text-gold"></i>
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Scripts -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            feather.replace();
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    feather.replace();
-
-    // -----------------------
-    // Mobile menu toggle
-    // -----------------------
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-
-    mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
-    });
-
-    // -----------------------
-    // Carousel functionality
-    // -----------------------
-    const track = document.getElementById('carousel-track');
-    const originalItems = Array.from(track.querySelectorAll('.carousel-item'));
-    const prevBtn = document.getElementById('carousel-prev');
-    const nextBtn = document.getElementById('carousel-next');
-
-    let visibleCount = getVisibleCount();
-    let currentIndex = 0;
-
-    function getVisibleCount() {
-        if (window.innerWidth >= 1024) return 3;
-        if (window.innerWidth >= 640) return 2;
-        return 1;
-    }
-
-    function setItemWidths() {
-        const items = track.querySelectorAll('.carousel-item');
-        const widthPercentage = 100 / visibleCount;
-        items.forEach(item => item.style.width = `${widthPercentage}%`);
-    }
-
-    function cloneItems() {
-        track.querySelectorAll('.clone').forEach(c => c.remove());
-        originalItems.forEach(item => {
-            const clone = item.cloneNode(true);
-            clone.classList.add('clone');
-            track.appendChild(clone);
-        });
-        setItemWidths();
-        updateCarousel(false);
-    }
-
-    function updateCarousel(animate = true) {
-        track.style.transition = animate ? 'transform 0.7s ease-in-out' : 'none';
-        track.style.transform = `translateX(${-currentIndex * (100 / visibleCount)}%)`;
-    }
-
-    nextBtn.addEventListener('click', () => {
-        currentIndex++;
-        updateCarousel();
-        if (currentIndex >= originalItems.length) {
-            setTimeout(() => { currentIndex = 0; updateCarousel(false); }, 710);
-        }
-    });
-
-    prevBtn.addEventListener('click', () => {
-        if (currentIndex === 0) {
-            currentIndex = originalItems.length;
-            updateCarousel(false);
-            setTimeout(() => { currentIndex--; updateCarousel(); }, 20);
-        } else {
-            currentIndex--;
-            updateCarousel();
-        }
-    });
-
-    window.addEventListener('resize', () => {
-        const newVisibleCount = getVisibleCount();
-        if (newVisibleCount !== visibleCount) {
-            visibleCount = newVisibleCount;
-            currentIndex = 0;
-            setItemWidths();
-            updateCarousel(false);
-        }
-    });
-
-    cloneItems();
-
-    // -----------------------
-    // EmailJS Contact Form
-    // -----------------------
-    emailjs.init('o-XjlNLzlQ99Lrq_k'); // Replace with your public key
-    const contactForm = document.getElementById('contact-form');
-    const feedback = document.getElementById('form-feedback');
-
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        emailjs.sendForm('service_pfh0zod', 'template_4miydur', this)
-            .then(() => {
-                feedback.textContent = "Message sent successfully!";
-                feedback.classList.remove('hidden');
-                contactForm.reset();
-            }, (error) => {
-                console.error('EmailJS error:', error);
-                feedback.textContent = "Failed to send message. Please try again later.";
-                feedback.classList.remove('hidden');
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
             });
-    });
-});
-</script>
+
+            // Close mobile menu when clicking a link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Carousel functionality
+            const track = document.getElementById('carousel-track');
+            const originalItems = Array.from(track.querySelectorAll('.carousel-item'));
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+
+            let visibleCount = getVisibleCount();
+            let currentIndex = 0;
+
+            function getVisibleCount() {
+                if (window.innerWidth >= 1024) return 3;
+                if (window.innerWidth >= 640) return 2;
+                return 1;
+            }
+
+            function setItemWidths() {
+                const items = track.querySelectorAll('.carousel-item');
+                const widthPercentage = 100 / visibleCount;
+                items.forEach(item => {
+                    item.style.width = `${widthPercentage}%`;
+                });
+            }
+
+            function cloneItems() {
+                track.querySelectorAll('.clone').forEach(c => c.remove());
+
+                originalItems.forEach(item => {
+                    const clone = item.cloneNode(true);
+                    clone.classList.add('clone');
+                    track.appendChild(clone);
+                });
+
+                setItemWidths();
+                updateCarousel(false);
+            }
+
+            function updateCarousel(animate = true) {
+                track.style.transition = animate ? 'transform 0.7s ease-in-out' : 'none';
+                const translateX = -(currentIndex * (100 / visibleCount));
+                track.style.transform = `translateX(${translateX}%)`;
+            }
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex++;
+                updateCarousel();
+                
+                if (currentIndex >= originalItems.length) {
+                    setTimeout(() => {
+                        currentIndex = 0;
+                        updateCarousel(false);
+                    }, 710);
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex === 0) {
+                    currentIndex = originalItems.length;
+                    updateCarousel(false);
+                    setTimeout(() => {
+                        currentIndex--;
+                        updateCarousel();
+                    }, 20);
+                } else {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                const newVisibleCount = getVisibleCount();
+                if (newVisibleCount !== visibleCount) {
+                    visibleCount = newVisibleCount;
+                    currentIndex = 0;
+                    setItemWidths();
+                    updateCarousel(false);
+                }
+            });
+
+            cloneItems();
+        });
+    </script>
+</body>
+</html>

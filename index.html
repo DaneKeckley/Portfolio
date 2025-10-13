@@ -675,6 +675,12 @@ window.addEventListener('resize', () => {
         <script>
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
+    <button type="submit" class="w-full bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
+    <i data-feather="send"></i> SEND MESSAGE
+</button>
+
+<p id="form-message" class="hidden mt-3 text-gold text-center font-medium"></p>
+
 
     const messageEl = document.getElementById('form-message');
 

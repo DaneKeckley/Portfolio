@@ -356,12 +356,12 @@ const photos = [
     { src:'21433546.jpeg', focus:'0%' },       // Purple (12)
     { src:'21433509.jpeg', focus:'40%' },      // Yellow-white (6)
     { src:'IMG_5879.JPG', focus:'00%' },       // Brown (19)
-    { src:'IMG_9981.JPG', focus:'5%' },        // White (2)
+    { src:'IMG_9981.JPG', focus:'5%' },        // White (2) — moved here
     { src:'IMG_5872.JPG', focus:'10%' },       // Purple 21
-    { src:'F45365FF-AA72-4825-A3DF-E4DBEF3E0DD4.jpg', focus:'50%' }, // White & blue — moved here in front of White (3)
-    { src:'IMG_9988.JPG', focus:'10%' },       // White (3)
-    { src:'F45365FF-AA72-4825-A3DF-E4DBEF3E0DD4.jpg', focus:'50%' }, // White & blue (Purple & Blue already moved, remove this duplicate)
+    { src:'F45365FF-AA72-4825-A3DF-E4DBEF3E0DD4.jpg', focus:'50%' }, // White & blue (20)
     { src:'IMG_5856.JPG', focus:'0%' },        // White (16)
+    { src:'D32BC33C-2F22-4594-A752-5518E10C4199.jpg', focus:'10%' }, // Purple & blue
+    { src:'IMG_9988.JPG', focus:'10%' },       // White (3)
     { src:'21433502.jpeg', focus:'0%' },       // Grey (4)
     { src:'21433529.jpeg', focus:'0%' },       // White (10)
 ];
@@ -403,12 +403,25 @@ photos.forEach(photo => {
 
 // Modal functions
 function openModal(img) {
-    document.getElementById('modalImage').src = img.src;
-    document.getElementById('photoModal').classList.remove('hidden');
+    const modal = document.getElementById('photoModal');
+    const modalImg = document.getElementById('modalImage');
+    
+    modalImg.src = img.src;
+    modal.classList.remove('hidden');
+
+    // Close modal when clicking outside the image
+    modal.addEventListener('click', function handler(e) {
+        if (e.target === modal) { // Only if clicking the backdrop
+            closeModal();
+            modal.removeEventListener('click', handler); // Clean up the listener
+        }
+    });
 }
+
 function closeModal() {
     document.getElementById('photoModal').classList.add('hidden');
 }
+
 
 // Photo Carousel Scroll
 let photoScroll = 0;

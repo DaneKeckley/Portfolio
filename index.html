@@ -241,50 +241,85 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="py-20 bg-velvet-800 border-t border-scarlet-700/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-16 text-cream">
-                <span class="border-b-2 border-gold pb-2">GALLERY</span>
-            </h2>
+<section id="gallery" class="py-20 bg-velvet-800 border-t border-scarlet-700/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-bold text-center mb-16 text-cream">
+            <span class="border-b-2 border-gold pb-2">GALLERY</span>
+        </h2>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Image item -->
-                <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
-                    <img src="/assets/images/photo1.jpg" alt="Gallery image" class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
-                </div>
+        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Initial 3 items -->
+            <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
+                <img src="/assets/images/photo1.jpg" alt="Gallery image" class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+            </div>
 
-                <!-- YouTube Visual Reel -->
-                <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
-                    <div class="relative pb-[56.25%] h-0 overflow-hidden">
-                        <iframe class="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg" 
-                            src="https://www.youtube.com/embed/c8vsu3dp_Ow" 
-                            title="Dane Keckley Visual Reel" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-                        </iframe>
-                    </div>
-                </div>
-
-                <!-- Another image -->
-                <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
-                    <img src="/assets/images/photo2.jpg" alt="Gallery image" class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
-                </div>
-
-                <!-- Another video -->
-                <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
-                    <video class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105" controls preload="metadata" poster="/assets/images/video2-poster.jpg">
-                        <source src="/assets/videos/clip2.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+            <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
+                <div class="relative pb-[56.25%] h-0 overflow-hidden">
+                    <iframe class="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg" 
+                        src="https://www.youtube.com/embed/c8vsu3dp_Ow" 
+                        title="Dane Keckley Visual Reel 1" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                    </iframe>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-16 text-cream">
-                <span class="border-b-2 border-gold pb-2">CONTACT</span>
-            </h2>
+            <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
+                <img src="/assets/images/photo2.jpg" alt="Gallery image" class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+            </div>
+        </div>
+
+        <!-- Hidden additional gallery items -->
+        <div id="gallery-extra" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+            <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
+                <div class="relative pb-[56.25%] h-0 overflow-hidden">
+                    <iframe class="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg" 
+                        src="https://www.youtube.com/embed/HZeioUxnKdw" 
+                        title="Dane Keckley Visual Reel 2" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
+                <img src="/assets/images/photo3.jpg" alt="Gallery image" class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+            </div>
+
+            <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
+                <video class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105" controls preload="metadata" poster="/assets/images/video2-poster.jpg">
+                    <source src="/assets/videos/clip2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <!-- View More Arrow -->
+        <div class="flex justify-center mt-8">
+            <button id="view-more-gallery" class="animate-bounce text-cream bg-velvet-900 hover:bg-velvet-700 px-4 py-3 rounded-full shadow-lg flex items-center gap-2">
+                <span>View More</span>
+                <i data-feather="chevron-down" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Feather icons
+    feather.replace();
+
+    // Gallery "View More" functionality
+    const viewMoreBtn = document.getElementById('view-more-gallery');
+    const galleryExtra = document.getElementById('gallery-extra');
+
+    viewMoreBtn.addEventListener('click', () => {
+        galleryExtra.classList.toggle('hidden');
+        if (!galleryExtra.classList.contains('hidden')) {
+            viewMoreBtn.innerHTML = '<span>View Less</span><i data-feather="chevron-up" class="w-6 h-6"></i>';
+        } else {
+            viewMoreBtn.innerHTML = '<span>View More</span><i data-feather="chevron-down" class="w-6 h-6"></i>';
+        }
+        feather.replace(); // Refresh icons
+        galleryExtra.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+</script>
+
 
             <!-- Contact message -->
             <div id="contact-message" class="hidden mt-4 p-4 rounded-lg text-cream font-bold"></div>

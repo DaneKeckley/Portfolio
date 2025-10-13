@@ -240,7 +240,7 @@
         </div>
     </section>
 
-  <!-- Gallery Section -->
+<!-- Gallery Section -->
 <section id="gallery" class="py-20 bg-velvet-800 border-t border-scarlet-700/20">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 class="text-4xl font-bold text-center mb-12 text-cream">
@@ -250,48 +250,36 @@
     <div class="relative">
       <!-- Carousel viewport -->
       <div class="overflow-hidden">
-        <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out gap-6">
-          <!-- Clones for infinite loop will be added via JS -->
+        <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out gap-6 justify-center">
+          <!-- Gallery Items -->
           <div class="carousel-item flex-shrink-0 w-1/3 border-2 border-gold rounded-lg overflow-hidden">
             <img src="/assets/images/photo1.jpg" alt="Gallery image" class="w-full h-full object-cover">
           </div>
-
           <div class="carousel-item flex-shrink-0 w-1/3 border-2 border-gold rounded-lg overflow-hidden">
             <div class="relative pb-[56.25%] h-0">
               <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/c8vsu3dp_Ow" title="Visual Reel 1" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
-
           <div class="carousel-item flex-shrink-0 w-1/3 border-2 border-gold rounded-lg overflow-hidden">
             <img src="/assets/images/photo2.jpg" alt="Gallery image" class="w-full h-full object-cover">
           </div>
-
           <div class="carousel-item flex-shrink-0 w-1/3 border-2 border-gold rounded-lg overflow-hidden">
             <div class="relative pb-[56.25%] h-0">
               <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/HZeioUxnKdw" title="Visual Reel 2" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
-
           <div class="carousel-item flex-shrink-0 w-1/3 border-2 border-gold rounded-lg overflow-hidden">
             <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/BZhbLHZDaLA" title="Visual Reel 3" frameborder="0" allowfullscreen></iframe>
           </div>
-
           <div class="carousel-item flex-shrink-0 w-1/3 border-2 border-gold rounded-lg overflow-hidden">
             <div class="relative pb-[56.25%] h-0">
               <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/4Y7T4t23AiM" title="Visual Reel 4" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
-
           <div class="carousel-item flex-shrink-0 w-1/3 border-2 border-gold rounded-lg overflow-hidden">
             <div class="relative pb-[56.25%] h-0">
               <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/kSYN8Ez1YpY" title="Visual Reel 5" frameborder="0" allowfullscreen></iframe>
             </div>
-          </div>
-
-          <div class="carousel-item flex-shrink-0 w-1/3 border-2 border-gold rounded-lg overflow-hidden">
-            <video class="w-full h-full object-cover" controls preload="metadata" poster="/assets/images/video2-poster.jpg">
-              <source src="/assets/videos/clip2.mp4" type="video/mp4">
-            </video>
           </div>
         </div>
       </div>
@@ -309,206 +297,142 @@
   </div>
 </section>
 
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-bold text-center mb-12 text-cream">
+      <span class="border-b-2 border-gold pb-2">CONTACT</span>
+    </h2>
+
+    <div id="contact-message" class="hidden mt-4 p-4 rounded-lg text-cream font-bold text-center"></div>
+
+    <div class="flex flex-col lg:flex-row gap-12 justify-center">
+      <!-- Contact Form -->
+      <div class="lg:w-1/2 bg-velvet-800 rounded-lg p-8 shadow-lg">
+        <form id="contact-form" class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-cream mb-2">NAME</label>
+            <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-velvet-900 border border-gold rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-cream mb-2">EMAIL</label>
+            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-velvet-900 border border-gold rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500">
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-cream mb-2">MESSAGE</label>
+            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-velvet-900 border border-gold rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-gold hover:bg-[#d4b36b] text-[#0C0C0C] font-bold py-3 px-6 rounded-full transition-all duration-300 flex items-center justify-center gap-2">
+            <i data-feather="send"></i> SEND MESSAGE
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="lg:w-1/2 bg-velvet-800 rounded-lg p-8 shadow-lg flex flex-col justify-between">
+        <div class="space-y-6 text-cream/90">
+          <h3 class="text-2xl font-bold mb-4">LET'S WORK TOGETHER</h3>
+          <p>For voiceover inquiries, collaborations, or just to say hello, feel free to reach out through the form or directly via email.</p>
+          <div class="flex items-start gap-4">
+            <i data-feather="mail" class="text-gold mt-1"></i>
+            <div>
+              <p class="font-bold">EMAIL</p>
+              <p>danekeckley@gmail.com</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <i data-feather="map-pin" class="text-gold mt-1"></i>
+            <div>
+              <p class="font-bold">LOCATIONS</p>
+              <p>Los Angeles, CA</p>
+              <p>Salt Lake City, UT</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="mt-8">
+          <h4 class="text-xl font-bold text-cream mb-4">CONNECT WITH ME</h4>
+          <div class="flex gap-4 flex-wrap">
+            <a href="#" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
+              <i data-feather="twitter" class="text-gold"></i>
+            </a>
+            <a href="https://www.instagram.com/dane_keckley" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
+              <i data-feather="instagram" class="text-gold"></i>
+            </a>
+            <a href="https://www.imdb.com/name/nm14250926" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
+              <i data-feather="film" class="text-gold"></i>
+            </a>
+            <a href="https://www.youtube.com/@TrajanWeekly" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
+              <i data-feather="youtube" class="text-gold"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <script>
 feather.replace();
 
+// Carousel Logic
 const track = document.getElementById('carousel-track');
-let items = Array.from(document.querySelectorAll('.carousel-item'));
+let items = Array.from(track.children);
 const prevBtn = document.getElementById('carousel-prev');
 const nextBtn = document.getElementById('carousel-next');
-
 const visibleCount = 3;
 
-// Clone first and last sets for seamless infinite loop
+// Clone first & last for infinite loop
 for (let i = 0; i < visibleCount; i++) {
   track.appendChild(items[i].cloneNode(true));
   track.insertBefore(items[items.length - 1 - i].cloneNode(true), items[0]);
 }
+items = Array.from(track.children);
+let currentIndex = visibleCount;
 
-// Recalculate items after cloning
-items = Array.from(document.querySelectorAll('.carousel-item'));
-let currentIndex = visibleCount; // start at the first real slide
-
-function updateCarousel(animate = true) {
-  if (!animate) track.style.transition = 'none';
+function updateCarousel(animate = true){
+  if(!animate) track.style.transition = 'none';
   else track.style.transition = 'transform 0.7s ease-in-out';
-
   const translateX = -(currentIndex * (100 / visibleCount));
   track.style.transform = `translateX(${translateX}%)`;
 }
 
-// Right arrow click
 nextBtn.addEventListener('click', () => {
   currentIndex++;
   updateCarousel();
-  if (currentIndex >= items.length - visibleCount) {
-    setTimeout(() => {
-      currentIndex = visibleCount;
-      updateCarousel(false);
-    }, 710);
+  if(currentIndex >= items.length - visibleCount){
+    setTimeout(() => { currentIndex = visibleCount; updateCarousel(false); }, 710);
   }
 });
 
-// Left arrow click
 prevBtn.addEventListener('click', () => {
   currentIndex--;
   updateCarousel();
-  if (currentIndex < visibleCount) {
-    setTimeout(() => {
-      currentIndex = items.length - 2 * visibleCount;
-      updateCarousel(false);
-    }, 710);
+  if(currentIndex < visibleCount){
+    setTimeout(() => { currentIndex = items.length - 2*visibleCount; updateCarousel(false); }, 710);
   }
 });
 
-// Initialize carousel
 updateCarousel(false);
+
+// EmailJS Form
+const contactForm = document.getElementById('contact-form');
+const contactMessage = document.getElementById('contact-message');
+contactForm.addEventListener('submit', function(e){
+  e.preventDefault();
+  emailjs.sendForm('service_pfh0zod', 'template_4miydur', this)
+    .then(() => {
+      contactMessage.textContent = '✅ Message sent successfully!';
+      contactMessage.classList.remove('hidden', 'text-red-500');
+      contactMessage.classList.add('text-green-400');
+      contactForm.reset();
+    })
+    .catch(err => {
+      console.error(err);
+      contactMessage.textContent = '❌ Failed to send message. Please try again later.';
+      contactMessage.classList.remove('hidden', 'text-green-400');
+      contactMessage.classList.add('text-red-500');
+    });
+});
 </script>
-
-
-            <!-- Contact message -->
-            <div id="contact-message" class="hidden mt-4 p-4 rounded-lg text-cream font-bold"></div>
-
-            <div class="flex flex-col lg:flex-row gap-12">
-                <div class="lg:w-1/2">
-                    <form id="contact-form" class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-cream mb-2">NAME</label>
-                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-cream mb-2">EMAIL</label>
-                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-cream mb-2">MESSAGE</label>
-                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
-                            <i data-feather="send"></i> SEND MESSAGE
-                        </button>
-                    </form>
-                </div>
-
-                <div class="lg:w-1/2">
-                    <div class="bg-velvet-800 rounded-lg p-8 h-full">
-                        <h3 class="text-2xl font-bold text-cream mb-6">LET'S WORK TOGETHER</h3>
-                        <div class="space-y-6 text-cream/90">
-                            <p>For voiceover inquiries, collaborations, or just to say hello, feel free to reach out through the form or directly via email.</p>
-                            <div class="flex items-start gap-4">
-                                <i data-feather="mail" class="text-gold"></i>
-                                <div>
-                                    <p class="font-bold">EMAIL</p>
-                                    <p>danekeckley@gmail.com</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <i data-feather="map-pin" class="text-gold"></i>
-                                <div>
-                                    <p class="font-bold">LOCATIONS</p>
-                                    <p>Los Angeles, CA</p>
-                                    <p>Salt Lake City, UT</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-12">
-                            <h4 class="text-xl font-bold text-cream mb-4">CONNECT WITH ME</h4>
-                            <div class="flex gap-4">
-                                <a href="#" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
-                                    <i data-feather="twitter" class="text-gold"></i>
-                                </a>
-                                <a href="https://www.instagram.com/dane_keckley" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
-                                    <i data-feather="instagram" class="text-gold"></i>
-                                </a>
-                                <a href="https://www.imdb.com/name/nm14250926" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
-                                    <i data-feather="film" class="text-gold"></i>
-                                </a>
-                                <a href="https://www.youtube.com/@TrajanWeekly" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
-                                    <i data-feather="youtube" class="text-gold"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-velvet-900 border-t border-scarlet-700/20 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <span class="text-cream font-bold">&copy; 2025 Dane Keckley</span>
-                </div>
-                <div class="flex gap-6">
-                    <a href="#" class="text-cream hover:text-gold transition-colors duration-300"><i data-feather="twitter"></i></a>
-                    <a href="#" class="text-cream hover:text-gold transition-colors duration-300"><i data-feather="instagram"></i></a>
-                    <a href="#" class="text-cream hover:text-gold transition-colors duration-300"><i data-feather="film"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script>
-        feather.replace();
-
-        // Mobile Menu Toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80, // offset for fixed navbar
-                        behavior: 'smooth'
-                    });
-                }
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        });
-
-        // EmailJS Form Submission
-        const contactForm = document.getElementById('contact-form');
-        const contactMessage = document.getElementById('contact-message');
-
-        contactForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            emailjs.sendForm('service_pfh0zod', 'template_4miydur', this)
-                .then(() => {
-                    contactMessage.textContent = '✅ Message sent successfully!';
-                    contactMessage.classList.remove('hidden', 'text-red-500');
-                    contactMessage.classList.add('text-green-400');
-                    contactForm.reset();
-                })
-                .catch((error) => {
-                    console.error('EmailJS error:', error);
-                    contactMessage.textContent = '❌ Failed to send message. Please try again later.';
-                    contactMessage.classList.remove('hidden', 'text-green-400');
-                    contactMessage.classList.add('text-red-500');
-                });
-        });
-
-        // Pause other audios
-        const audios = document.querySelectorAll('audio');
-        audios.forEach(audio => {
-            audio.addEventListener('play', () => {
-                audios.forEach(a => { if (a !== audio) a.pause(); });
-            });
-        });
-    </script>
-</body>
-</html>

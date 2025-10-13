@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dane Keckley | The Gamble Pays Off</title>
+  <meta name="description" content="Animation Character Demo – Inspired Monologue (‘The Gamble Pays Off’) by Dane Keckley.">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            scarlet: { 500: '#340E12', 600: '#2A0B0E', 700: '#20090A' },
+            gold: '#E5C47A',
+            cream: '#F5F3F0'
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&display=swap');
+
+    body {
+      background: radial-gradient(circle at center, #1a0a0a 0%, #340E12 70%, #1a0a0a 100%);
+      color: #F5F3F0;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .audio-container {
+      position: relative;
+      background: rgba(0, 0, 0, 0.55);
+      border: 2px solid #E5C47A;
+      border-radius: 1rem;
+      padding: 2rem;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 0 40px rgba(229, 196, 122, 0.15);
+      z-index: 10;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1.5s ease-out forwards;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    audio {
+      width: 100%;
+      outline: none;
+      border-radius: 0.5rem;
+    }
+
+    #particles {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    @keyframes glow {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.7; }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <div class="audio-container">
+    <h1 class="text-3xl font-bold mb-3 text-gold">Animation Character Demo</h1>
+    <p class="text-lg italic mb-6">“Inspired Monologue (‘The Gamble Pays Off’)”</p>
+
+    <audio controls preload="metadata">
+      <source src="/assets/demos/The Gamble Pays Off.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <p class="text-sm text-cream/70 mt-6">
+      © Dane Keckley — Private Demo | For casting reference only.
+    </p>
+  </div>
+
+  <script>
+    // Subtle particle background
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    for (let i = 0; i < 45; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 2.2 + 0.8,
+        dx: (Math.random() - 0.5) * 0.2,
+        dy: (Math.random() - 0.5) * 0.2,
+        color: Math.random() > 0.6 ? '#E5C47A' : '#A61C1C'
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        ctx.beginPath();
+        const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 4);
+        gradient.addColorStop(0, p.color);
+        gradient.addColorStop(1, 'transparent');
+        ctx.fillStyle = gradient;
+        ctx.arc(p.x, p.y, p.r * 4, 0, Math.PI * 2);
+        ctx.fill();
+        p.x += p.dx;
+        p.y += p.dy;
+
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+      });
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+</body>
+</html>

@@ -241,15 +241,15 @@
     </section>
 
 <!-- Gallery Section -->
-<section id="gallery" class="py-24 bg-velvet-800 border-t border-scarlet-700/20 relative overflow-visible">
-  <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative">
+<section id="gallery" class="py-24 bg-velvet-800 border-t border-scarlet-700/20">
+  <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
     <h2 class="text-4xl font-bold text-center mb-12 text-cream">
       <span class="border-b-2 border-gold pb-2">GALLERY</span>
     </h2>
 
-    <div class="relative flex justify-center overflow-hidden">
+    <div class="relative w-full flex justify-center overflow-hidden">
       <!-- Carousel Track -->
-      <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out gap-8 w-max">
+      <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out gap-6 w-max">
         <!-- Video Items -->
         <div class="carousel-item flex-shrink-0 w-[30%] border-2 border-gold rounded-lg overflow-hidden">
           <div class="relative pb-[56.25%] h-0">
@@ -294,11 +294,12 @@
       </div>
 
       <!-- Carousel Arrows -->
-      <button id="carousel-prev" class="absolute top-1/2 left-[-3rem] transform -translate-y-1/2 w-14 h-14 rounded-full bg-gold/20 text-gold flex items-center justify-center shadow-lg z-10 transition-all duration-300 hover:bg-gold/40 hover:shadow-[0_0_15px_rgba(229,196,122,0.6)]">
-        &#10094;
+      <button id="carousel-prev" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-velvet-900 hover:bg-velvet-700 text-cream p-3 rounded-full shadow-lg z-10">
+        <i data-feather="chevron-left" class="w-6 h-6"></i>
       </button>
-      <button id="carousel-next" class="absolute top-1/2 right-[-3rem] transform -translate-y-1/2 w-14 h-14 rounded-full bg-red-600/20 text-red-600 flex items-center justify-center shadow-lg z-10 transition-all duration-300 hover:bg-red-600/40 hover:shadow-[0_0_15px_rgba(229,50,50,0.6)]">
-        &#10095;
+
+      <button id="carousel-next" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-velvet-900 hover:bg-velvet-700 text-cream p-3 rounded-full shadow-lg z-10">
+        <i data-feather="chevron-right" class="w-6 h-6"></i>
       </button>
     </div>
   </div>
@@ -307,33 +308,41 @@
 <!-- Gallery Carousel JS -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+  feather.replace();
+
   const track = document.getElementById('carousel-track');
-  const items = Array.from(document.querySelectorAll('.carousel-item'));
+  let items = Array.from(document.querySelectorAll('.carousel-item'));
   const prevBtn = document.getElementById('carousel-prev');
   const nextBtn = document.getElementById('carousel-next');
-  
-  const visibleCount = 3;
-  let currentIndex = visibleCount;
 
-  // Clone for seamless loop
-  for (let i = 0; i < visibleCount; i++) {
-    track.appendChild(items[i].cloneNode(true));
-    track.insertBefore(items[items.length - 1 - i].cloneNode(true), track.firstChild);
+  function getVisibleCount() {
+    const width = window.innerWidth;
+    if (width >= 1024) return 3; // Desktop
+    if (width >= 640) return 2;  // Tablet
+    return 1;                     // Mobile
   }
 
-  const allItems = Array.from(track.querySelectorAll('.carousel-item'));
+  let visibleCount = getVisibleCount();
+
+  // Clone first & last sets for infinite loop
+  for (let i = 0; i < visibleCount; i++) {
+    track.appendChild(items[i].cloneNode(true));
+    track.insertBefore(items[items.length - 1 - i].cloneNode(true), items[0]);
+  }
+
+  items = Array.from(document.querySelectorAll('.carousel-item'));
+  let currentIndex = visibleCount;
 
   function updateCarousel(animate = true) {
     track.style.transition = animate ? 'transform 0.7s ease-in-out' : 'none';
-    const itemWidth = allItems[0].getBoundingClientRect().width + 32; // includes gap
-    const offset = (currentIndex - Math.floor(visibleCount/2)) * itemWidth;
-    track.style.transform = `translateX(-${offset}px)`;
+    const translateX = -(currentIndex * (100 / visibleCount));
+    track.style.transform = `translateX(${translateX}%)`;
   }
 
   nextBtn.addEventListener('click', () => {
     currentIndex++;
     updateCarousel();
-    if (currentIndex >= allItems.length - visibleCount) {
+    if (currentIndex >= items.length - visibleCount) {
       setTimeout(() => {
         currentIndex = visibleCount;
         updateCarousel(false);
@@ -346,13 +355,17 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCarousel();
     if (currentIndex < visibleCount) {
       setTimeout(() => {
-        currentIndex = allItems.length - 2 * visibleCount;
+        currentIndex = items.length - 2 * visibleCount;
         updateCarousel(false);
       }, 710);
     }
   });
 
-  window.addEventListener('resize', updateCarousel);
+  window.addEventListener('resize', () => {
+    visibleCount = getVisibleCount();
+    updateCarousel(false);
+  });
+
   updateCarousel(false);
 });
 </script>

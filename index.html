@@ -25,7 +25,7 @@
 
     <script>
         // Initialize EmailJS
-        emailjs.init('o-XjlNLzlQ99Lrq_k');
+        emailjs.init('YOUR_PUBLIC_KEY_HERE');
 
         tailwind.config = {
             theme: {
@@ -56,8 +56,8 @@
         }
 
         .velvet-gradient {
-            background: linear-gradient(135deg, #0C0C0C 0%, #1A0A0A %, #340E12 40%, #1A0A0A 60%, #0C0C0C 100%);
-            background-size: 0% 0%;
+            background: linear-gradient(135deg, #0C0C0C 0%, #1A0A0A 20%, #340E12 40%, #1A0A0A 60%, #0C0C0C 100%);
+            background-size: 200% 200%;
             animation: gradientPulse 15s ease infinite;
         }
 
@@ -99,7 +99,7 @@
     <!-- Navbar -->
     <nav class="fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h- items-center">
+            <div class="flex justify-between h-20 items-center">
                 <div class="flex-shrink-0 flex items-center">
                     <span class="text-xl font-bold text-cream">DANE KECKLEY</span>
                 </div>
@@ -248,73 +248,36 @@
     </h2>
 
     <div class="relative w-full overflow-hidden px-4 lg:px-8">
-<!-- Gallery Section -->
-<section id="gallery" class="py-24 bg-velvet-800 border-t border-scarlet-700/20">
-  <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-0">
-    <h2 class="text-4xl font-bold text-center mb-12 text-cream">
-      <span class="border-b-2 border-gold pb-2">GALLERY</span>
-    </h2>
+  <!-- Carousel Track -->
+<div id="carousel-track" class="flex transition-transform duration-700 ease-in-out justify-center" style="margin-left: -20px;">
+  <div class="carousel-item border-2 border-gold rounded-lg overflow-hidden w-[31.5%] mx-[0.35%]">
+    <div class="relative pb-[56.25%] h-0">
+      <iframe src="https://www.youtube.com/embed/c8vsu3dp_Ow"
+        class="absolute top-0 left-0 w-full h-full"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
 
-    <!-- Wider Carousel Container -->
-    <div class="relative w-full overflow-visible px-8 lg:px-16">
-      <!-- Carousel Track Wider -->
-      <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out justify-center" style="width: 120%; margin-left: -10px; margin-right: -10px;">
-        <!-- Video 1 -->
-        <div class="carousel-item border-2 border-gold rounded-lg overflow-hidden w-[31.5%] mx-[0.35%]">
-          <div class="relative pb-[56.25%] h-0">
-            <iframe src="https://www.youtube.com/embed/c8vsu3dp_Ow?start=0" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
-          </div>
-        </div>
+  <div class="carousel-item border-2 border-gold rounded-lg overflow-hidden w-[31.5%] mx-[0.35%]">
+    <div class="relative pb-[56.25%] h-0">
+      <iframe src="https://www.youtube.com/embed/HZeioUxnKdw"
+        class="absolute top-0 left-0 w-full h-full"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
 
-        <!-- Video 2 -->
-        <div class="carousel-item border-2 border-gold rounded-lg overflow-hidden w-[31.5%] mx-[0.35%]">
-          <div class="relative pb-[56.25%] h-0">
-            <iframe src="https://www.youtube.com/embed/HZeioUxnKdw?start=0" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
-          </div>
-        </div>
+  <div class="carousel-item border-2 border-gold rounded-lg overflow-hidden w-[31.5%] mx-[0.35%]">
+    <div class="relative pb-[56.25%] h-0">
+      <iframe src="https://www.youtube.com/embed/BZhbLHZDaLA"
+        class="absolute top-0 left-0 w-full h-full"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</div>
 
-        <!-- Video 3 -->
-        <div class="carousel-item border-2 border-gold rounded-lg overflow-hidden w-[31.5%] mx-[0.35%]">
-          <div class="relative pb-[56.25%] h-0">
-            <iframe src="https://www.youtube.com/embed/BZhbLHZDaLA?start=0" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <!-- Video 4 -->
-        <div class="carousel-item border-2 border-gold rounded-lg overflow-hidden w-[31.5%] mx-[0.35%]">
-          <div class="relative pb-[56.25%] h-0">
-            <iframe src="https://www.youtube.com/embed/4Y7T4t23AiM?start=137" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <!-- Video 5 -->
-        <div class="carousel-item border-2 border-gold rounded-lg overflow-hidden w-[31.5%] mx-[0.35%]">
-          <div class="relative pb-[56.25%] h-0">
-            <iframe src="https://www.youtube.com/embed/kSYN8Ez1YpY?start=245" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <!-- Video 6 -->
-        <div class="carousel-item border-2 border-gold rounded-lg overflow-hidden w-[31.5%] mx-[0.35%]">
-          <div class="relative pb-[56.25%] h-0">
-            <iframe src="https://www.youtube.com/embed/TtwRsnzXHiM?start=394" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <!-- Video 7 -->
-        <div class="carousel-item border-2 border-gold rounded-lg overflow-hidden w-[31.5%] mx-[0.35%]">
-          <div class="relative pb-[56.25%] h-0">
-            <iframe src="https://www.youtube.com/embed/h4_fuKJHz5E?start=245" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <!-- Video 8 -->
-        <div class="carousel-item border-2 border-gold rounded-lg overflow-hidden w-[31.5%] mx-[0.35%]">
-          <div class="relative pb-[56.25%] h-0">
-            <iframe src="https://www.youtube.com/embed/ZsgK0lzA0PE?start=11" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
 
       <!-- Carousel Arrows -->
       <button id="carousel-prev" class="absolute top-1/2 left-[-1.5rem] transform -translate-y-1/2 bg-velvet-900 hover:bg-velvet-700 text-cream p-3 rounded-full shadow-lg z-10">
@@ -326,7 +289,6 @@
     </div>
   </div>
 </section>
-
 
 <!-- Fixed Carousel Script for 3 Videos -->
 <script>
@@ -411,39 +373,6 @@ document.addEventListener('DOMContentLoaded', () => {
           </button>
         </form>
       </div>
-        <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('contact-form');
-
-    form.addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent default form submission
-
-        // Collect form data
-        const formData = {
-            from_name: form.name.value,
-            from_email: form.email.value,
-            message: form.message.value
-        };
-
-        // Send email using EmailJS
-        emailjs.send(
-            'service_pfh0zod',      // <-- replace with your EmailJS Service ID
-            'template_4miydur',     // <-- replace with your EmailJS Template ID
-            formData,
-            'o-XjlNLzlQ99Lrq_k'       // <-- replace with your EmailJS Public Key
-        ).then(
-            (response) => {
-                alert('Message sent successfully! ✅');
-                form.reset();
-            },
-            (error) => {
-                console.error('FAILED...', error);
-                alert('Failed to send message. Please try again.');
-            }
-        );
-    });
-});
-</script>
 
       <!-- Contact Info -->
       <div class="lg:w-1/2">

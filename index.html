@@ -253,7 +253,7 @@
 
 <!-- Photo Carousel -->
 <div class="relative overflow-hidden">
-    <div id="photo-carousel-track" class="flex gap-6 transition-transform duration-700 ease-in-out">
+    <div id="photo-carousel-track" class="flex transition-transform duration-700 ease-in-out" style="gap:1rem;">
         <!-- Photo Items -->
         <script>
             const photos = [
@@ -264,7 +264,7 @@
             ];
             photos.forEach(photo => {
                 document.write(`
-                    <div class="carousel-item flex-shrink-0 w-1/4">
+                    <div class="carousel-item flex-shrink-0" style="flex-basis: calc(25% - 0.75rem);">
                         <div class="border-2 border-gold rounded-lg overflow-hidden cursor-pointer">
                             <img src="assets/images/${photo}" 
                                  alt="Model Photo" 
@@ -286,7 +286,6 @@
     </button>
 </div>
 
-
 <!-- Modal for Enlarged Photos -->
 <div id="photoModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50">
     <span class="absolute top-5 right-5 text-3xl text-cream cursor-pointer" onclick="closeModal()">&times;</span>
@@ -301,6 +300,24 @@ function openModal(img) {
 function closeModal() {
     document.getElementById('photoModal').classList.add('hidden');
 }
+
+// Photo Carousel Scroll
+const photoTrack = document.getElementById('photo-carousel-track');
+let photoScroll = 0;
+const photoItemWidth = photoTrack.querySelector('.carousel-item').offsetWidth + 16; // includes gap
+
+document.getElementById('photo-next').addEventListener('click', () => {
+    photoScroll += photoItemWidth;
+    if(photoScroll > photoTrack.scrollWidth - photoTrack.clientWidth) photoScroll = photoTrack.scrollWidth - photoTrack.clientWidth;
+    photoTrack.style.transform = `translateX(-${photoScroll}px)`;
+});
+document.getElementById('photo-prev').addEventListener('click', () => {
+    photoScroll -= photoItemWidth;
+    if(photoScroll < 0) photoScroll = 0;
+    photoTrack.style.transform = `translateX(-${photoScroll}px)`;
+});
+</script>
+
 
 // Video Carousel Scroll (unchanged)
 const videoTrack = document.getElementById('carousel-track');

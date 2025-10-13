@@ -240,95 +240,207 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+   <!-- Gallery Section -->
 <section id="gallery" class="py-20 bg-velvet-800 border-t border-scarlet-700/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-bold text-center mb-16 text-cream">
-            <span class="border-b-2 border-gold pb-2">GALLERY</span>
-        </h2>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-bold text-center mb-12 text-cream">
+      <span class="border-b-2 border-gold pb-2">GALLERY</span>
+    </h2>
 
-        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Initial 3 items -->
-            <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
-                <img src="/assets/images/photo1.jpg" alt="Gallery image" class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
-            </div>
+    <div class="relative">
+      <!-- Carousel container -->
+      <div class="overflow-hidden relative">
+        <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out gap-6 touch-pan-x">
+          <!-- Carousel Items -->
+          <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 border-2 border-gold rounded-lg overflow-hidden">
+            <img src="/assets/images/photo1.jpg" alt="Gallery image" class="w-full h-full object-cover">
+          </div>
 
-            <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
-                <div class="relative pb-[56.25%] h-0 overflow-hidden">
-                    <iframe class="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg" 
-                        src="https://www.youtube.com/embed/c8vsu3dp_Ow" 
-                        title="Dane Keckley Visual Reel 1" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-                    </iframe>
-                </div>
+          <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 border-2 border-gold rounded-lg overflow-hidden">
+            <div class="relative pb-[56.25%] h-0">
+              <iframe class="absolute top-0 left-0 w-full h-full"
+                      src="https://www.youtube.com/embed/c8vsu3dp_Ow"
+                      title="Visual Reel 1" frameborder="0" allowfullscreen></iframe>
             </div>
+          </div>
 
-            <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
-                <img src="/assets/images/photo2.jpg" alt="Gallery image" class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+          <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 border-2 border-gold rounded-lg overflow-hidden">
+            <img src="/assets/images/photo2.jpg" alt="Gallery image" class="w-full h-full object-cover">
+          </div>
+
+          <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 border-2 border-gold rounded-lg overflow-hidden">
+            <div class="relative pb-[56.25%] h-0">
+              <iframe class="absolute top-0 left-0 w-full h-full"
+                      src="https://www.youtube.com/embed/HZeioUxnKdw"
+                      title="Visual Reel 2" frameborder="0" allowfullscreen></iframe>
             </div>
+          </div>
+
+          <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 border-2 border-gold rounded-lg overflow-hidden">
+            <iframe class="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/BZhbLHZDaLA"
+                    title="Visual Reel 3" frameborder="0" allowfullscreen></iframe>
+          </div>
+
+          <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 border-2 border-gold rounded-lg overflow-hidden">
+            <div class="relative pb-[56.25%] h-0">
+              <iframe class="absolute top-0 left-0 w-full h-full"
+                      src="https://www.youtube.com/embed/4Y7T4t23AiM"
+                      title="Visual Reel 4" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 border-2 border-gold rounded-lg overflow-hidden">
+            <div class="relative pb-[56.25%] h-0">
+              <iframe class="absolute top-0 left-0 w-full h-full"
+                      src="https://www.youtube.com/embed/kSYN8Ez1YpY"
+                      title="Visual Reel 5" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="carousel-item flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 border-2 border-gold rounded-lg overflow-hidden">
+            <video class="w-full h-full object-cover" controls preload="metadata" poster="/assets/images/video2-poster.jpg">
+              <source src="/assets/videos/clip2.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
+      </div>
 
-        <!-- Hidden additional gallery items -->
-        <div id="gallery-extra" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-            <!-- Second YouTube video -->
-            <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
-                <div class="relative pb-[56.25%] h-0 overflow-hidden">
-                    <iframe class="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg" 
-                        src="https://www.youtube.com/embed/HZeioUxnKdw" 
-                        title="Dane Keckley Visual Reel 2" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-                    </iframe>
-                </div>
-            </div>
+      <!-- Left Arrow -->
+      <button id="carousel-prev" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-velvet-900 hover:bg-velvet-700 text-cream p-3 rounded-full shadow-lg z-10">
+        <i data-feather="chevron-left" class="w-6 h-6"></i>
+      </button>
 
-            <!-- Third YouTube video -->
-            <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
-                <div class="relative pb-[56.25%] h-0 overflow-hidden">
-                    <iframe class="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg" 
-                        src="https://www.youtube.com/embed/BZhbLHZDaLA" 
-                        title="Dane Keckley Visual Reel 3" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-                    </iframe>
-                </div>
-            </div>
+      <!-- Right Arrow -->
+      <button id="carousel-next" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-velvet-900 hover:bg-velvet-700 text-cream p-3 rounded-full shadow-lg z-10">
+        <i data-feather="chevron-right" class="w-6 h-6"></i>
+      </button>
 
-            <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
-                <img src="/assets/images/photo3.jpg" alt="Gallery image" class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
-            </div>
-
-            <div class="bg-velvet-800 rounded-lg overflow-hidden p-4">
-                <video class="w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105" controls preload="metadata" poster="/assets/images/video2-poster.jpg">
-                    <source src="/assets/videos/clip2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-
-        <!-- View More Arrow -->
-        <div class="flex justify-center mt-8">
-            <button id="view-more-gallery" class="animate-bounce text-cream bg-velvet-900 hover:bg-velvet-700 px-4 py-3 rounded-full shadow-lg flex items-center gap-2">
-                <span>View More</span>
-                <i data-feather="chevron-down" class="w-6 h-6"></i>
-            </button>
-        </div>
+      <!-- Dots Indicators -->
+      <div id="carousel-dots" class="flex justify-center gap-2 mt-6"></div>
     </div>
+  </div>
 </section>
 
 <script>
-    // Feather icons
-    feather.replace();
+feather.replace();
 
-    // Gallery "View More" functionality
-    const viewMoreBtn = document.getElementById('view-more-gallery');
-    const galleryExtra = document.getElementById('gallery-extra');
+function getItemsPerSlide() {
+  if (window.innerWidth >= 1024) return 3;
+  if (window.innerWidth >= 640) return 2;
+  return 1;
+}
 
-    viewMoreBtn.addEventListener('click', () => {
-        galleryExtra.classList.toggle('hidden');
-        if (!galleryExtra.classList.contains('hidden')) {
-            viewMoreBtn.innerHTML = '<span>View Less</span><i data-feather="chevron-up" class="w-6 h-6"></i>';
-        } else {
-            viewMoreBtn.innerHTML = '<span>View More</span><i data-feather="chevron-down" class="w-6 h-6"></i>';
-        }
-        feather.replace(); // Refresh icons
-        galleryExtra.scrollIntoView({ behavior: 'smooth', block: 'start' });
+const track = document.getElementById('carousel-track');
+const items = Array.from(document.querySelectorAll('.carousel-item'));
+const prevBtn = document.getElementById('carousel-prev');
+const nextBtn = document.getElementById('carousel-next');
+const dotsContainer = document.getElementById('carousel-dots');
+
+let currentIndex = 0;
+let itemsPerSlide = getItemsPerSlide();
+let totalSlides = Math.ceil(items.length / itemsPerSlide);
+
+// Clone for infinite loop
+const cloneFirst = items.slice(0, itemsPerSlide).map(item => item.cloneNode(true));
+const cloneLast = items.slice(-itemsPerSlide).map(item => item.cloneNode(true));
+
+cloneFirst.forEach(clone => track.appendChild(clone));
+cloneLast.reverse().forEach(clone => track.insertBefore(clone, track.firstChild));
+
+currentIndex = 1; // start at first original slide
+track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+// Create dots
+function createDots() {
+  dotsContainer.innerHTML = '';
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('button');
+    dot.classList.add('w-3', 'h-3', 'rounded-full', 'bg-velvet-700');
+    dot.addEventListener('click', () => {
+      currentIndex = i + 1;
+      updateCarousel(true);
     });
+    dotsContainer.appendChild(dot);
+  }
+}
+createDots();
+
+function updateDots() {
+  const dots = dotsContainer.children;
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.toggle('bg-gold', i === currentIndex - 1);
+    dots[i].classList.toggle('bg-velvet-700', i !== currentIndex - 1);
+  }
+}
+
+function updateCarousel(jump=false) {
+  track.style.transition = jump ? 'transform 0.7s ease-in-out' : 'none';
+  const offset = -(currentIndex * 100);
+  track.style.transform = `translateX(${offset}%)`;
+
+  track.addEventListener('transitionend', () => {
+    if (currentIndex === 0) {
+      track.style.transition = 'none';
+      currentIndex = totalSlides;
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    } else if (currentIndex === totalSlides + 1) {
+      track.style.transition = 'none';
+      currentIndex = 1;
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+  }, { once: true });
+
+  updateDots();
+}
+
+prevBtn.addEventListener('click', () => {
+  currentIndex--;
+  updateCarousel(true);
+});
+
+nextBtn.addEventListener('click', () => {
+  currentIndex++;
+  updateCarousel(true);
+});
+
+window.addEventListener('resize', () => {
+  itemsPerSlide = getItemsPerSlide();
+  totalSlides = Math.ceil(items.length / itemsPerSlide);
+  createDots();
+  updateCarousel();
+});
+
+// Swipe gestures
+let startX = 0;
+let isDragging = false;
+
+track.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
+  isDragging = true;
+});
+
+track.addEventListener('touchmove', (e) => {
+  if (!isDragging) return;
+  const currentX = e.touches[0].clientX;
+  const deltaX = currentX - startX;
+  track.style.transform = `translateX(calc(${-currentIndex * 100}% + ${deltaX}px))`;
+});
+
+track.addEventListener('touchend', (e) => {
+  if (!isDragging) return;
+  const endX = e.changedTouches[0].clientX;
+  const deltaX = endX - startX;
+  if (deltaX > 50) {
+    currentIndex--;
+  } else if (deltaX < -50) {
+    currentIndex++;
+  }
+  updateCarousel(true);
+  isDragging = false;
+});
+
+updateCarousel(true);
 </script>
 
 

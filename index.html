@@ -304,40 +304,53 @@
 
 <!-- Photo Gallery Section -->
 <div class="relative overflow-hidden">
-    <div id="photo-carousel-track" class="flex transition-transform duration-700 ease-in-out" style="gap:1rem;">
-        <script>
-            const photos = [
-                { src:'21239384.jpg', focus:'0%' },
-                { src:'IMG_9981.JPG', focus:'0%' },
-                { src:'IMG_9988.JPG', focus:'0%' },
-                { src:'21433502.jpeg', focus:'0%' },
-                { src:'21433503.jpeg', focus:'30%' },
-                { src:'21433509.jpeg', focus:'40%' },
-                { src:'21433515.jpeg', focus:'0%' },
-                { src:'21433524.jpeg', focus:'0%' },
-                { src:'21433528.jpeg', focus:'0%' },
-                { src:'21433529.jpeg', focus:'0%' },
-                { src:'21433542.jpeg', focus:'0%' },
-                { src:'21433546.jpeg', focus:'0%' },
-                { src:'21433567.jpeg', focus:'0%' },
-                { src:'21433576.jpeg', focus:'0%' },
-                { src:'21433588.jpeg', focus:'0%' }
-            ];
-            
-            photos.forEach(photo => {
-                document.write(`
-                    <div class="carousel-item flex-shrink-0" style="flex-basis: calc(25% - 0.75rem);">
-                        <div class="border-2 border-gold rounded-lg overflow-hidden cursor-pointer">
-                            <img src="assets/images/${photo.src}" 
-                                 alt="Model Photo" 
-                                 data-focus="${photo.focus}"
-                                 class="w-full h-64 object-cover"
-                                 onclick="openModal(this)">
-                        </div>
-                    </div>
-                `);
-            });
-        </script>
+    <div id="photo-carousel-track" class="flex transition-transform duration-700 ease-in-out" style="gap:1rem;"></div>
+
+<script>
+const photos = [
+    { src:'21239384.jpg', focus:'0%' },
+    { src:'IMG_9981.JPG', focus:'0%' },
+    { src:'IMG_9988.JPG', focus:'0%' },
+    { src:'21433502.jpeg', focus:'0%' },
+    { src:'21433503.jpeg', focus:'30%' },
+    { src:'21433509.jpeg', focus:'40%' },
+    { src:'21433515.jpeg', focus:'0%' },
+    { src:'21433524.jpeg', focus:'0%' },
+    { src:'21433528.jpeg', focus:'0%' },
+    { src:'21433529.jpeg', focus:'0%' },
+    { src:'21433542.jpeg', focus:'0%' },
+    { src:'21433546.jpeg', focus:'0%' },
+    { src:'21433567.jpeg', focus:'0%' },
+    { src:'21433576.jpeg', focus:'0%' },
+    { src:'21433588.jpeg', focus:'0%' }
+];
+
+const track = document.getElementById('photo-carousel-track');
+
+photos.forEach(photo => {
+    const div = document.createElement('div');
+    div.className = "carousel-item flex-shrink-0";
+    div.style.flexBasis = "calc(25% - 0.75rem)";
+
+    const innerDiv = document.createElement('div');
+    innerDiv.className = "border-2 border-gold rounded-lg overflow-hidden cursor-pointer";
+
+    const img = document.createElement('img');
+    img.src = `assets/images/${photo.src}`;
+    img.alt = "Model Photo";
+    img.dataset.focus = photo.focus;
+    img.className = "w-full h-64 object-cover";
+    img.onclick = () => openModal(img);
+
+    // Apply the object position dynamically
+    img.style.objectPosition = `50% ${photo.focus}`;
+
+    innerDiv.appendChild(img);
+    div.appendChild(innerDiv);
+    track.appendChild(div);
+});
+</script>
+
     </div>
 
     <!-- Photo Carousel Buttons -->

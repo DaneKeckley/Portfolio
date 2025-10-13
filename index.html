@@ -24,6 +24,7 @@
     <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
 
     <script>
+        // Initialize EmailJS
         emailjs.init('YOUR_PUBLIC_KEY_HERE');
 
         tailwind.config = {
@@ -82,18 +83,15 @@
             box-shadow: 0 10px 25px rgba(140, 28, 19, 0.3);
         }
 
+        /* Semi-transparent navbar with gold trim */
         nav {
             background-color: rgba(0,0,0,0.85);
             border-bottom: 2px solid #E5C47A;
         }
 
+        /* Listen button hover glow */
         .listen-btn:hover {
             box-shadow: 0 0 15px rgba(229, 196, 122, 0.6), 0 5px 15px rgba(229, 196, 122, 0.3);
-        }
-
-        #gallery iframe {
-            width: 100%;
-            height: 65vh; /* large video height */
         }
     </style>
 </head>
@@ -145,6 +143,7 @@
                 <p class="text-lg md:text-xl font-serif italic text-cream mb-4">Velvet Tone. Scarlet Passion.</p>
                 <p class="text-xl md:text-2xl font-serif italic text-gold mb-10">Voice Actor, Actor, Model</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <!-- Button -->
                     <a href="#demos-header" class="listen-btn relative font-bold py-3 px-8 rounded-full transition-all duration-300 flex items-center justify-center gap-2 
                         bg-gold text-[#0C0C0C] shadow-lg hover:bg-[#d4b36b]">
                         <i data-feather="headphones"></i> LISTEN TO MY WORK
@@ -169,7 +168,7 @@
             <span class="border-b-2 border-gold pb-2">DEMOS</span>
         </h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="audio-card bg-velvet-800 rounded-lg overflow-hidden p-6 transition-all duration-300">
             <div class="flex flex-col gap-4">
                 <h3 class="text-xl font-bold text-cream">Animation Demo</h3>
@@ -207,145 +206,253 @@
                     </h2>
                     <div class="space-y-6 text-cream/90 text-lg leading-relaxed">
                         <p>
-                            Dane Keckley is a professional voice actor whose craft lies in transforming words into living, breathing characters...
+                            Dane Keckley is a professional voice actor whose craft lies in transforming words into living, breathing characters. 
+                            Known for his rich, versatile voice and refined control, Dane specializes in animation, delivering performances that range from heartfelt heroes to complex villains. 
+                            Whether voicing a spirited protagonist or an otherworldly creature, Dane brings a cinematic sensibility and a nuanced understanding of tone and rhythm to every session.
                         </p>
+                        <p>
+                            Dane has built his career from the ground up and has landed himself in a multifaceted universe, playing diverging characters such as Yan Shu-Wen and the Dark One in The Bridge Curse 2,
+                            Gaia in Super Snail X, Patriot Sam in Enigma, Omus in Lone Soul, and William Afton and Michael Schmidt in The Return to Freddy’s. 
+                        </p>
+                        <p>
+                            In addition to his variety in vocal range, Dane has versatility in talent. 
+                            He has made his mark in the modeling world, walking the Nordstrom runway and appearing in publications such as Vessel, Artells, Marika, and Top Posters. 
+                            These experiences amplify his ability and have shaped his creative presence to embody character through subtlety and expression.
+                        </p>
+                        <p>
+                            With a voice that carries warmth, power, and range, Dane Keckley continues to build a reputation as an accomplished performer who can adapt, elevate, and captivate. 
+                            For casting directors and creators seeking a voice that can give their worlds dimension, Dane offers not just sound, but <strong>soul.</strong> 
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-10">
+                        <!-- View Resume Button -->
+                        <a href="/assets/images/DaneKeckleyResume.pdf" target="_blank" class="inline-flex items-center bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-full transition-all duration-300">
+                            <i data-feather="eye" class="mr-2"></i> VIEW RESUME
+                        </a>
+
+                        <!-- Download Resume Button -->
+                        <a href="/assets/images/DaneKeckleyResume.pdf" download class="inline-flex items-center bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-full transition-all duration-300">
+                            <i data-feather="download" class="mr-2"></i> DOWNLOAD RESUME
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-20 bg-velvet-800 border-t border-scarlet-700/20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-bold text-center mb-12 text-cream">
-          <span class="border-b-2 border-gold pb-2">GALLERY</span>
-        </h2>
+<!-- Gallery Section -->
+<section id="gallery" class="py-24 bg-velvet-800 border-t border-scarlet-700/20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-bold text-center mb-12 text-cream">
+      <span class="border-b-2 border-gold pb-2">GALLERY</span>
+    </h2>
 
-        <div class="relative w-full overflow-hidden">
-          <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out gap-6">
-            <div class="carousel-item border-2 border-gold rounded-lg overflow-hidden">
-              <iframe src="https://www.youtube.com/embed/c8vsu3dp_Ow?start=0" allowfullscreen></iframe>
-            </div>
-            <div class="carousel-item border-2 border-gold rounded-lg overflow-hidden">
-              <iframe src="https://www.youtube.com/embed/HZeioUxnKdw?start=0" allowfullscreen></iframe>
-            </div>
-            <div class="carousel-item border-2 border-gold rounded-lg overflow-hidden">
-              <iframe src="https://www.youtube.com/embed/BZhbLHZDaLA?start=0" allowfullscreen></iframe>
-            </div>
+    <div class="relative w-full overflow-hidden">
+      <!-- Carousel Track -->
+      <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out gap-6">
+        <!-- Video Items -->
+        <div class="carousel-item flex-shrink-0 w-full md:w-1/3 border-2 border-gold rounded-lg overflow-hidden">
+          <div class="relative pb-[56.25%] h-0">
+            <iframe src="https://www.youtube.com/embed/c8vsu3dp_Ow?start=0" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
           </div>
-
-          <button id="carousel-prev" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-velvet-900 hover:bg-velvet-700 text-cream p-3 rounded-full shadow-lg z-10">
-            <i data-feather="chevron-left" class="w-6 h-6"></i>
-          </button>
-
-          <button id="carousel-next" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-velvet-900 hover:bg-velvet-700 text-cream p-3 rounded-full shadow-lg z-10">
-            <i data-feather="chevron-right" class="w-6 h-6"></i>
-          </button>
         </div>
+        <div class="carousel-item flex-shrink-0 w-full md:w-1/3 border-2 border-gold rounded-lg overflow-hidden">
+          <div class="relative pb-[56.25%] h-0">
+            <iframe src="https://www.youtube.com/embed/HZeioUxnKdw?start=0" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="carousel-item flex-shrink-0 w-full md:w-1/3 border-2 border-gold rounded-lg overflow-hidden">
+          <div class="relative pb-[56.25%] h-0">
+            <iframe src="https://www.youtube.com/embed/BZhbLHZDaLA?start=0" class="absolute top-0 left-0 w-full h-full" allowfullscreen></iframe>
+          </div>
+        </div>
+        <!-- Add more videos here if needed -->
       </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-bold text-center mb-12 text-cream">
-          <span class="border-b-2 border-gold pb-2">CONTACT</span>
-        </h2>
-        <form id="contactForm" class="space-y-6 text-cream">
-          <input type="text" name="from_name" placeholder="Your Name" required class="w-full p-3 rounded-lg bg-velvet-800 border border-gold">
-          <input type="email" name="from_email" placeholder="Your Email" required class="w-full p-3 rounded-lg bg-velvet-800 border border-gold">
-          <textarea name="message" placeholder="Your Message" required class="w-full p-3 rounded-lg bg-velvet-800 border border-gold" rows="6"></textarea>
-          <button type="submit" class="bg-gold text-[#0C0C0C] font-bold py-3 px-8 rounded-full hover:bg-[#d4b36b] transition-all duration-300">
-            Send Message
+      <!-- Carousel Arrows -->
+      <button id="carousel-prev" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-velvet-900 hover:bg-velvet-700 text-cream p-3 rounded-full shadow-lg z-10">
+        <i data-feather="chevron-left" class="w-6 h-6"></i>
+      </button>
+      <button id="carousel-next" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-velvet-900 hover:bg-velvet-700 text-cream p-3 rounded-full shadow-lg z-10">
+        <i data-feather="chevron-right" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Carousel JS -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  feather.replace();
+
+  const track = document.getElementById('carousel-track');
+  let items = Array.from(document.querySelectorAll('.carousel-item'));
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+
+  let visibleCount = 3;
+  let currentIndex = visibleCount;
+
+  function setupCarousel() {
+    // Clone first & last sets for seamless loop
+    for (let i = 0; i < visibleCount; i++) {
+      track.appendChild(items[i].cloneNode(true));
+      track.insertBefore(items[items.length - 1 - i].cloneNode(true), items[0]);
+    }
+    items = Array.from(document.querySelectorAll('.carousel-item'));
+    updateCarousel(false);
+  }
+
+  function updateCarousel(animate = true) {
+    track.style.transition = animate ? 'transform 0.7s ease-in-out' : 'none';
+    const translateX = -(currentIndex * (100 / visibleCount));
+    track.style.transform = `translateX(${translateX}%)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex++;
+    updateCarousel();
+    if (currentIndex >= items.length - visibleCount) {
+      setTimeout(() => {
+        currentIndex = visibleCount;
+        updateCarousel(false);
+      }, 710);
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex--;
+    updateCarousel();
+    if (currentIndex < visibleCount) {
+      setTimeout(() => {
+        currentIndex = items.length - 2 * visibleCount;
+        updateCarousel(false);
+      }, 710);
+    }
+  });
+
+  setupCarousel();
+});
+</script>
+
+
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-velvet-900 border-t border-scarlet-700/20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row gap-12">
+      <div class="lg:w-1/2">
+        <form id="contact-form" class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-cream mb-2">NAME</label>
+            <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-cream mb-2">EMAIL</label>
+            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500">
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-cream mb-2">MESSAGE</label>
+            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-velvet-800 border border-scarlet-700/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-cream placeholder-velvet-500"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-[#340E12] hover:bg-[#2A0B0E] text-cream font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
+            <i data-feather="send"></i> SEND MESSAGE
           </button>
         </form>
       </div>
-    </section>
 
-    <script>
-    // Mobile menu toggle
-    document.getElementById('mobile-menu-button').addEventListener('click', () => {
-        const menu = document.getElementById('mobile-menu');
-        menu.classList.toggle('hidden');
-    });
+      <div class="lg:w-1/2">
+        <div class="bg-velvet-800 rounded-lg p-8 h-full">
+          <h3 class="text-2xl font-bold text-cream mb-6">LET'S WORK TOGETHER</h3>
+          <div class="space-y-6 text-cream/90">
+            <p>For voiceover inquiries, collaborations, or just to say hello, feel free to reach out through the form or directly via email.</p>
+            <div class="flex items-start gap-4">
+              <i data-feather="mail" class="text-gold"></i>
+              <div>
+                <p class="font-bold">EMAIL</p>
+                <p>danekeckley@gmail.com</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <i data-feather="map-pin" class="text-gold"></i>
+              <div>
+                <p class="font-bold">LOCATIONS</p>
+                <p>Los Angeles, CA</p>
+                <p>Salt Lake City, UT</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-12">
+            <h4 class="text-xl font-bold text-cream mb-4">CONNECT WITH ME</h4>
+            <div class="flex gap-4">
+              <a href="#" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
+                <i data-feather="twitter" class="text-gold"></i>
+              </a>
+              <a href="https://www.instagram.com/dane_keckley" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
+                <i data-feather="instagram" class="text-gold"></i>
+              </a>
+              <a href="https://www.imdb.com/name/nm14250926" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
+                <i data-feather="film" class="text-gold"></i>
+              </a>
+              <a href="https://www.youtube.com/@TrajanWeekly" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
+                <i data-feather="youtube" class="text-gold"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    // Carousel
-    document.addEventListener('DOMContentLoaded', () => {
-      feather.replace();
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  feather.replace();
 
-      const track = document.getElementById('carousel-track');
-      let items = Array.from(document.querySelectorAll('.carousel-item'));
-      const prevBtn = document.getElementById('carousel-prev');
-      const nextBtn = document.getElementById('carousel-next');
-      let visibleCount, currentIndex;
+  const track = document.getElementById('carousel-track');
+  let items = Array.from(document.querySelectorAll('.carousel-item'));
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+  const visibleCount = 3;
 
-      function getVisibleCount() {
-        const width = window.innerWidth;
-        if (width >= 1024) return 3;
-        if (width >= 640) return 2;
-        return 1;
-      }
+  // Clone first and last sets for seamless loop
+  for (let i = 0; i < visibleCount; i++) {
+    track.appendChild(items[i].cloneNode(true));
+    track.insertBefore(items[items.length - 1 - i].cloneNode(true), items[0]);
+  }
 
-      function setupCarousel() {
-        items = Array.from(document.querySelectorAll('.carousel-item'));
-        track.querySelectorAll('.clone').forEach(c => c.remove());
-        visibleCount = getVisibleCount();
+  items = Array.from(document.querySelectorAll('.carousel-item'));
+  let currentIndex = visibleCount;
+
+  function updateCarousel(animate = true) {
+    track.style.transition = animate ? 'transform 0.7s ease-in-out' : 'none';
+    const translateX = -(currentIndex * (100 / visibleCount));
+    track.style.transform = `translateX(${translateX}%)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex++;
+    updateCarousel();
+    if (currentIndex >= items.length - visibleCount) {
+      setTimeout(() => {
         currentIndex = visibleCount;
-
-        for (let i = 0; i < visibleCount; i++) {
-          const firstClone = items[i].cloneNode(true);
-          firstClone.classList.add('clone');
-          track.appendChild(firstClone);
-
-          const lastClone = items[items.length - 1 - i].cloneNode(true);
-          lastClone.classList.add('clone');
-          track.insertBefore(lastClone, items[0]);
-        }
-
-        items = Array.from(document.querySelectorAll('.carousel-item'));
-        items.forEach(item => { item.style.width = `${100 / visibleCount}%`; });
         updateCarousel(false);
-      }
+      }, 710);
+    }
+  });
 
-      function updateCarousel(animate = true) {
-        track.style.transition = animate ? 'transform 0.7s ease-in-out' : 'none';
-        const translateX = -(currentIndex * (100 / visibleCount));
-        track.style.transform = `translateX(${translateX}%)`;
-      }
+  prevBtn.addEventListener('click', () => {
+    currentIndex--;
+    updateCarousel();
+    if (currentIndex < visibleCount) {
+      setTimeout(() => {
+        currentIndex = items.length - 2 * visibleCount;
+        updateCarousel(false);
+      }, 710);
+    }
+  });
 
-      nextBtn.addEventListener('click', () => {
-        currentIndex++;
-        updateCarousel();
-        if (currentIndex >= items.length - visibleCount) {
-          setTimeout(() => { currentIndex = visibleCount; updateCarousel(false); }, 710);
-        }
-      });
-
-      prevBtn.addEventListener('click', () => {
-        currentIndex--;
-        updateCarousel();
-        if (currentIndex < visibleCount) {
-          setTimeout(() => { currentIndex = items.length - 2 * visibleCount; updateCarousel(false); }, 710);
-        }
-      });
-
-      window.addEventListener('resize', () => {
-        const newVisible = getVisibleCount();
-        if (newVisible !== visibleCount) setupCarousel();
-      });
-
-      setupCarousel();
-    });
-
-    // Contact form
-    const form = document.getElementById('contactForm');
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      emailjs.sendForm('YOUR_SERVICE_ID', 'template_4miydur', this)
-        .then(() => { alert('Message sent!'); form.reset(); })
-        .catch(err => alert('Failed to send message: ' + JSON.stringify(err)));
-    });
-    </script>
-</body>
-</html>
+  updateCarousel(false);
+});
+</script>

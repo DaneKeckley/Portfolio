@@ -418,7 +418,6 @@
                         <div class="mt-12">
                             <h4 class="text-xl font-bold text-cream mb-4">CONNECT WITH ME</h4>
                             <div class="flex gap-4">
-                                </a>
                                 <a href="https://www.instagram.com/dane_keckley" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
                                     <i data-feather="instagram" class="text-gold"></i>
                                 </a>
@@ -426,14 +425,10 @@
                                     <i data-feather="film" class="text-gold"></i>
                                 </a>
                                 <a href="https://www.tiktok.com/@danekeckley" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
-    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="#E5C47A">
-        <path d="M34.5 10.4c-.4 0-.8-.1-1.2-.1-2.1-.2-4.1-.9-5.8-2v14.7c0 6.3-5.1 11.4-11.4 11.4-6.3 0-11.4-5.1-11.4-11.4S9.8 10.4 16.1 10.4c.9 0 1.8.1 2.6.3v6.8c-.8-.1-1.6-.2-2.6-.2-4.8 0-8.7 3.9-8.7 8.7s3.9 8.7 8.7 8.7 8.7-3.9 8.7-8.7V4.8h4.5c.4 0 .8.1 1.2.1v5.5z"/>
-    </svg>
-</a>
-
-
-
-
+                                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="#E5C47A">
+                                        <path d="M34.5 10.4c-.4 0-.8-.1-1.2-.1-2.1-.2-4.1-.9-5.8-2v14.7c0 6.3-5.1 11.4-11.4 11.4-6.3 0-11.4-5.1-11.4-11.4S9.8 10.4 16.1 10.4c.9 0 1.8.1 2.6.3v6.8c-.8-.1-1.6-.2-2.6-.2-4.8 0-8.7 3.9-8.7 8.7s3.9 8.7 8.7 8.7 8.7-3.9 8.7-8.7V4.8h4.5c.4 0 .8.1 1.2.1v5.5z"/>
+                                    </svg>
+                                </a>
                                 <a href="https://www.youtube.com/@TrajanWeekly" target="_blank" class="w-10 h-10 rounded-full bg-velvet-700 hover:bg-scarlet-500 flex items-center justify-center transition-colors duration-300">
                                     <i data-feather="youtube" class="text-gold"></i>
                                 </a>
@@ -566,11 +561,19 @@
 
             const photoTrack = document.getElementById('photo-carousel-track');
 
+            function getPhotoFlexBasis() {
+                if (window.innerWidth < 768) {
+                    return "calc(50% - 0.75rem)";
+                } else {
+                    return "calc(25% - 0.75rem)";
+                }
+            }
+
             // Inject photos into carousel
             photos.forEach(photo => {
                 const div = document.createElement('div');
                 div.className = "carousel-item px-3 flex-shrink-0";
-                div.style.flexBasis = "calc(25% - 0.75rem)";
+                div.style.flexBasis = getPhotoFlexBasis();
 
                 const innerDiv = document.createElement('div');
                 innerDiv.className = "border-2 border-gold rounded-lg overflow-hidden cursor-pointer";
@@ -588,27 +591,27 @@
             });
 
             // Smooth scrolling with offset for fixed navbar
-const navbarHeight = document.querySelector('nav').offsetHeight;
+            const navbarHeight = document.querySelector('nav').offsetHeight;
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const targetPosition = target.getBoundingClientRect().top + window.scrollY - navbarHeight - 10; // 10px extra padding
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const targetPosition = target.getBoundingClientRect().top + window.scrollY - navbarHeight - 10;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
             });
-        }
-    });
-});
 
             // Clone photos for infinite scroll
             photos.forEach(photo => {
                 const div = document.createElement('div');
                 div.className = "carousel-item px-3 flex-shrink-0 clone";
-                div.style.flexBasis = "calc(25% - 0.75rem)";
+                div.style.flexBasis = getPhotoFlexBasis();
 
                 const innerDiv = document.createElement('div');
                 innerDiv.className = "border-2 border-gold rounded-lg overflow-hidden cursor-pointer";
@@ -684,6 +687,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
             window.addEventListener('resize', () => {
                 updatePhotoScroll();
+                
+                // Update flex basis on resize
+                photoTrack.querySelectorAll('.carousel-item').forEach(item => {
+                    item.style.flexBasis = getPhotoFlexBasis();
+                });
             });
 
             // Contact Form
